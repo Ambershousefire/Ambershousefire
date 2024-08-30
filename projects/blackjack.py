@@ -15,4 +15,3 @@ deck.append(cards[0:12])
 hand=[]
 random.shuffle(deck)
 hand=(deck[-1])
-print (deck[-1])
