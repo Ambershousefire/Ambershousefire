@@ -42,11 +42,11 @@ if run==True:
                 
         elif z==(2):#P
             if x==3:#S
-                w += 1
+                w+= 1
                 print (win)
             
         elif x==1:#R
-            l += 1
+            l+= 1
             print(loss)
                 
         elif z==(3):#S
