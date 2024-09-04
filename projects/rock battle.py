@@ -1,5 +1,6 @@
 
 import random
+
 win= "  You Won :3"
 loss="  You lost >:3"
 draw="  Thats a Draw"
@@ -16,7 +17,7 @@ elif not run.capitalize().startswith("Y"):
         print("aww i whanted to play")
         
 if run==True:
-    npc=[1,2,3] #rock is 1 paper is 2 sisors are 3
+    npc=[1,2,3] #rock is 1 paper is 2 paper 3 is sissiors
     b=0
     
     while runtime:
@@ -62,5 +63,5 @@ if run==True:
             runtime = False
         elif l == 2:
             runtime = False
-                
+            
     print("wins",w,"losses",l,"draws",d)
