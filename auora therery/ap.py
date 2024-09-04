@@ -143,6 +143,7 @@ while run:
     
     if MouseDown == False and AppClick == True:
         AppClick = False
+        
 #Border Aesthetic
     x1, y1, stage1 = turtle(P1, x1, y1, stage1, speed)
     x2, y2, stage2 = turtle(P3, x2, y2, stage2, speed)
