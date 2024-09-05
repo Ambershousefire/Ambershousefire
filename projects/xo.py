@@ -13,11 +13,7 @@ lc2=(255,255,255)
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
-v=0
-c=1
-
-
-
+k=True
 
 screen = pygame.display.set_mode((300, 300))
 
@@ -36,31 +32,30 @@ def O (mousex,mousey):
         pygame.draw.circle(screen,cc,(mousex+50,mousey+50),(40))
         pygame.draw.circle(screen,lc2,(mousex+50,mousey+50),(35))
     
-
 def X (mousex, mousey):
       
         pygame.draw.line(screen,lc,(mousex+10,mousey+10),(mousex+90,mousey+90),(5)) 
         pygame.draw.line(screen,lc,(mousex+10,mousey+90),(mousex+90,mousey+10),(5))
     
-def Button(x, y, AppClick, isO,v,c):
+def Button(x, y, AppClick, isO):
     inboundingbox = False
+    k=True
     #pygame.draw.rect(screen, (x, y, 150, 150))
     #pygame.draw.rect(screen, (x + 5, y + 5, 140, 140))
     
     if mousex >= x and mousey >= y and mousex <= (x + 100) and mousey <= (y + 100):
         inboundingbox = True
-
+    
     if MouseDown and inboundingbox and AppClick == False:
-            print("X:", x, "Y:", y,"turn:",c,v)
+            print("X:", x, "Y:", y,"turn:",k)
             if isO:
-                if v<c:
-                    O(x,y)
-                    c=c+1
-                if v>c:
-                    X(x,y)
-                    v=v+1
+                k=False
+                O(x,y)
+                    
+            else:
+                k=True
+                X(x,y)
                 
-
             AppClick = True
     return AppClick
 
@@ -92,16 +87,15 @@ while running:
     if MouseDown == False and AppClick == True:
         AppClick = False
 
-    AppClick = Button(0,0,AppClick,True,v,c)
-    AppClick = Button(100,0,AppClick,True,v,c)
-    AppClick = Button(200,0,AppClick,True,v,c)
-    AppClick = Button(0,100,AppClick,True,v,c)
-    AppClick = Button(100,100,AppClick,True,v,c)
-    AppClick = Button(200,100,AppClick,True,v,c)
-    AppClick = Button(0,200,AppClick,True,v,c)
-    AppClick = Button(100,200,AppClick,True,v,c)
-    AppClick = Button(200,200,AppClick,True,v,c)
+    AppClick = Button(0,0,AppClick,k)
+    AppClick = Button(100,0,AppClick,k)
+    AppClick = Button(200,0,AppClick,k)
+    AppClick = Button(0,100,AppClick,k)
+    AppClick = Button(100,100,AppClick,k)
+    AppClick = Button(200,100,AppClick,k)
+    AppClick = Button(0,200,AppClick,k)
+    AppClick = Button(100,200,AppClick,k)
+    AppClick = Button(200,200,AppClick,k)
 
-    
     pygame.display.flip()
     
