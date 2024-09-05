@@ -13,7 +13,7 @@ lc2=(255,255,255)
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
-k=True
+k=bool
 
 screen = pygame.display.set_mode((300, 300))
 
@@ -39,12 +39,13 @@ def X (mousex, mousey):
     
 def Button(x, y, AppClick, isO):
     inboundingbox = False
-    k=True
+    
     #pygame.draw.rect(screen, (x, y, 150, 150))
     #pygame.draw.rect(screen, (x + 5, y + 5, 140, 140))
     
     if mousex >= x and mousey >= y and mousex <= (x + 100) and mousey <= (y + 100):
         inboundingbox = True
+        k=False
     
     if MouseDown and inboundingbox and AppClick == False:
             print("X:", x, "Y:", y,"turn:",k)
@@ -98,4 +99,3 @@ while running:
     AppClick = Button(200,200,AppClick,k)
 
     pygame.display.flip()
-    
