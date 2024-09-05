@@ -39,13 +39,13 @@ def X (mousex, mousey):
     
 def Button(x, y, AppClick, isO):
     inboundingbox = False
-    
+    k=False
     #pygame.draw.rect(screen, (x, y, 150, 150))
     #pygame.draw.rect(screen, (x + 5, y + 5, 140, 140))
     
     if mousex >= x and mousey >= y and mousex <= (x + 100) and mousey <= (y + 100):
         inboundingbox = True
-        k=False
+        
     
     if MouseDown and inboundingbox and AppClick == False:
             print("X:", x, "Y:", y,"turn:",k)
