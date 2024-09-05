@@ -1,7 +1,7 @@
 
 import pygame
 import os
-import links
+import links # type: ignore
 
 pygame.init()
 
