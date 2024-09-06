@@ -22,10 +22,10 @@ pygame.display.set_caption('Tick, Tack, Toe')
 # Fill the background colour to the screen 
 screen.fill(lc2)
 
-pygame.draw.line(screen,slc,(100,0),(100,300),(5))
-pygame.draw.line(screen,slc,(200,0),(200,300),(5))
-pygame.draw.line(screen,slc,(0,100),(300,100),(5))
-pygame.draw.line(screen,slc,(0,200),(300,200),(5))
+pygame.draw.line(screen,slc,(100,0),(100,300),(3))
+pygame.draw.line(screen,slc,(200,0),(200,300),(3))
+pygame.draw.line(screen,slc,(0,100),(300,100),(3))
+pygame.draw.line(screen,slc,(0,200),(300,200),(3))
 def O (mousex,mousey):
 
         pygame.draw.circle(screen,cc,(mousex+50,mousey+50),(40))
