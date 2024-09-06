@@ -13,12 +13,13 @@ lc2=(255,255,255)
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
-k=bool
+k=False
+
 
 screen = pygame.display.set_mode((300, 300))
 
 # Set the caption of the screen 
-pygame.display.set_caption('graph') 
+pygame.display.set_caption('Tick, Tack, Toe') 
 
 # Fill the background colour to the screen 
 screen.fill(lc2)
@@ -39,7 +40,6 @@ def X (mousex, mousey):
     
 def Button(x, y, AppClick, isO):
     inboundingbox = False
-    k=False
     #pygame.draw.rect(screen, (x, y, 150, 150))
     #pygame.draw.rect(screen, (x + 5, y + 5, 140, 140))
     
@@ -50,15 +50,15 @@ def Button(x, y, AppClick, isO):
     if MouseDown and inboundingbox and AppClick == False:
             print("X:", x, "Y:", y,"turn:",k)
             if isO:
-                k=False
+                isO=False
                 O(x,y)
                     
             else:
-                k=True
+                isO=True
                 X(x,y)
                 
             AppClick = True
-    return AppClick
+    return AppClick, isO
 
 # Update the display using flip 
 pygame.display.flip() 
@@ -88,14 +88,14 @@ while running:
     if MouseDown == False and AppClick == True:
         AppClick = False
 
-    AppClick = Button(0,0,AppClick,k)
-    AppClick = Button(100,0,AppClick,k)
-    AppClick = Button(200,0,AppClick,k)
-    AppClick = Button(0,100,AppClick,k)
-    AppClick = Button(100,100,AppClick,k)
-    AppClick = Button(200,100,AppClick,k)
-    AppClick = Button(0,200,AppClick,k)
-    AppClick = Button(100,200,AppClick,k)
-    AppClick = Button(200,200,AppClick,k)
+    AppClick,k = Button(0,0,AppClick,k)
+    AppClick,k = Button(100,0,AppClick,k)
+    AppClick,k = Button(200,0,AppClick,k)
+    AppClick,k = Button(0,100,AppClick,k)
+    AppClick,k = Button(100,100,AppClick,k)
+    AppClick,k = Button(200,100,AppClick,k)
+    AppClick,k = Button(0,200,AppClick,k)
+    AppClick,k = Button(100,200,AppClick,k)
+    AppClick,k = Button(200,200,AppClick,k)
 
     pygame.display.flip()
