@@ -1,7 +1,5 @@
 
-# import the pygame module 
-import pygame 
-# Define the background colour 
+import pygame  
 # using RGB color coding. 
 delay=5
 slc=(0,0,0)
@@ -24,10 +22,10 @@ pygame.display.set_caption('Tick, Tack, Toe')
 # Fill the background colour to the screen 
 screen.fill(lc2)
 
-pygame.draw.line(screen,slc,(100,0),(100,300))
-pygame.draw.line(screen,slc,(200,0),(200,300))
-pygame.draw.line(screen,slc,(0,100),(300,100))
-pygame.draw.line(screen,slc,(0,200),(300,200))
+pygame.draw.line(screen,slc,(100,0),(100,300),(5))
+pygame.draw.line(screen,slc,(200,0),(200,300),(5))
+pygame.draw.line(screen,slc,(0,100),(300,100),(5))
+pygame.draw.line(screen,slc,(0,200),(300,200),(5))
 def O (mousex,mousey):
 
         pygame.draw.circle(screen,cc,(mousex+50,mousey+50),(40))
@@ -48,7 +46,6 @@ def Button(x, y, AppClick, isO):
         
     
     if MouseDown and inboundingbox and AppClick == False:
-            print("X:", x, "Y:", y,"turn:",k)
             if isO:
                 isO=False
                 O(x,y)
