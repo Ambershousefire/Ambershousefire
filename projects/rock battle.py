@@ -59,9 +59,9 @@ if run==True:
             l+=1
             print(loss)
             
-        if w == 2:
+        if w == 3:
             runtime = False
-        elif l == 2:
+        elif l == 3:
             runtime = False
             
     print("wins",w,"losses",l,"draws",d)
