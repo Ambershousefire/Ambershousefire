@@ -32,7 +32,7 @@ if run==True:
             d+=1
             print(draw)
         
-        if z==(1):#R
+        elif z==(1):#R
             if x==2:#P
                 w+=1
                 print (win)
@@ -63,5 +63,5 @@ if run==True:
             runtime = False
         elif l == 3:
             runtime = False
-            
+        
     print("wins",w,"losses",l,"draws",d)
