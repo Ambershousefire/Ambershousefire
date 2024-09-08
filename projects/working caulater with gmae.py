@@ -26,13 +26,15 @@ if list.count(x)==True:
 
     
 if x==(5):
-    q=0
+    q=1
     c=input("two nubers multipyed together is the gole, this will spit out a lsit of suqar numbers, do you whant to play: ")
+    y=float(input("first number: "))
+    z=float(input("second nuber: "))
     if c.lower().startswith==("y"):
-        while (q*q) < (y*z):
-            q=+ 1
+        while (z*y) > (y*y):
+            q=q+1
             print(q*q)
-    print (z*y)
+        print (z*y)
 
 def sqr(x):
     x*=x 
