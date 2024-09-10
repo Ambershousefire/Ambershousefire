@@ -47,14 +47,14 @@ while running:
     pygame.time.delay(delay)
     snake(screen, x, y, alpha, bata, black, white)
     
-    if y>440:
-        y=10
-    elif y<10:
-        y=440
-    if x>890:
-        x=10
-    elif x<10:
-        x=890
+    if y>450:
+        y=0
+    elif y<0:
+        y=450
+    if x>900:
+        x=0
+    elif x<0:
+        x=900
         
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
