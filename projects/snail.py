@@ -32,10 +32,10 @@ def snake(screen, x, y, alpha, bata, black, white):
 
 while running:
     
-    pygame.display.set_caption("snail")
+    pygame.display.set_caption("supper snail")
     
     if score==scorecount:
-        print(score,speed)
+        print("score:",score)
         xpos=r.randint(1,89)
         xpos=xpos*10
         ypos=r.randint(1,44)
