@@ -17,10 +17,8 @@ scorecount=0
 delay=5
 screen=pygame.display.set_mode((900,450))
 running=True
-xpos=r.randint(1,89)
-xpos=xpos*10
-ypos=r.randint(1,89)
-ypos=ypos*10
+xpos=r.randint(1,890)
+ypos=r.randint(1,440)
 xDir=0
 yDir=0
 speed = 1
@@ -36,17 +34,14 @@ while running:
     
     if score==scorecount:
         print("score:",score)
-        xpos=r.randint(1,89)
-        xpos=xpos*10
-        ypos=r.randint(1,44)
-        ypos=ypos*10
+        xpos=r.randint(1,890)
+        ypos=r.randint(1,440)
         speed= speed+0.5
         scorecount= scorecount+1
         
     if (x-xpos)<pickupDist and (x-xpos)>-pickupDist and (y-ypos)<pickupDist and (y-ypos)>-pickupDist:
         score= score+1 
     
-        
     screen.fill(green)
     pygame.draw.circle(screen,red,((xpos),(ypos)),(5))
     pygame.time.delay(delay)
@@ -60,30 +55,35 @@ while running:
         x=10
     elif x<10:
         x=890
+        
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
              running = False
+             
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 bata=+10
                 alpha=0
                 yDir = -1
-                xDir = 0
+                xDir = 0#
             elif event.key == pygame.K_DOWN:
                 bata=-10
                 alpha=0
                 yDir = 1
                 xDir = 0
+                
             elif event.key == pygame.K_LEFT:
                 alpha=+10
                 bata=0
                 xDir = -1
                 yDir = 0
+                
             elif event.key == pygame.K_RIGHT:
                 alpha=-10
                 bata=0
                 xDir = 1
                 yDir = 0
+                
             if event.key == pygame.K_SPACE:
                 running=False
 
