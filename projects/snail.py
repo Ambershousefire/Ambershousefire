@@ -23,6 +23,18 @@ xDir=0
 yDir=0
 speed = 1
 pickupDist = 15
+z=0
+say=1
+say=int(input("Select of these: esay(1) normal(2) hard(3): "))
+
+if say>3:
+    print("ultra hard mode")
+    speed=10
+else:
+    modes = ["esay", "normal", "hard"]
+    print(modes[say-1], "Selected!")
+    speed = (say-1)*speed
+
 
 def snake(screen, x, y, alpha, bata, black, white):
     pygame.draw.circle(screen,black,(x,y),(10))
@@ -49,12 +61,16 @@ while running:
     
     if y>450:
         y=0
+        z+=1
     elif y<0:
         y=450
+        z+=1
     if x>900:
         x=0
+        z+=1
     elif x<0:
         x=900
+        z+=1
         
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
@@ -90,6 +106,7 @@ while running:
     if score>=10:
         running=False
         print("how did you win that, you were moving like 100 pixles a second")
+        print("this is the amount of times you whent off screen:",z)
 
     x = x +(speed*xDir)
     y = y + (speed*yDir)
