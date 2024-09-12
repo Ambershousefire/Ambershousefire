@@ -46,8 +46,8 @@ while running:
     
     if score==scorecount:
         print("score:",score)
-        xpos=r.randint(1,890)
-        ypos=r.randint(1,440)
+        xpos=r.randint(10,890)
+        ypos=r.randint(10,440)
         speed= speed+0.5
         scorecount= scorecount+1
         
@@ -101,12 +101,16 @@ while running:
                 yDir = 0
                 
             if event.key == pygame.K_SPACE:
-                running=False
+                score+=1
 
     if score>=10:
         running=False
         print("how did you win that, you were moving like 100 pixles a second")
-        print("this is the amount of times you whent off screen:",z)
+        if say<4:
+            print("this is the amount of times you whent off screen", z, "times! on",(modes[say-1]),"mode")
+        else:
+            print("this is the amount of times you whent off screen", z)
+            print("good job but can you get your off screen's to zero")
 
     x = x +(speed*xDir)
     y = y + (speed*yDir)
