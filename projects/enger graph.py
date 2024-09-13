@@ -1,11 +1,12 @@
 
 import pygame
 print("this is a graphing tool for alloy Graphs")
+print("the max temp on this graph is 500 so your max temp must be less than 500, so insure your numbers are all hole numbers under 500")
 start1=int(input("what is the satring point for liqufaction: "))
 count=int(input("how many points: "))
 
 l=1000
-w=450
+w=500
 screen=pygame.display.set_mode((l,w))
 
 
@@ -31,12 +32,12 @@ while running==True:
     while z<count:
         if run1:
             mintemp=int(input("Min temperture: "))
-            mintemp=(450-mintemp)
-            start1=(450-start1)
+            mintemp=(w-mintemp)
+            start1=(w-start1)
             run1=False
         maxtemp=int(input("Max temperture: "))
 
-        maxtemp=(450-maxtemp)
+        maxtemp=(w-maxtemp)
 
         if z==0:
             f=maxtemp
@@ -56,17 +57,17 @@ while running==True:
         z=z+1
         pygame.display.flip()
     
-    while xgrid<450:
+    while xgrid<w:
         pygame.draw.line(screen,gray,(0,xgrid),(l,xgrid),(1))
         xgrid+=10
         
     while ygrid<1000:
         pygame.draw.line(screen,gray,(ygrid,0),(ygrid,w),(1))
         ygrid+=10
-    pygame.draw.line(screen,black,(0,440),(l,440),(5))
+    pygame.draw.line(screen,black,(0,w-10),(l,w-10),(5))
     pygame.draw.line(screen,black,(10,w),(10,0),(5))
     while per<1000:
-        pygame.draw.line(screen,black,(per,430),(per,w))
+        pygame.draw.line(screen,black,(per,w-20),(per,w))
         per+=100
         
         while temp<430:
