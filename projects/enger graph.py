@@ -1,26 +1,30 @@
 
 import pygame
+
 print("this is a graphing tool for alloy Graphs")
 print("the max temp on this graph is 500 so your max temp must be less than 500, so insure your numbers are all hole numbers under 500")
 v=(input("is the highest temp over 500 (y/n)"))
+
 if v.capitalize().startswith("Y"):
     o=2
 else:
     o=1
 count=10
+
 sort=(input("are you using this grap for eutetic alloys (y/n)"))
+
 sorttype=False
+
 if sort.capitalize().startswith("Y"):
     start1=int(input("what is the end point for solifcation: "))
     sorttype=True
 if sorttype==False:
     start1=int(input("what is the sart point for solidfcation: "))
     start2=int(input("what is the end point for solifcation: "))
+
 l=1000
 w=500
 screen=pygame.display.set_mode((l,w))
-
-
 
 running=True
 white=(255,255,255)
