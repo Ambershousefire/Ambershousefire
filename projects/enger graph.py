@@ -1,9 +1,8 @@
 
 import pygame
-
 print("this is a graphing tool for alloy Graphs")
 print("the max temp on this graph is 500 so your max temp must be less than 500, so insure your numbers are all hole numbers under 500")
-v=(input("is the highest temp over 500 (y/n)"))
+v=(input("is the highest temp over 500 (y/n): "))
 
 if v.capitalize().startswith("Y"):
     o=2
@@ -11,7 +10,7 @@ else:
     o=1
 count=10
 
-sort=(input("are you using this grap for eutetic alloys (y/n)"))
+sort=(input("are you using this grap for eutetic alloys (y/n): "))
 
 sorttype=False
 
@@ -42,7 +41,6 @@ temp=0
 xpos=100
 x2pos=0
 run1=True
-
 
 screen.fill(white)
 while running==True:
@@ -86,11 +84,9 @@ while running==True:
             start1=(w-start1)
             start2=(w-start2)
             
-
             if z==0:
                 ef=maxtemp
                 eg=mintemp
-        
         
             if z==0:
                 pygame.draw.line(screen,black,(x2pos,start2),(xpos,mintemp),(3))
@@ -108,28 +104,26 @@ while running==True:
                 xpos+=100
                 x2pos+=100
             z=z+1
-            
-        
     
     while xgrid<w:
         pygame.draw.line(screen,gray,(0,xgrid),(l,xgrid),(1))
         xgrid+=10
         
-    while ygrid<1000:
+    while ygrid<l:
         pygame.draw.line(screen,gray,(ygrid,0),(ygrid,w),(1))
         ygrid+=10
-    pygame.draw.line(screen,black,(0,w-10),(l,w-10),(5))
-    pygame.draw.line(screen,black,(10,w),(10,0),(5))
-    while per<1000:
+    pygame.draw.line(screen,black,(0,w-10),(l,w-10),(2))
+    pygame.draw.line(screen,black,(10,w),(10,0),(2))
+    while per<l:
         pygame.draw.line(screen,black,(per,w-20),(per,w))
         per+=100
         
-        while temp<430:
+        while temp<w:
             pygame.draw.line(screen,black,(5,num),(0,num))
             num+=10
             temp+=10
     
-        
+
     pygame.display.flip()
     for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
