@@ -7,6 +7,7 @@ def new_func(kg, x):
     elif kg.upper().startswith("K"):
         output = str(x * 2.20462)+"lb"
     print( output)
+
 def new_func1(x, kg):
     if kg.upper().startswith("F"):
         output = str(x * 0.3048)+"m"
