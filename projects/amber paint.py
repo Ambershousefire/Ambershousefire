@@ -27,6 +27,22 @@ global screen
 screen=pygame.display.set_mode((l,w))
 screen.fill((255,255,255))
 cooler_colour=False
+def stopper():
+    rc=False
+    gc=False
+    bc=False
+
+def black():
+    r=0
+    g=0
+    b=0
+
+def White():
+    r=240
+    b=240
+    g=240
+    return r,b,g
+
 while running: 
 
     colour=((r),(g),(b))
@@ -66,13 +82,9 @@ while running:
                 if togle:
                     if event.key == pygame.K_UP:
                         if flip:
-                            r=0
-                            g=0
-                            b=0
+                            black()
                         else:
-                            r=240
-                            b=240
-                            g=240
+                            r, b, g = White()
                     if event.key == pygame.K_DOWN:
                         if cooler_colour==False:
                             g+=5
@@ -123,29 +135,19 @@ while running:
                 if event.key == pygame.K_e:
                     if flip:
                         screen.fill((0,0,0))
-                        r=240
-                        b=240
-                        g=240
+                        White()
                         flip=False
                     else:
                         screen.fill((255,255,255))
-                        r=0
-                        g=0
-                        b=0
+                        black()
                         flip=True
                 if event.key == pygame.K_q:
                     if cooler_colour:
                         cooler_colour=False
-                        rc=False
-                        gc=False
-                        bc=False
+                        stopper()
                     else:
                         cooler_colour=True
-                        rc=False
-                        gc=False
-                        bc=False
-                        
-                    
+                        stopper()
                 if event.key == pygame.K_SPACE:
                     xDir=0
                     yDir=0
