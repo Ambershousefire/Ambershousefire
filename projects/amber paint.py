@@ -17,6 +17,8 @@ running=True
 rc=False
 gc=False
 bc=False
+togle=True
+Filler=False
 global screen 
 screen=pygame.display.set_mode((l,w))
 screen.fill((255,255,255))
@@ -53,40 +55,64 @@ while running:
                 if event.key == pygame.K_d:
                     yDir = 0
                     xDir = 1
-                if event.key == pygame.K_UP:
-                    if flip:
-                        r=0
-                        g=0
-                        b=0
-                    else:
-                        r=240
-                        b=240
-                        g=240
-                if event.key == pygame.K_DOWN:
-                    if cooler_colour==False:
-                        g+=10
-                        if g>=250:
-                            g=0
-                    else:
-                        gc=True
-                if event.key == pygame.K_LEFT:
-                    if cooler_colour==False:
-                        r+=10
-                        if r>=250:
+                if togle:
+                    if event.key == pygame.K_UP:
+                        if flip:
                             r=0
-                    else:
-                        rc=True
-
-                if event.key == pygame.K_RIGHT:
-                    if cooler_colour==False:
-                        b+=10
-                        if b>=250:
+                            g=0
                             b=0
-                    else:
-                        bc=True
-                        
+                        else:
+                            r=240
+                            b=240
+                            g=240
+                    if event.key == pygame.K_DOWN:
+                        if cooler_colour==False:
+                            g+=5
+                            if g>=250:
+                                g=0
+                        else:
+                            gc=True
+                    if event.key == pygame.K_LEFT:
+                        if cooler_colour==False:
+                            r+=5
+                            if r>=250:
+                                r=0
+                        else:
+                            rc=True
+
+                    if event.key == pygame.K_RIGHT:
+                        if cooler_colour==False:
+                            b+=5
+                            if b>=250:
+                                b=0
+                        else:
+                            bc=True
+                if togle==False:
+                    if event.key == pygame.K_UP:
+                        if r<5:
+                            r=240
+                        if g<5:
+                            g=240
+                        if b<5:
+                            b=240
+                        r-=5
+                        g-=5
+                        b-=5
+                    if event.key == pygame.K_LEFT:
+                        if r<5:
+                            r=240
+                        r-=5
+                    if event.key == pygame.K_DOWN:
+
+                        if g<5:
+                            g=240
+                        g-=5
+                    if event.key == pygame.K_RIGHT:
+                        if b<5:
+                            b=240
+                        b-=5
+                                
                 if event.key == pygame.K_e:
-                    
                     if flip:
                         screen.fill((0,0,0))
                         r=240
@@ -102,12 +128,32 @@ while running:
                 if event.key == pygame.K_q:
                     if cooler_colour:
                         cooler_colour=False
+                        rc=False
+                        gc=False
+                        bc=False
                     else:
                         cooler_colour=True
+                        rc=False
+                        gc=False
+                        bc=False
+                        
                     
                 if event.key == pygame.K_SPACE:
                     xDir=0
                     yDir=0
+                
+                if event.key == pygame.K_f:
+                    if Filler:
+                        Filler=False
+                    else:
+                        Filler=True
+                if event.key == pygame.K_r:
+                    if togle:
+                        togle=False
+                    else:
+                        togle=True
+    if Filler:
+        screen.fill((r,g,b))        
     if cooler_colour:
         if rc:
             r+=1
@@ -123,6 +169,6 @@ while running:
                 b=0
     x = x + (0.33*xDir)
     y = y + (0.33*yDir)  
-    print(cooler_colour,flip,r,g,b,)                 
+    print(r,g,b,togle)                 
     pygame.display.flip()
 pygame.quit()
