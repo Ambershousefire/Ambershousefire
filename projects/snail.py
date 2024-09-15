@@ -81,7 +81,7 @@ while running:
                 bata=+10
                 alpha=0
                 yDir = -1
-                xDir = 0#
+                xDir = 0
             elif event.key == pygame.K_DOWN:
                 bata=-10
                 alpha=0
