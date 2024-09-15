@@ -7,6 +7,7 @@ global r,b,g
 r=0
 g=0
 b=0
+MouseDown=False
 flip=True
 y=250
 x=500
@@ -19,26 +20,33 @@ gc=False
 bc=False
 togle=True
 Filler=False
+z=0
+xmouse=0
+ymouse=0
 global screen 
 screen=pygame.display.set_mode((l,w))
 screen.fill((255,255,255))
 cooler_colour=False
 while running: 
+
     colour=((r),(g),(b))
     pygame.draw.circle(screen,colour,(x,y),(3))
     if y>500:
         y=0
-        
+        x+=1
+        z+=1
     elif y<0:
         y=500
-       
+        x-=3
+        z+=1
     if x>1000:
         x=0
-        
+        y+=1
+        z+=1
     elif x<0:
         x=1000
-        
-    
+        y-=1
+        z+=1
     for event in pygame.event.get():
             if event.type == pygame.QUIT: 
              running = False
@@ -152,6 +160,8 @@ while running:
                         togle=False
                     else:
                         togle=True
+
+
     if Filler:
         screen.fill((r,g,b))        
     if cooler_colour:
@@ -167,8 +177,8 @@ while running:
             b+=1
             if b==250:
                 b=0
+    print(r,g,b,"colour",cooler_colour,"roolerer",togle,"subtration",z)
     x = x + (0.33*xDir)
-    y = y + (0.33*yDir)  
-    print(r,g,b,togle)                 
+    y = y + (0.33*yDir)                 
     pygame.display.flip()
 pygame.quit()
