@@ -27,21 +27,7 @@ global screen
 screen=pygame.display.set_mode((l,w))
 screen.fill((255,255,255))
 cooler_colour=False
-def stopper():
-    rc=False
-    gc=False
-    bc=False
 
-def black():
-    r=0
-    g=0
-    b=0
-
-def White():
-    r=240
-    b=240
-    g=240
-    return r,b,g
 
 while running: 
 
@@ -82,9 +68,13 @@ while running:
                 if togle:
                     if event.key == pygame.K_UP:
                         if flip:
-                            black()
+                            r=0
+                            b=0
+                            g=0
                         else:
-                            r, b, g = White()
+                            r=240
+                            b=240
+                            g=240
                     if event.key == pygame.K_DOWN:
                         if cooler_colour==False:
                             g+=5
@@ -135,19 +125,27 @@ while running:
                 if event.key == pygame.K_e:
                     if flip:
                         screen.fill((0,0,0))
-                        White()
+                        r=240
+                        b=240
+                        g=240
                         flip=False
                     else:
                         screen.fill((255,255,255))
-                        black()
+                        r=0
+                        b=0
+                        g=0
                         flip=True
                 if event.key == pygame.K_q:
                     if cooler_colour:
                         cooler_colour=False
-                        stopper()
+                        rc=False
+                        gc=False
+                        bc=False
                     else:
                         cooler_colour=True
-                        stopper()
+                        rc=False
+                        gc=False
+                        bc=False
                 if event.key == pygame.K_SPACE:
                     xDir=0
                     yDir=0
