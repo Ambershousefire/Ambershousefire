@@ -3,7 +3,7 @@ import pygame
 
 l=1000
 w=500
-global r,b,g
+global r,g,b
 r=0
 g=0
 b=0
