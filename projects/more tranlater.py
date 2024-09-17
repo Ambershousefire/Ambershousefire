@@ -12,4 +12,5 @@ while i< len(letter):
     trans.append(morse[x])
     i+=1
     y+=1
+    x=0
 print(" ".join(trans))
