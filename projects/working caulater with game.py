@@ -1,9 +1,8 @@
 
-import scipy as sci
-import numpy
-
 x=int(input("Select of these: Addition(1) Subtraction(2) Multiplication(3) Division(4) Number Game(5) Square Numbers(6): "))
-
+def sqr(x):
+    x*=x 
+    return x
 if x>6:
     print("thats not something i can do")
 else: 
@@ -32,19 +31,13 @@ if list.count(x)==True:
 if x==(5):
     q=1
     c=input("two nubers multipyed together is the gole, this will spit out a lsit of suqar numbers, do you whant to play: ")
-    y=float(input("first number: "))
-    z=float(input("second nuber: "))
-    if c.lower().startswith==("y"):
-        while (z*y) > (q*q):
-            q=q+1
+    if c.capitalize().startswith("Y"):
+        y=float(input("first number: "))
+        z=float(input("second nuber: "))
+        while ((y)*(z)) > sqr(q):
             print(q*q)
-        print (z*y)
-
-def sqr(x):
-    x*=x 
-    return x
+            q=q+1
+        print ("your number:",z*y)
 if x==(6):
     g=int(input("number: "))
     print(sqr(g))
-    
-    
