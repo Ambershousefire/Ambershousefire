@@ -35,7 +35,7 @@ if x==(5):
     y=float(input("first number: "))
     z=float(input("second nuber: "))
     if c.lower().startswith==("y"):
-        while (z*y) > (y*y):
+        while (z*y) > (q*q):
             q=q+1
             print(q*q)
         print (z*y)
