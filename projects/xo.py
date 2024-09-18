@@ -2,10 +2,7 @@
 import pygame  
 # using RGB color coding. 
 delay=5
-slc=(0,0,0)
-lc=(48,8,255) 
-cc=(255,8,48)
-lc2=(255,255,255)
+
 # Define the dimensions of 
 # screen object(width,height) 
 global AppClick; AppClick = False
@@ -20,21 +17,21 @@ screen = pygame.display.set_mode((300, 300))
 pygame.display.set_caption('Tick, Tack, Toe') 
 
 # Fill the background colour to the screen 
-screen.fill(lc2)
+screen.fill((255,255,255))
 
-pygame.draw.line(screen,slc,(100,0),(100,300),(3))
-pygame.draw.line(screen,slc,(200,0),(200,300),(3))
-pygame.draw.line(screen,slc,(0,100),(300,100),(3))
-pygame.draw.line(screen,slc,(0,200),(300,200),(3))
+pygame.draw.line(screen,(0,0,0),(100,0),(100,300),(3))
+pygame.draw.line(screen,(0,0,0),(200,0),(200,300),(3))
+pygame.draw.line(screen,(0,0,0),(0,100),(300,100),(3))
+pygame.draw.line(screen,(0,0,0),(0,200),(300,200),(3))
 def O (mousex,mousey):
 
-        pygame.draw.circle(screen,cc,(mousex+50,mousey+50),(40))
-        pygame.draw.circle(screen,lc2,(mousex+50,mousey+50),(35))
+        pygame.draw.circle(screen,(255,8,48),(mousex+50,mousey+50),(40))
+        pygame.draw.circle(screen,(255,255,255),(mousex+50,mousey+50),(35))
     
 def X (mousex, mousey):
       
-        pygame.draw.line(screen,lc,(mousex+10,mousey+10),(mousex+90,mousey+90),(5)) 
-        pygame.draw.line(screen,lc,(mousex+10,mousey+90),(mousex+90,mousey+10),(5))
+        pygame.draw.line(screen,(48,8,255),(mousex+10,mousey+10),(mousex+90,mousey+90),(5)) 
+        pygame.draw.line(screen,(48,8,255),(mousex+10,mousey+90),(mousex+90,mousey+10),(5))
     
 def Button(x, y, AppClick, isO):
     inboundingbox = False
@@ -64,7 +61,8 @@ pygame.display.flip()
 running = True
 
 # game loop 
-while running: 
+while running:
+    print(MouseDown) 
     pygame.time.delay(delay)
     #mouse = pygame.mouse.get_pos()
     mousex, mousey = pygame.mouse.get_pos()
