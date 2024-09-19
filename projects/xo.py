@@ -10,7 +10,6 @@ global MouseDown; MouseDown = False
 global screen
 k=False
 
-
 screen = pygame.display.set_mode((300, 300))
 
 # Set the caption of the screen 
@@ -62,7 +61,6 @@ running = True
 
 # game loop 
 while running:
-    print(MouseDown) 
     pygame.time.delay(delay)
     #mouse = pygame.mouse.get_pos()
     mousex, mousey = pygame.mouse.get_pos()
@@ -82,8 +80,8 @@ while running:
     
     if MouseDown == False and AppClick == True:
         AppClick = False
-
-    AppClick,k = Button(0,0,AppClick,k)
+    if mousex<100 and mousey <100:
+        AppClick,k = Button(0,0,AppClick,k)
     AppClick,k = Button(100,0,AppClick,k)
     AppClick,k = Button(200,0,AppClick,k)
     AppClick,k = Button(0,100,AppClick,k)
