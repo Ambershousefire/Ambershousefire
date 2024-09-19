@@ -1,4 +1,3 @@
-
 print("RULES OF USE, no caps, and no symbolse other than (!':;/.,-_)")
 string = input("what to translate: ")
 letter = [x for x in string]

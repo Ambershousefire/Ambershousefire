@@ -1,6 +1,6 @@
 
 import pygame
-
+delay=5
 l=1000
 w=500
 global r,g,b
@@ -30,7 +30,7 @@ cooler_colour=False
 
 
 while running: 
-
+    pygame.time.delay(delay)
     colour=((r),(g),(b))
     pygame.draw.circle(screen,colour,(x,y),(3))
     if y>500:
