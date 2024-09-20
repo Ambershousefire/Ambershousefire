@@ -29,17 +29,8 @@ running=True
 white=(255,255,255)
 gray=(128,128,128)
 black=(0,0,0)
-per=0
-xgrid=0
-ygrid=0
-f=0
-z=0
-ef=0
-ez=0
-num=0
-temp=0
+per,xgrid,ygrid,f,z,ef,ez,num,temp,x2pos=0,0,0,0,0,0,0,0,0,0
 xpos=100
-x2pos=0
 run1=True
 
 screen.fill(white)
