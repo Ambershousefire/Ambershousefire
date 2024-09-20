@@ -1,14 +1,13 @@
 
 import random
+import json
 
 win= "  You Won :3"
 loss="  You lost >:3"
 draw="  Thats a Draw"
 runtime = True
 
-w=0
-l=0
-d=0
+w,l,d=0,0,0
 run=input("do you whant to play rock paper sisors(yes or no): ")
 if run.capitalize().startswith("Y"):
     run=True
@@ -65,3 +64,12 @@ if run==True:
             runtime = False
         
     print("wins",w,"losses",l,"draws",d)
+with open ("winrate.json") as f:
+    data=json.load(f)
+data = { 
+    "win" :w, 
+    "losses":l,
+    "draws":d
+}
+with open('output.json', 'w') as f:
+    json.dump(data, f)
