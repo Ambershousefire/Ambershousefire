@@ -1,3 +1,4 @@
+#reminder add 13,824 if satmins for chinging polaint and movemnts
 
 import pygame
 bord=pygame.display.set_mode((62*8,62*8))
@@ -6,7 +7,6 @@ white=(255,255,255)
 tblack=(0,0,0)
 delay=5
 select=False
-#chker coluer
 cc1=(225,0,0)
 cc2=(0,0,225)
 pice=0
@@ -92,10 +92,6 @@ c12y=31*15
 
 
 running=True
-
-def checker(bord, tblack, x, y):
-    pygame.draw.circle(bord,tblack,(x-31,y-31),(31))
-    pygame.draw.circle(bord,tblack,(x-31,y-31),(30))
 
 def regrid(bord, black, white, action, x, y, grid):
     while not grid>32+action:
@@ -227,3 +223,4 @@ while running:
     pygame.draw.circle(bord,tblack,(ec12x,ec12y),(15))
 
     pygame.display.flip()
+    
