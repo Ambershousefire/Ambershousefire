@@ -3,6 +3,7 @@ import pygame
 l=560
 w=420
 screen=pygame.display.set_mode((l,w))
+pygame.display.set_caption("connect 4 in a row")
 blue=(0,125,255)
 red=(255,0,0,)
 yellow=(255,255,0)
@@ -125,6 +126,13 @@ while running:
             if event.key == pygame.K_d:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x+=80
-    
-    pygame.draw.circle(screen,(125,255,125),(x,py),(20))
+            if event.key == pygame.K_LEFT:
+                pygame.draw.circle(screen,(255,255,255),(x,py),(20))
+                x-=80
+            if event.key == pygame.K_RIGHT:
+                pygame.draw.circle(screen,(255,255,255),(x,py),(20))
+                x+=80
+    if r1>6 and r2>6 and r3>6 and r4>6 and r5>6 and r6>6 and r7>6:
+        running=False
+    pygame.draw.circle(screen,(0,255,0),(x,py),(20))
     pygame.display.flip()
