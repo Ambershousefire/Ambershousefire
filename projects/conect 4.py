@@ -11,13 +11,7 @@ screen.fill(blue)
 hole=0
 x=40
 y=30
-r1=1
-r2=1
-r3=1
-r4=1
-r5=1
-r6=1
-r7=1
+r1,r2,r3,r4,r5,r6,r7=1,1,1,1,1,1,1
 togle=False
 while hole<43:
         if x>l:
@@ -132,6 +126,5 @@ while running:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x+=80
     
-    print(togle,x)
     pygame.draw.circle(screen,(125,255,125),(x,py),(20))
     pygame.display.flip()
