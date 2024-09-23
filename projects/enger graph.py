@@ -122,5 +122,4 @@ while running==True:
                 running = False
         if event.type == pygame.QUIT: 
             running = False
-
 pygame.quit()
