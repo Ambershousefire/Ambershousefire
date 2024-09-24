@@ -78,8 +78,7 @@ while running==True:
             if z==0:
                 ef=maxtemp
                 eg=mintemp
-        
-            if z==0:
+                
                 pygame.draw.line(screen,black,(x2pos,start2),(xpos,mintemp),(3))
                 pygame.draw.line(screen,black,(x2pos,start1),(xpos,maxtemp),(3))
                 xpos+=100

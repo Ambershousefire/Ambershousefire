@@ -120,7 +120,7 @@ while running:
                         r7+=1
                         y=0
                         
-            if event.key == pygame.K_a:
+            elif event.key == pygame.K_a:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x-=80
             elif event.key == pygame.K_d:
