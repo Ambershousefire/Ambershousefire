@@ -21,13 +21,13 @@ while hole<43:
         x+=80
         if hole == 7:
             y+=65
-        if hole == 14:
+        elif hole == 14:
             y+=65
-        if hole == 21:
+        elif hole == 21:
             y+=65
-        if hole == 28:
+        elif hole == 28:
             y+=65
-        if hole == 35:
+        elif hole == 35:
             y+=65
         hole+=1
 x=40
@@ -36,7 +36,7 @@ py=30
 while running:
     if x<40:
         x=520
-    if x>560:
+    elif x>560:
         x=40
         
     
@@ -52,32 +52,32 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r1+=1
                         y=0
-                    if x==120:
+                    elif x==120:
                         y=420-65*r2
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r2+=1
                         y=0
-                    if x==200:
+                    elif x==200:
                         y=420-65*r3
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r3+=1
                         y=0
-                    if x==280:
+                    elif x==280:
                         y=420-65*r4
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r4+=1
                         y=0
-                    if x==360:
+                    elif x==360:
                         y=420-65*r5
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r5+=1
                         y=0
-                    if x==440:
+                    elif x==440:
                         y=420-65*r6
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r6+=1
                         y=0
-                    if x==520:
+                    elif x==520:
                         y=420-65*r7
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r7+=1
@@ -89,32 +89,32 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r1+=1
                         y=0
-                    if x==120:
+                    elif x==120:
                         y=420-65*r2
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r2+=1
                         y=0
-                    if x==200:
+                    elif x==200:
                         y=420-65*r3
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r3+=1
                         y=0
-                    if x==280:
+                    elif x==280:
                         y=420-65*r4
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r4+=1
                         y=0
-                    if x==360:
+                    elif x==360:
                         y=420-65*r5
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r5+=1
                         y=0
-                    if x==440:
+                    elif x==440:
                         y=420-65*r6
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r6+=1
                         y=0
-                    if x==520:
+                    elif x==520:
                         y=420-65*r7
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r7+=1
