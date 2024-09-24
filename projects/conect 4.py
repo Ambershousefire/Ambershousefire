@@ -32,7 +32,6 @@ while hole<43:
         hole+=1
 x=40
 y=30
-py=30
 while running:
     if x<40:
         x=520
@@ -121,18 +120,18 @@ while running:
                         y=0
                         
             elif event.key == pygame.K_a:
-                pygame.draw.circle(screen,(255,255,255),(x,py),(20))
+                pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x-=80
             elif event.key == pygame.K_d:
-                pygame.draw.circle(screen,(255,255,255),(x,py),(20))
+                pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
             elif event.key == pygame.K_LEFT:
-                pygame.draw.circle(screen,(255,255,255),(x,py),(20))
+                pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x-=80
             elif event.key == pygame.K_RIGHT:
-                pygame.draw.circle(screen,(255,255,255),(x,py),(20))
+                pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
     if r1>6 and r2>6 and r3>6 and r4>6 and r5>6 and r6>6 and r7>6:
         running=False
-    pygame.draw.circle(screen,(0,255,0),(x,py),(20))
+    pygame.draw.circle(screen,(0,255,0),(x,30),(20))
     pygame.display.flip()
