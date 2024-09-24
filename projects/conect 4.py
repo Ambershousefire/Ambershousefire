@@ -123,13 +123,13 @@ while running:
             if event.key == pygame.K_a:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x-=80
-            if event.key == pygame.K_d:
+            elif event.key == pygame.K_d:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x+=80
-            if event.key == pygame.K_LEFT:
+            elif event.key == pygame.K_LEFT:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x-=80
-            if event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,py),(20))
                 x+=80
     if r1>6 and r2>6 and r3>6 and r4>6 and r5>6 and r6>6 and r7>6:
