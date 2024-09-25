@@ -656,5 +656,5 @@ while running:
             if togle:
                 print("red won")
             else:
-                print("yelalow won")
+                print("yellow won")
 #if your reading this, dont cry my code is over yes i know its so bad that its might possably be the worst possable code on earth that works but it works 
