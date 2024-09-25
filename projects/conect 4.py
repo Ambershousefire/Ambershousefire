@@ -308,7 +308,6 @@ while running:
             elif event.key == pygame.K_d:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
-                print(a1,a2,a3,a4,a5,a6,b1,b2,b3,b4,b5,b6,c1,c2,c3,c4,c5,c6,d1,d2,d3,d4,d5,d6,e1,e2,e3,e4,e5,e6,f1,f2,f3,f4,f5,f6)
             elif event.key == pygame.K_LEFT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x-=80
@@ -586,30 +585,30 @@ while running:
         running=False
         
     #posative diagnels 
-    elif a1==False and b2 == False and c3 == False and d3 == False: 
+    elif a1==False and b2 == False and c3 == False and d4 == False: 
         running=False
-    elif a2 == False and b3 == False and c3 == False and d5 == False:
+    elif a2 == False and b3 == False and c4 == False and d5 == False:
         running = False
     elif a3 == False and b3== False and c5 == False and d6 == False:
         running = False
         
-    elif b1==False and c2 == False and d3 == False and e3 == False: 
+    elif b1==False and c2 == False and d3 == False and e4 == False: 
         running=False
-    elif b2 == False and c3 == False and d3 == False and e5 == False:
+    elif b2 == False and c3 == False and d4 == False and e5 == False:
         running = False
     elif b3 == False and c3== False and d5 == False and e6 == False:
         running = False
         
-    elif c1==False and d2 == False and e3 == False and f3 == False: 
+    elif c1==False and d2 == False and e3 == False and f4 == False: 
         running=False
-    elif c2 == False and d3 == False and e3 == False and f5 == False:
+    elif c2 == False and d3 == False and e4 == False and f5 == False:
         running = False
     elif c3 == False and d3== False and e5 == False and f6 == False:
         running = False
     
     elif d1==False and e2 == False and f3 == False and g3 == False: 
         running=False
-    elif d2 == False and e3 == False and f3 == False and g5 == False:
+    elif d2 == False and e3 == False and f4 == False and g4 == False:
         running = False
     elif d3 == False and e3== False and f5 == False and g6 == False:
         running = False
@@ -650,5 +649,11 @@ while running:
     else:
         player=red
 
+
     pygame.draw.circle(screen,player,(x,30),(20))
     pygame.display.flip()
+    if running==False:
+            if togle:
+                print("red won")
+            else:
+                print("yellow won")
