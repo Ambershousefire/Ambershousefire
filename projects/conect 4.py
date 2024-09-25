@@ -436,7 +436,7 @@ while running:
     elif b3 == True and c3== True and d5 == True and e6 == True:
         running = False
         
-    elif c1==True and d2 == True and e3 == True and f3 == True: 
+    elif c1 == True and d2 == True and e3 == True and f3 == True: 
         running=False
     elif c2 == True and d3 == True and e3 == True and f5 == True:
         running = False
