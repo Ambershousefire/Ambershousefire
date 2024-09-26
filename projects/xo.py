@@ -80,6 +80,7 @@ while running:
              pygame.quit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             MouseDown = True
+            
         if event.type == pygame.MOUSEBUTTONUP:
             MouseDown = False
         if event.type == pygame.KEYDOWN:
@@ -93,52 +94,87 @@ while running:
             if mousex<100 and mousey<100:
                 AppClick,k = Button(0,0,AppClick,k)
                 b1=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b2==False:
         if MouseDown:
             if mousex<200 and mousex>100 and mousey<100:            
                 AppClick,k = Button(100,0,AppClick,k)
                 b2=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b3==False:
         if MouseDown:
             if mousex<300 and mousex>200 and mousey<100:
                 AppClick,k = Button(200,0,AppClick,k)
                 b3=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b4==False:
         if MouseDown:
             if mousex<100 and mousey<200 and mousey>100:
                 AppClick,k = Button(0,100,AppClick,k)
                 b4=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b5==False:
         if MouseDown:
             if mousex<200 and mousex>100 and mousey<200 and mousey>100:
                 AppClick,k = Button(100,100,AppClick,k)
                 b5=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b6==False:
         if MouseDown:
             if mousex<300 and mousex>200 and mousey<200 and mousey>100:
-                    AppClick,k = Button(200,100,AppClick,k)
-                    b6=True
+                AppClick,k = Button(200,100,AppClick,k)
+                b6=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b7==False:
         if MouseDown:
             if mousex<100 and mousey<300 and mousey>200:
                 AppClick,k = Button(0,200,AppClick,k)
                 b7=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b8==False:
         if MouseDown:
             if mousex<200 and mousex>100 and mousey<300 and mousey>200:
                 AppClick,k = Button(100,200,AppClick,k)
                 b8=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b9==False:
         if MouseDown:
             if mousex<300 and mousex>200 and mousey<300 and mousey>200:
                 AppClick,k = Button(200,200,AppClick,k)
                 b9=True
+                if g:
+                    g=False
+                else:
+                    g=True
     if b1:
         if g:
             c1=False
         else:
             c1=True
-            
     if b2:
         if g:
             c2=False
@@ -179,8 +215,43 @@ while running:
             c9=False
         else:
             c9=True
+            
+            
+    if c1==True and c2==True and c3==True:
+        running=False
+    elif c1==False and c2==False and c3==False:
+        running=False
+    elif c4==True and c5==True and c6==True:
+        running=False
+    elif c4==False and c5==False and c6==False:
+        running=False
+    elif c7==True and c8==True and c9==True:
+        running=False
+    elif c7==False and c8==False and c9==False:
+        running=False
+    elif c1==True and c4==True and c7==True:
+        running=False
+    elif c1==False and c4==False and c7==False:
+        running=False
+    elif c2==True and c5==True and c8==True:
+        running=False
+    elif c2==False and c5==False and c8==False:
+        running=False
+    elif c3==True and c6==True and c9==True:
+        running=False
+    elif c3==False and c6==False and c9==False:
+        running=False
+    elif c1==True and c5==True and c9==True:
+        running=False
+    elif c1==False and c5==False and c9==False:
+        running=False
+    elif c7==True and c5==True and c3==True:
+        running=False
+    elif c7==False and c5==False and c3==False:
+        running=False
+        
     
-    
-    
+
+    print(g)
     pygame.display.flip()
-print(b1,b2,b3,b4,b5,b6,b7,b8,b9)
+print(c1,c2,c3,c4,c5,c6,c7,c8,c9)
