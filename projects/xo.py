@@ -175,46 +175,55 @@ while running:
             c1=False
         else:
             c1=True
+        b1=0
     if b2:
         if g:
             c2=False
         else:
             c2=True
+        b2=0
     if b3:
         if g:
             c3=False
         else:
             c3=True
+        b3=0
     if b4:
         if g:
             c4=False
         else:
             c4=True
+        b4=0
     if b5:
         if g:
             c5=False
         else:
             c5=True
+        b5=0
     if b6:
         if g:
             c6=False
         else:
             c6=True
+        b6=0
     if b7:
         if g:
             c7=False
         else:
             c7=True
+        b7=0
     if b8:
         if g:
             c8=False
         else:
             c8=True
+        b8=0
     if b9:
         if g:
             c9=False
         else:
             c9=True
+        b9=0
             
             
     if c1==True and c2==True and c3==True:
@@ -250,7 +259,7 @@ while running:
     elif c7==False and c5==False and c3==False:
         running=False
         
-    
+    print(c1,c4,c7)
 
     print(g)
     pygame.display.flip()
