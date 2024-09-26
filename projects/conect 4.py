@@ -648,7 +648,7 @@ while running:
     else:
         player=yellow
 
-    pygame.draw.circle(screen,player,(x,30),(20))
+    pygame.draw.circle(screen,player,(x,30),(20ddddddddddd))
     pygame.display.flip()
     if running==False:
             if r1>6 and r2>6 and r3>6 and r4>6 and r5>6 and r6>6 and r7>6:

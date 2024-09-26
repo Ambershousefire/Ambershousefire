@@ -8,8 +8,11 @@ delay=5
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
-k=False
+g=bool
 
+k=False
+b1,b2,b3,b4,b5,b6,b7,b8,b9=False,False,False,False,False,False,False,False,False
+c1,c2,c3,c4,c5,c6,c7,c8,c9=bool,bool,bool,bool,bool,bool,bool,bool,bool
 screen = pygame.display.set_mode((300, 300))
 
 # Set the caption of the screen 
@@ -44,10 +47,12 @@ def Button(x, y, AppClick, isO):
     if MouseDown and inboundingbox and AppClick == False:
             if isO:
                 isO=False
+                g=False
                 O(x,y)
                     
             else:
                 isO=True
+                g=True
                 X(x,y)
                 
             AppClick = True
@@ -77,18 +82,105 @@ while running:
             MouseDown = True
         if event.type == pygame.MOUSEBUTTONUP:
             MouseDown = False
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                running=False
     
     if MouseDown == False and AppClick == True:
         AppClick = False
-    if mousex<100 and mousey <100:
-        AppClick,k = Button(0,0,AppClick,k)
-    AppClick,k = Button(100,0,AppClick,k)
-    AppClick,k = Button(200,0,AppClick,k)
-    AppClick,k = Button(0,100,AppClick,k)
-    AppClick,k = Button(100,100,AppClick,k)
-    AppClick,k = Button(200,100,AppClick,k)
-    AppClick,k = Button(0,200,AppClick,k)
-    AppClick,k = Button(100,200,AppClick,k)
-    AppClick,k = Button(200,200,AppClick,k)
-
+    if b1==False:
+        if MouseDown:
+            if mousex<100 and mousey<100:
+                AppClick,k = Button(0,0,AppClick,k)
+                b1=True
+    if b2==False:
+        if MouseDown:
+            if mousex<200 and mousex>100 and mousey<100:            
+                AppClick,k = Button(100,0,AppClick,k)
+                b2=True
+    if b3==False:
+        if MouseDown:
+            if mousex<300 and mousex>200 and mousey<100:
+                AppClick,k = Button(200,0,AppClick,k)
+                b3=True
+    if b4==False:
+        if MouseDown:
+            if mousex<100 and mousey<200 and mousey>100:
+                AppClick,k = Button(0,100,AppClick,k)
+                b4=True
+    if b5==False:
+        if MouseDown:
+            if mousex<200 and mousex>100 and mousey<200 and mousey>100:
+                AppClick,k = Button(100,100,AppClick,k)
+                b5=True
+    if b6==False:
+        if MouseDown:
+            if mousex<300 and mousex>200 and mousey<200 and mousey>100:
+                    AppClick,k = Button(200,100,AppClick,k)
+                    b6=True
+    if b7==False:
+        if MouseDown:
+            if mousex<100 and mousey<300 and mousey>200:
+                AppClick,k = Button(0,200,AppClick,k)
+                b7=True
+    if b8==False:
+        if MouseDown:
+            if mousex<200 and mousex>100 and mousey<300 and mousey>200:
+                AppClick,k = Button(100,200,AppClick,k)
+                b8=True
+    if b9==False:
+        if MouseDown:
+            if mousex<300 and mousex>200 and mousey<300 and mousey>200:
+                AppClick,k = Button(200,200,AppClick,k)
+                b9=True
+    if b1:
+        if g:
+            c1=False
+        else:
+            c1=True
+            
+    if b2:
+        if g:
+            c2=False
+        else:
+            c2=True
+    if b3:
+        if g:
+            c3=False
+        else:
+            c3=True
+    if b4:
+        if g:
+            c4=False
+        else:
+            c4=True
+    if b5:
+        if g:
+            c5=False
+        else:
+            c5=True
+    if b6:
+        if g:
+            c6=False
+        else:
+            c6=True
+    if b7:
+        if g:
+            c7=False
+        else:
+            c7=True
+    if b8:
+        if g:
+            c8=False
+        else:
+            c8=True
+    if b9:
+        if g:
+            c9=False
+        else:
+            c9=True
+    
+    
+    
     pygame.display.flip()
+print(b1,b2,b3,b4,b5,b6,b7,b8,b9)
