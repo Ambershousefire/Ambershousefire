@@ -651,8 +651,10 @@ while running:
     pygame.draw.circle(screen,player,(x,30),(20))
     pygame.display.flip()
     if running==False:
-            if togle:
-                print("yellow won")
+            if r1>6 and r2>6 and r3>6 and r4>6 and r5>6 and r6>6 and r7>6:
+                print("thats a draw!!")
+            elif togle:
+                print("  yellow won!!")
             else:
-                print("red won")
+                print("     red won!!")
 #if your reading this, dont cry my code is over yes i know its so bad that its might possably be the worst possable code on earth that works but it works 
