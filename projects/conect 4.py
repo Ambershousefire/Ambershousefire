@@ -49,7 +49,7 @@ while running:
                     togle=False
                     if x==40:
                         y=420-65*r1
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r1+=1
                         if r1==2:
                             a1=True
@@ -68,7 +68,7 @@ while running:
                         y=0
                     elif x==120:
                         y=420-65*r2
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r2+=1
                         if r2==2:
                             b1=True
@@ -86,7 +86,7 @@ while running:
                         y=0
                     elif x==200:
                         y=420-65*r3
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r3+=1
                         if r3==2:
                             c1=True
@@ -104,7 +104,7 @@ while running:
                         y=0
                     elif x==280:
                         y=420-65*r4
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r4+=1
                         if r4==2:
                             d1=True
@@ -122,7 +122,7 @@ while running:
                         y=0
                     elif x==360:
                         y=420-65*r5
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r5+=1
                         if r5==2:
                             e1=True
@@ -140,7 +140,7 @@ while running:
                         y=0
                     elif x==440:
                         y=420-65*r6
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r6+=1
                         if r6==2:
                             f1=True
@@ -158,7 +158,7 @@ while running:
                         y=0
                     elif x==520:
                         y=420-65*r7
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
+                        pygame.draw.circle(screen,red,(x,y),(30))
                         r7+=1
                         if r7==2:
                             g1=True
@@ -178,7 +178,7 @@ while running:
                     togle=True
                     if x==40:
                         y=420-65*r1
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r1+=1
                         if r1==2:
                             a1=False
@@ -196,7 +196,7 @@ while running:
                         y=0
                     elif x==120:
                         y=420-65*r2
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r2+=1
                         if r2==2:
                             b1=False
@@ -214,7 +214,7 @@ while running:
                         y=0
                     elif x==200:
                         y=420-65*r3
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r3+=1
                         if r3==2:
                             c1=False
@@ -232,7 +232,7 @@ while running:
                         y=0
                     elif x==280:
                         y=420-65*r4
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r4+=1
                         if r4==2:
                             d1=False
@@ -250,7 +250,7 @@ while running:
                         y=0
                     elif x==360:
                         y=420-65*r5
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r5+=1
                         if r5==2:
                             e1=False
@@ -268,7 +268,7 @@ while running:
                         y=0
                     elif x==440:
                         y=420-65*r6
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r6+=1
                         if r6==2:
                             f1=False
@@ -286,7 +286,7 @@ while running:
                         y=0
                     elif x==520:
                         y=420-65*r7
-                        pygame.draw.circle(screen,red,(x,y),(30))
+                        pygame.draw.circle(screen,yellow,(x,y),(30))
                         r7+=1
                         if r7==2:
                             g1=False
@@ -314,7 +314,6 @@ while running:
             elif event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
-   
     #downs
     if a1==True and b1==True and c1==True and d1==True:
         running=False
@@ -645,16 +644,15 @@ while running:
     elif r1>6 and r2>6 and r3>6 and r4>6 and r5>6 and r6>6 and r7>6:
         running=False    
     if togle:
-        player=yellow
-    else:
         player=red
-
+    else:
+        player=yellow
 
     pygame.draw.circle(screen,player,(x,30),(20))
     pygame.display.flip()
     if running==False:
             if togle:
-                print("red won")
-            else:
                 print("yellow won")
+            else:
+                print("red won")
 #if your reading this, dont cry my code is over yes i know its so bad that its might possably be the worst possable code on earth that works but it works 
