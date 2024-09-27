@@ -1,11 +1,8 @@
 
 import pygame  
-delay=5
-
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
-g=bool
 o="O wins"
 Y="X wins"
 k=False
@@ -56,7 +53,6 @@ pygame.display.flip()
 running = True
 
 while running:
-    pygame.time.delay(delay)
     mousex, mousey = pygame.mouse.get_pos()
     
     for event in pygame.event.get():
@@ -193,7 +189,6 @@ while running:
                 c9=True
             b9=6
             
-            
     if c1==True and c2==True and c3==True:
         running=False
         print(o)
@@ -249,7 +244,6 @@ while running:
     elif c3==False and c6==False and c9==False:
         running=False
         print(Y) 
-           
         
     elif c7==False and c5==False and c3==False:
         running=False
@@ -258,5 +252,4 @@ while running:
     elif c1==False and c5==False and c9==False:
         running=False
         print(Y)
-        
     pygame.display.flip()
