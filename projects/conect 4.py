@@ -368,12 +368,12 @@ while running:
         running=False
     elif d6==True and e6==True and f6==True and g6==True:
         running=False
-    
-    
+
+
     #up's        
     elif a1==True and  a2 ==True and a3==True and a4==True:
         running=False
-    elif a2==True and  a3 ==True and a4==True and a4==True:
+    elif a2==True and  a3 ==True and a4==True and a5==True:
         running=False
     elif a3==True and  a4 ==True and a5==True and a6==True:
         running=False
@@ -384,28 +384,28 @@ while running:
         running=False
     elif b3==True and  b4 ==True and b5==True and b6==True:
         running=False
-    
+
     elif c1==True and  c2 ==True and c3==True and c4==True:
         running=False
     elif c2==True and  c3 ==True and c4==True and c5==True:
         running=False
     elif c3==True and  c4 ==True and c5==True and c6==True:
         running=False
-    
+
     elif d1==True and  d2 ==True and d3==True and d4==True:
         running=False
     elif d2==True and  d3 ==True and d4==True and d5==True:
         running=False
     elif d3==True and  d4 ==True and d5==True and d6==True:
         running=False
-    
+
     elif e1==True and  e2 ==True and e3==True and e4==True:
         running=False
     elif e2==True and  e3 ==True and e4==True and e5==True:
         running=False
     elif e3==True and  e4 ==True and e5==True and e6==True:
         running=False
-    
+
     elif f1==True and  f2 ==True and f3==True and f4==True:
         running=False
     elif f2==True and  f3 ==True and f4==True and f5==True:
@@ -421,34 +421,34 @@ while running:
         running=False
         
     #posative diagnels 
-    elif a1==True and b2 == True and c3 == True and d3 == True: 
+    elif a1==True and b2 == True and c3 == True and d4 == True: 
         running=False
-    elif a2 == True and b3 == True and c3 == True and d5 == True:
+    elif a2 == True and b3 == True and c4 == True and d5 == True:
         running = False
-    elif a3 == True and b3== True and c5 == True and d6 == True:
+    elif a3 == True and b4== True and c5 == True and d6 == True:
         running = False
         
-    elif b1==True and c2 == True and d3 == True and e3 == True: 
+    elif b1==True and c2 == True and d3 == True and e4 == True: 
         running=False
-    elif b2 == True and c3 == True and d3 == True and e5 == True:
+    elif b2 == True and c3 == True and d4 == True and e5 == True:
         running = False
-    elif b3 == True and c3== True and d5 == True and e6 == True:
+    elif b3 == True and c4== True and d5 == True and e6 == True:
         running = False
         
-    elif c1 == True and d2 == True and e3 == True and f3 == True: 
+    elif c1 == True and d2 == True and e3 == True and f4 == True: 
         running=False
-    elif c2 == True and d3 == True and e3 == True and f5 == True:
+    elif c2 == True and d3 == True and e4 == True and f5 == True:
         running = False
-    elif c3 == True and d3== True and e5 == True and f6 == True:
+    elif c3 == True and d4== True and e5 == True and f6 == True:
         running = False
-    
-    elif d1==True and e2 == True and f3 == True and g3 == True: 
+
+    elif d1==True and e2 == True and f3 == True and g4 == True: 
         running=False
-    elif d2 == True and e3 == True and f3 == True and g5 == True:
+    elif d2 == True and e3 == True and f4 == True and g5 == True:
         running = False
-    elif d3 == True and e3== True and f5 == True and g6 == True:
+    elif d3 == True and e4== True and f5 == True and g6 == True:
         running = False
-    
+
     #negative  diagnels 
     elif a6==True and b5 == True and c4 == True and d3 == True: 
         running=False
@@ -470,14 +470,14 @@ while running:
         running = False
     elif c4 == True and d3== True and e2 == True and f1 == True:
         running = False
-    
+
     elif d6==True and e5 == True and f4 == True and g3 == True: 
         running=False
     elif d5 == True and e4 == True and f3 == True and g2 == True:
         running = False
     elif d4 == True and e3== True and f2 == True and g1 == True:
         running = False
-    
+
     elif a1==False and b1==False and c1==False and d1==False:
         running=False
     elif b1==False and c1==False and d1==False and e1==False:
@@ -531,12 +531,12 @@ while running:
         running=False
     elif d6==False and e6==False and f6==False and g6==False:
         running=False
-    
-    
+
+
     #up's        
     elif a1==False and  a2 ==False and a3==False and a4==False:
         running=False
-    elif a2==False and  a3 ==False and a4==False and a4==False:
+    elif a2==False and  a3 ==False and a4==False and a5==False:
         running=False
     elif a3==False and  a4 ==False and a5==False and a6==False:
         running=False
@@ -547,28 +547,28 @@ while running:
         running=False
     elif b3==False and  b4 ==False and b5==False and b6==False:
         running=False
-    
+
     elif c1==False and  c2 ==False and c3==False and c4==False:
         running=False
     elif c2==False and  c3 ==False and c4==False and c5==False:
         running=False
     elif c3==False and  c4 ==False and c5==False and c6==False:
         running=False
-    
+
     elif d1==False and  d2 ==False and d3==False and d4==False:
         running=False
     elif d2==False and  d3 ==False and d4==False and d5==False:
         running=False
     elif d3==False and  d4 ==False and d5==False and d6==False:
         running=False
-    
+
     elif e1==False and  e2 ==False and e3==False and e4==False:
         running=False
     elif e2==False and  e3 ==False and e4==False and e5==False:
         running=False
     elif e3==False and  e4 ==False and e5==False and e6==False:
         running=False
-    
+
     elif f1==False and  f2 ==False and f3==False and f4==False:
         running=False
     elif f2==False and  f3 ==False and f4==False and f5==False:
@@ -588,30 +588,30 @@ while running:
         running=False
     elif a2 == False and b3 == False and c4 == False and d5 == False:
         running = False
-    elif a3 == False and b3== False and c5 == False and d6 == False:
+    elif a3 == False and b4== False and c5 == False and d6 == False:
         running = False
         
     elif b1==False and c2 == False and d3 == False and e4 == False: 
         running=False
     elif b2 == False and c3 == False and d4 == False and e5 == False:
         running = False
-    elif b3 == False and c3== False and d5 == False and e6 == False:
+    elif b3 == False and c4== False and d5 == False and e6 == False:
         running = False
         
     elif c1==False and d2 == False and e3 == False and f4 == False: 
         running=False
     elif c2 == False and d3 == False and e4 == False and f5 == False:
         running = False
-    elif c3 == False and d3== False and e5 == False and f6 == False:
+    elif c3 == False and d4== False and e5 == False and f6 == False:
         running = False
-    
-    elif d1==False and e2 == False and f3 == False and g3 == False: 
+
+    elif d1==False and e2 == False and f3 == False and g4 == False: 
         running=False
-    elif d2 == False and e3 == False and f4 == False and g4 == False:
+    elif d2 == False and e3 == False and f4 == False and g5 == False:
         running = False
-    elif d3 == False and e3== False and f5 == False and g6 == False:
+    elif d3 == False and e4== False and f5 == False and g6 == False:
         running = False
-    
+
     #negative  diagnels 
     elif a6==False and b5 == False and c4 == False and d3 == False: 
         running=False
@@ -633,7 +633,7 @@ while running:
         running = False
     elif c4 == False and d3== False and e2 == False and f1 == False:
         running = False
-    
+
     elif d6==False and e5 == False and f4 == False and g3 == False: 
         running=False
     elif d5 == False and e4 == False and f3 == False and g2 == False:
@@ -657,4 +657,4 @@ while running:
                 print("  yellow won!!")
             else:
                 print("     red won!!")
-#if your reading this, dont cry my code is over yes i know its so bad that its might possably be the worst possable code on earth that works but it works 
+#if your reading this, dont cry my code is over yes i know its so bad that its might possably be the worst possable code on earth that works but it works  
