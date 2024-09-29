@@ -1,8 +1,8 @@
 
 import pygame 
 l=500
-x=10
-y=250
+x=0
+y=249
 x2=500
 y2=0
 x3=0
@@ -108,15 +108,19 @@ while running:
         y4=500
     if y4>500:
         y4=0
+    
     if x<250 and y<250:
-        x+=.05
-        y-=.05
+        x+=.01
+        y-=.01
     elif x>250 and y>250:
         x+=.01
         y+=.01
     elif x>250 and y<250:
         x-=.01
         y+=.01
+    elif x<250 and y<250:
+        x-=.01
+        y-=.01
           
     x = x +(speed*xDir)
     x-=xDir
