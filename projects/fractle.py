@@ -1,7 +1,6 @@
 
 import pygame 
 l=600
-l1=0
 colour=True
 space=True
 color=(0,0,0)
