@@ -1,13 +1,13 @@
 
-import pygame 
+import pygame
 l=600
 colour=True
 space=True
 color=(0,0,0)
-x=0
 y=0
 b=0
 z=1
+x2=0
 count=1
 yDir=0
 x2Dir=0
@@ -15,12 +15,12 @@ speed=.001
 black=(0,0,0)
 white=(255,255,255)
 screen=pygame.display.set_mode((l,l))
-running =True 
+running =True
 screen.fill((white))
-while running: 
+while running:
     b+=1
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: 
+        if event.type == pygame.QUIT:
              running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_DOWN:
@@ -37,13 +37,13 @@ while running:
                     space=True
             if event.key == pygame.K_z:
                 count+=1
-
+            if event.key == pygame.K_e:
+                if speed==.1:
+                    speed=.001
+                else:
+                    speed=.1
     if count==4:
         count=1
-    if x<0:
-        x=l
-    if x>l:
-        x=0
     if x2<0:
         x2=l
     if x2>l:
@@ -53,17 +53,9 @@ while running:
         y=l
     if y>l:
         y=0
-    if y2<0:
-        y2=l
-    if y2>l:
-        y2=0
 
-    
-        
     x2 = x2 + (speed*x2Dir)
     x2-=x2Dir
-
-    
     y = y +(speed*yDir)
     y-=yDir
     if colour:
@@ -86,6 +78,5 @@ while running:
     if b>10000:
         b=0
         count+=1
-    print(b)
+    print(speed)
     pygame.display.flip()
-            
