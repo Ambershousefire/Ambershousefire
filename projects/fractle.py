@@ -1,6 +1,10 @@
 
 import pygame
-l=600
+l=int(input("how bad do you whnat your head ace in number form"))
+if l<600:
+    l=600
+if l>99999:
+    l=60000
 colour=True
 space=True
 color=(0,0,0)
@@ -18,7 +22,7 @@ screen=pygame.display.set_mode((l,l))
 running =True
 screen.fill((white))
 while running:
-    b+=1
+    #b+=1
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
              running = False
@@ -42,6 +46,14 @@ while running:
                     speed=.001
                 else:
                     speed=.1
+            if event.key == pygame.K_w:
+                y+=10
+                x2-=10
+            if event.key == pygame.K_s:
+                y-=10
+                x2+=10
+            if event.key == pygame.K_BACKSPACE:
+                running=False
     if count==4:
         count=1
     if x2<0:
@@ -59,10 +71,10 @@ while running:
     y = y +(speed*yDir)
     y-=yDir
     if colour:
-        color=(0,0,0)
+        color=(black)
         colour=False
     else:
-        color=white
+        color=(white)
         colour=True
     if space:
         pygame.draw.line(screen,color,(0,y),(l/z,l/z))
@@ -72,11 +84,10 @@ while running:
             z=2
             pygame.draw.line(screen,color,(l,l-y),(l/z,l/z))
             pygame.draw.line(screen,color,(l-x2,l),(l/z,l/z))
-            
         if count<2:
             z=1
     if b>10000:
         b=0
         count+=1
-    print(speed)
+    #print(speed)
     pygame.display.flip()
