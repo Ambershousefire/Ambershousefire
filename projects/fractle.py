@@ -3,8 +3,8 @@ import pygame
 l=int(input("how bad do you whnat your head ace in number form"))
 if l<600:
     l=600
-if l>99999:
-    l=60000
+if l>6000:
+    l=10000
 colour=True
 space=True
 color=(0,0,0)
@@ -17,7 +17,7 @@ yDir=0
 x2Dir=0
 speed=.001
 black=(0,0,0)
-white=(255,255,255)
+white=(200,255,255)
 screen=pygame.display.set_mode((l,l))
 running =True
 screen.fill((white))
