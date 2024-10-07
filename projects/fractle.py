@@ -1,11 +1,13 @@
 
 import random
 import pygame
-l=int(input("how bad do you whnat your head ace in number form"))
-if l<600:
+l=int(input("how large do you wahnt the sreen to be size 1 or 2 :"))
+if l==1:
     l=600
-if l>6000:
-    l=10000
+elif l==2:
+    l=9000
+else:
+    l=900
 h=l
 colour=True
 space=True
@@ -18,14 +20,12 @@ x2=0
 count=1
 yDir=0
 x2Dir=0
-speed=.001
 black=(0,0,0)
-white=(200,255,255)
+white=(255,255,255)
 screen=pygame.display.set_mode((l,l))
 running =True
 screen.fill((white))
 while running:
-    #b+=1
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
              running = False
@@ -44,11 +44,6 @@ while running:
                     space=True
             if event.key == pygame.K_z:
                 count+=1
-            if event.key == pygame.K_e:
-                if speed==.1:
-                    speed=.001
-                else:
-                    speed=.1
             if event.key == pygame.K_w:
                 y+=10
                 x2-=10
@@ -57,23 +52,14 @@ while running:
                 x2+=10
             if event.key == pygame.K_BACKSPACE:
                 running=False
-    if count==4:
+    if count==3:
         count=1
     if x2<0:
         x2=l
-    if x2>l:
-        x2=0
-
-    if y<0:
-        y=l
     if y>l:
         y=0
-
-    x2 = x2 + (speed*x2Dir)
-    x2-=x2Dir
-    y = y +(speed*yDir)
-    y-=yDir
-    
+    x2 = x2 - x2Dir
+    y = y - yDir
     if colour:
         color=(black)
         colour=False
@@ -84,14 +70,10 @@ while running:
         pygame.draw.line(screen,color,(0,y),(l/z,l/z))
         pygame.draw.line(screen,color,(x2,0),(l/z,l/z))
         
-        if count>2:
+        if count==2:
             z=2
             pygame.draw.line(screen,color,(l,l-y),(l/z,l/z))
             pygame.draw.line(screen,color,(l-x2,l),(l/z,l/z))
-        if count<2:
+        if count==1:
             z=1
-    if b>10000:
-        b=0
-        count+=1
-    #print(speed)
     pygame.display.flip()
