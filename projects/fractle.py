@@ -1,15 +1,18 @@
 
+import random
 import pygame
 l=int(input("how bad do you whnat your head ace in number form"))
 if l<600:
     l=600
 if l>6000:
     l=10000
+h=l
 colour=True
 space=True
 color=(0,0,0)
 y=0
 b=0
+p=False
 z=1
 x2=0
 count=1
@@ -70,6 +73,7 @@ while running:
     x2-=x2Dir
     y = y +(speed*yDir)
     y-=yDir
+    
     if colour:
         color=(black)
         colour=False
