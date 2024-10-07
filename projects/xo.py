@@ -37,12 +37,10 @@ def Button(x, y, AppClick, isO):
     if MouseDown and inboundingbox and AppClick == False:
             if isO:
                 isO=False
-                g=False
                 O(x,y)
                     
             else:
                 isO=True
-                g=True
                 X(x,y)
                 
             AppClick = True

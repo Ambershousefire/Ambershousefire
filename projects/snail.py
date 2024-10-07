@@ -1,6 +1,5 @@
 
-import random as r
-import pygame
+import random as r , pygame
 
 global screen
 x=450
@@ -15,7 +14,6 @@ green=(12,183,30)
 score=0
 scorecount=0
 delay=5
-screen=pygame.display.set_mode((900,450))
 running=True
 xpos=r.randint(1,890)
 ypos=r.randint(1,440)
@@ -34,7 +32,8 @@ else:
     modes = ["esay", "normal", "hard"]
     print(modes[say-1], "Selected!")
     speed = (say-1)*speed
-
+    
+screen=pygame.display.set_mode((900,450))    
 
 def snake(screen, x, y, alpha, bata, black, white):
     pygame.draw.circle(screen,black,(x,y),(10))

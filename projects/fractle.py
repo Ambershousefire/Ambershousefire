@@ -1,5 +1,4 @@
 
-import random
 import pygame
 l=int(input("how large do you wahnt the sreen to be size 1 or 2 :"))
 if l==1:
