@@ -1,11 +1,9 @@
 
 import random
-
 win= "  You Won :3"
 loss="  You lost >:3"
 draw="  Thats a Draw"
 runtime = True
-
 w,l,d=0,0,0
 run=input("do you whant to play rock paper sisors(yes or no): ")
 if run.capitalize().startswith("Y"):
@@ -61,5 +59,4 @@ if run==True:
             runtime = False
         elif l == 3:
             runtime = False
-        
     print("wins",w,"losses",l,"draws",d)
