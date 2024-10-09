@@ -3,7 +3,7 @@ import random as r
 import pygame
 l=1000
 w=500
-green=(25,255,25)
+green=(25,200 ,25)
 red=(255,25,25)
 black=(0,0,0)
 white=(255,255,255)
@@ -469,4 +469,5 @@ while running:
     
     if score==100:
         running=False
+        print(score,"wow that took forever")
     pygame.display.flip()
