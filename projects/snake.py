@@ -11,10 +11,6 @@ X=[]
 Y=[]
 i=0
 count=0
-def tail(a,b):
-    a[score]=X[-5*int(score)]
-    b[score]=Y[-5*int(score)]
-    pygame.draw.circle(screen,white,(x1,y1),10)
 x=l/2
 y=w/2
 xpos=0
