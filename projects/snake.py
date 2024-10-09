@@ -22,9 +22,9 @@ running=True
 pickupDist=15
 speed=1
 screen=pygame.display.set_mode((l,w))
+pygame.display.set_caption("snake for real this time")
 while running:
-    pygame.display.set_caption("snake for real this time")
-    mousex, mousey = pygame.mouse.get_pos()
+
     pygame.time.delay(delay)
     if (x-xpos)<pickupDist and (x-xpos)>-pickupDist and (y-ypos)<pickupDist and (y-ypos)>-pickupDist:
         score= score+1 
