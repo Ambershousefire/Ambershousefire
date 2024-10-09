@@ -74,42 +74,34 @@ while running:
         x1=X[-15]
         y1=Y[-15]
         pygame.draw.circle(screen,white,(x1,y1),10)
-
     if score>=2:
         x2=X[-5*2*3]
         y2=Y[-5*2*3]
         pygame.draw.circle(screen,black,(x2,y2),10)
-
     if score>=3:
         x3=X[-5*3*3]
         y3=Y[-5*3*3]
         pygame.draw.circle(screen,white,(x3,y3),10)
-
     if score>=4:
         x4=X[-5*4*3]
         y4=Y[-5*4*3]
         pygame.draw.circle(screen,black,(x4,y4),10)
-
     if score>=5:
         x5=X[-5*5*3]
         y5=Y[-5*5*3]
         pygame.draw.circle(screen,white,(x5,y5),10)
-
     if score>=6:
         x6=X[-5*6*3]
         y6=Y[-5*6*3]
         pygame.draw.circle(screen,black,(x6,y6),10)
-
     if score>=7:
         x7=X[-5*7*3]
         y7=Y[-5*7*3]
         pygame.draw.circle(screen,white,(x7,y7),10)
-
     if score>=8:
         x8=X[-5*8*3]
         y8=Y[-5*8*3]
         pygame.draw.circle(screen,black,(x8,y8),10)
-
     if score>=9:
         x9=X[-5*9*3]
         y9=Y[-5*9*3]
