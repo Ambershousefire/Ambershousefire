@@ -60,7 +60,6 @@ while running:
                 yDir = 0
                 
             if event.key == pygame.K_SPACE:
-                score+=1
                 print(score)
     screen.fill(green)
     x = x +(speed*xDir)
