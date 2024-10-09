@@ -475,9 +475,6 @@ while running:
         y99=Y[-15*99]
         pygame.draw.circle(screen,white,(x99,y99),10)
     
-            
-
-
     if score==100:
         running=False
     pygame.display.flip()
