@@ -80,9 +80,6 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 xDir=0
                 yDir=0 
-            if event.key == pygame.K_SPACE:
-                score+=1
-                print(score)
             if event.key == pygame.K_e:
                 if lines:
                     lines=False
@@ -94,7 +91,7 @@ while running:
     if lines:
         pygame.draw.polygon(screen,red,((xpos,ypos),(xpos,y),(x,y)),1)
     pygame.draw.circle(screen,red,(xpos,ypos),(5))
-    pygame.draw.circle(screen,(0,0,26),(x,y),10)
+    pygame.draw.circle(screen,(0,0,80),(x,y),10)
     X.append(x)
     Y.append(y)
     while i<score:
@@ -103,6 +100,6 @@ while running:
     i=0
     
     if score==100:
-        #running=False
+        running=False
         print(score,"wow that took forever")
     pygame.display.flip()
