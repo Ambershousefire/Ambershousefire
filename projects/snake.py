@@ -65,7 +65,23 @@ while running:
             elif event.key == pygame.K_RIGHT:
                 xDir = 1
                 yDir = 0 
+            elif event.key == pygame.K_w:
+                yDir = -1
+                xDir = 0
+            elif event.key == pygame.K_s:
+                yDir = 1
+                xDir = 0
+            elif event.key == pygame.K_a:
+                xDir = -1
+                yDir = 0
+            elif event.key == pygame.K_d:
+                xDir = 1
+                yDir = 0
+            if event.key == pygame.K_ESCAPE:
+                xDir=0
+                yDir=0 
             if event.key == pygame.K_SPACE:
+                score+=1
                 print(score)
             if event.key == pygame.K_e:
                 if lines:
@@ -85,6 +101,7 @@ while running:
         i+=1
         sectDrawing(X, Y, score, screen, i)
     i=0
+    
     if score==100:
         #running=False
         print(score,"wow that took forever")
