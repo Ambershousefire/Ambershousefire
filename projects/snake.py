@@ -9,8 +9,8 @@ X=[]
 Y=[]
 x=l/2
 y=w/2
-xpos=0
-ypos=0
+applex=0
+appley=0
 xDir=0
 yDir=0
 delay=5
@@ -35,11 +35,11 @@ def sectDrawing(X, Y, score, screen, iter):
 while running:
     screen.fill(green)
     pygame.time.delay(delay)
-    if (x-xpos)<pickupDist and (x-xpos)>-pickupDist and (y-ypos)<pickupDist and (y-ypos)>-pickupDist:
+    if (x-applex)<pickupDist and (x-applex)>-pickupDist and (y-appley)<pickupDist and (y-appley)>-pickupDist:
         score+=1
     if score==scorecount:
-        xpos=r.randint(10,(l-10))
-        ypos=r.randint(10,(w-10))
+        applex=r.randint(10,(l-10))
+        appley=r.randint(10,(w-10))
         scorecount+=1
     if x>l:
         x=0
@@ -89,8 +89,8 @@ while running:
     x = x +(speed*xDir)
     y = y + (speed*yDir)
     if lines:
-        pygame.draw.polygon(screen,red,((xpos,ypos),(xpos,y),(x,y)),1)
-    pygame.draw.circle(screen,red,(xpos,ypos),(5))
+        pygame.draw.polygon(screen,red,((applex,appley),(applex,y),(x,y)),1)
+    pygame.draw.circle(screen,red,(applex,appley),(5))
     pygame.draw.circle(screen,(0,0,80),(x,y),10)
     X.append(x)
     Y.append(y)
