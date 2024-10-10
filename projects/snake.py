@@ -22,6 +22,7 @@ scorecount=0
 running=True
 pickupDist=15
 speed=1
+lines=False
 i=0
 screen=pygame.display.set_mode((l,w))
 pygame.display.set_caption("snake for real this time")
@@ -32,7 +33,7 @@ while running:
     screen.fill(green)
     pygame.time.delay(delay)
     if (x-xpos)<pickupDist and (x-xpos)>-pickupDist and (y-ypos)<pickupDist and (y-ypos)>-pickupDist:
-        score= score+1 
+        score+=1
     if score==scorecount:
         xpos=r.randint(10,(l-10))
         ypos=r.randint(10,(w-10))
@@ -63,8 +64,16 @@ while running:
                 yDir = 0 
             if event.key == pygame.K_SPACE:
                 print(score)
+            if event.key == pygame.K_e:
+                if lines:
+                    lines=False
+                else:
+                    lines=True
+                
     x = x +(speed*xDir)
     y = y + (speed*yDir)
+    if lines:
+        pygame.draw.polygon(screen,red,((xpos,ypos),(xpos,y),(x,y)),1)
     pygame.draw.circle(screen,red,(xpos,ypos),(5))
     pygame.draw.circle(screen,(0,0,26),(x,y),10)
     X.append(x)
@@ -74,6 +83,6 @@ while running:
         sectDrawing(white, X, Y, score, screen, i)
     i=0
     if score==100:
-        running=False
+        #running=False
         print(score,"wow that took forever")
     pygame.display.flip()
