@@ -1,8 +1,8 @@
 
 import random as r
 import pygame
-X=[]
-Y=[]
+xpos=[]
+ypos=[]
 x=500
 y=250
 applex=0
@@ -16,7 +16,7 @@ lines=False
 i=0
 screen=pygame.display.set_mode((1000,500))
 pygame.display.set_caption("snake for real this time")
-def sectDrawing(X, Y, score, screen, iter):
+def sectDrawing(xpos, ypos, score, screen, iter):
     black = (0,0,0)
     white = (255,255,255)
     if i%2 == 1:#if score is even colour=black
@@ -24,8 +24,8 @@ def sectDrawing(X, Y, score, screen, iter):
     else:
         colour = black
     if score>=iter:
-        pygame.draw.circle(screen,colour,(X[15*-iter],Y[15*-iter]),10)#uses the 15th postion in the list multpleyed by iteeration to draw tail
-        #X[15*-iter] this only works becuse all postions of players are stored in list
+        pygame.draw.circle(screen,colour,(xpos[15*-iter],ypos[15*-iter]),10)#uses the 15th postion in the list multpleyed by iteeration to draw tail
+        #xpos[15*-iter] this only works becuse all postions of players are stored in list
 while running:
     screen.fill((25,200 ,25))
     pygame.time.delay(5)
@@ -73,11 +73,11 @@ while running:
         pygame.draw.polygon(screen,(255,25,25),((applex,appley),(applex,y),(x,y)),1)
     pygame.draw.circle(screen,(255,25,25),(applex,appley),(5))#draws the apple
     pygame.draw.circle(screen,(0,0,80),(x,y),10)#draws the players 
-    X.append(x)#adds palyer psotion into list 
-    Y.append(y)#so that next segment can have a postion
+    xpos.append(x)#adds palyer psotion into list 
+    ypos.append(y)#so that next segment can have a postion
     while i<score:#draws a number of segemnts baced off of score
         i+=1
-        sectDrawing(X, Y, score, screen, i)
+        sectDrawing(xpos, ypos, score, screen, i)
     i=0#sets i to zero for next run
     if score==100:
         running=False
