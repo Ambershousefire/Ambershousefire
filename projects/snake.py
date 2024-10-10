@@ -5,9 +5,6 @@ l=1000
 w=500
 green=(25,200 ,25)
 red=(255,25,25)
-black=(0,0,0)
-white=(255,255,255)
-colour=white
 X=[]
 Y=[]
 x=l/2
@@ -26,7 +23,13 @@ lines=False
 i=0
 screen=pygame.display.set_mode((l,w))
 pygame.display.set_caption("snake for real this time")
-def sectDrawing(colour, X, Y, score, screen, iter):
+def sectDrawing(X, Y, score, screen, iter):
+    black = (0,0,0)
+    white = (255,255,255)
+    if i%2 == 1:
+        colour = white
+    else:
+        colour = black
     if score>=iter:
         pygame.draw.circle(screen,colour,(X[15*-iter],Y[15*-iter]),10)
 while running:
@@ -80,7 +83,7 @@ while running:
     Y.append(y)
     while i<score:
         i+=1
-        sectDrawing(white, X, Y, score, screen, i)
+        sectDrawing(X, Y, score, screen, i)
     i=0
     if score==100:
         #running=False
