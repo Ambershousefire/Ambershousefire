@@ -26,9 +26,7 @@ pygame.display.set_caption("snake for real this time")
 def sectDrawing(colour, X, Y, score, screen, iter):
     if score>=iter:
         pygame.draw.circle(screen,colour,(X[15*-iter],Y[15*-iter]),10)
-
 while running:
-
     pygame.time.delay(delay)
     if (x-xpos)<pickupDist and (x-xpos)>-pickupDist and (y-ypos)<pickupDist and (y-ypos)>-pickupDist:
         score= score+1 
@@ -54,25 +52,19 @@ while running:
             elif event.key == pygame.K_DOWN:
                 yDir = 1
                 xDir = 0
-                
             elif event.key == pygame.K_LEFT:
                 xDir = -1
                 yDir = 0
-                
             elif event.key == pygame.K_RIGHT:
                 xDir = 1
-                yDir = 0
-                
+                yDir = 0 
             if event.key == pygame.K_SPACE:
                 print(score)
-                
     screen.fill(green)
     x = x +(speed*xDir)
     y = y + (speed*yDir)
     pygame.draw.circle(screen,red,(xpos,ypos),(5))
-    
     pygame.draw.circle(screen,(0,0,26),(x,y),10)
-
     X.append(x)
     Y.append(y)
     sectDrawing(white, X, Y, score, screen, 1)
@@ -184,7 +176,6 @@ while running:
     sectDrawing(white, X, Y, score, screen, 97)
     sectDrawing(black, X, Y, score, screen, 98)
     sectDrawing(white, X, Y, score, screen, 99)
-
     if score==100:
         running=False
         print(score,"wow that took forever")
