@@ -82,8 +82,7 @@ while running:
                 if lines:
                     lines=False
                 else:
-                    lines=True
-                
+                    lines=True     
     x = x +(1*xDir)
     y = y + (1*yDir)
     if lines:
