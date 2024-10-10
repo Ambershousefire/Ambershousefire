@@ -24,22 +24,23 @@ pygame.display.set_caption("snake for real this time")
 def sectDrawing(X, Y, score, screen, iter):
     black = (0,0,0)
     white = (255,255,255)
-    if i%2 == 1:
+    if i%2 == 1:#if score is even colour=black
         colour = white
     else:
         colour = black
     if score>=iter:
-        pygame.draw.circle(screen,colour,(X[15*-iter],Y[15*-iter]),10)
+        pygame.draw.circle(screen,colour,(X[15*-iter],Y[15*-iter]),10)#uses the 15th postion in the list multpleyed by iteeration to draw tail
+        #X[15*-iter] this only works becuse all postions of players are stored in list
 while running:
     screen.fill(green)
     pygame.time.delay(delay)
-    if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:
+    if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:#proxicmaty pickup for apple 
         score+=1
-    if score==scorecount:
+    if score==scorecount:#genrates random postions for apple 
         applex=r.randint(10,(l-10))
         appley=r.randint(10,(w-10))
         scorecount+=1
-    if x>l:
+    if x>l:#wrap around for player 
         x=0
     if x<0:
         x=l
@@ -50,7 +51,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
              running = False
-        if event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYDOWN:#contols 
             if event.key == pygame.K_UP:
                 yDir = -1
                 xDir = 0
@@ -83,19 +84,19 @@ while running:
                     lines=False
                 else:
                     lines=True     
-    x = x +(1*xDir)
-    y = y + (1*yDir)
-    if lines:
+    x = x +(1*xDir)#controls direction on x 
+    y = y + (1*yDir)#controls diretion on y
+    if lines:#drwas a triangle to apple 
         pygame.draw.polygon(screen,red,((applex,appley),(applex,y),(x,y)),1)
-    pygame.draw.circle(screen,red,(applex,appley),(5))
-    pygame.draw.circle(screen,(0,0,80),(x,y),10)
-    X.append(x)
-    Y.append(y)
-    while i<score:
+    pygame.draw.circle(screen,red,(applex,appley),(5))#draws the apple
+    pygame.draw.circle(screen,(0,0,80),(x,y),10)#draws the players 
+    X.append(x)#adds palyer psotion into list 
+    Y.append(y)#so that next segment can have a postion
+    while i<score:#draws a number of segemnts baced off of score
         i+=1
         sectDrawing(X, Y, score, screen, i)
-    i=0
-    if score==100:
+    i=0#sets i to zero for next run
+    if score==100:#ends when score is 100
         running=False
         print(score,"wow that took forever")
     pygame.display.flip()
