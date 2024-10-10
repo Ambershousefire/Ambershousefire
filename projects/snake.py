@@ -98,7 +98,6 @@ while running:
         i+=1
         sectDrawing(X, Y, score, screen, i)
     i=0
-    
     if score==100:
         running=False
         print(score,"wow that took forever")
