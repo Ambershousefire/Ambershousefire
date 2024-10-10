@@ -17,8 +17,6 @@ delay=5
 score=0
 scorecount=0#to check if socre has incressed
 running=True
-pickupDist=15
-speed=1
 lines=False
 i=0
 screen=pygame.display.set_mode((l,w))
@@ -35,7 +33,7 @@ def sectDrawing(X, Y, score, screen, iter):
 while running:
     screen.fill(green)
     pygame.time.delay(delay)
-    if (x-applex)<pickupDist and (x-applex)>-pickupDist and (y-appley)<pickupDist and (y-appley)>-pickupDist:
+    if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:
         score+=1
     if score==scorecount:
         applex=r.randint(10,(l-10))
@@ -86,8 +84,8 @@ while running:
                 else:
                     lines=True
                 
-    x = x +(speed*xDir)
-    y = y + (speed*yDir)
+    x = x +(1*xDir)
+    y = y + (1*yDir)
     if lines:
         pygame.draw.polygon(screen,red,((applex,appley),(applex,y),(x,y)),1)
     pygame.draw.circle(screen,red,(applex,appley),(5))
