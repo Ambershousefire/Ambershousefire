@@ -15,7 +15,7 @@ running=True
 lines=False
 i=0
 screen=pygame.display.set_mode((1000,500))
-pygame.display.set_caption("snake for real this time")
+pygame.display.set_caption("Snake for real this time")
 def sectDrawing(xpos, ypos, score, screen, iter):
     black = (0,0,0)
     white = (255,255,255)
@@ -25,25 +25,27 @@ def sectDrawing(xpos, ypos, score, screen, iter):
         colour = black
     if score>=iter:
         pygame.draw.circle(screen,colour,(xpos[15*-iter],ypos[15*-iter]),10)#uses the 15th postion in the list multpleyed by iteration to draw tailing pieces
-        #xpos[15*-iter] this only works becuse all postions of players are stored in list
+        #xpos[15*-iter] this only works becuse all positions of players are stored in list
 while running:
     screen.fill((25,200 ,25))
     pygame.time.delay(5)
     if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:#proximity detection pickup for apple
         score+=1
-    if score==scorecount:#generates random postions for apple
+    if score==scorecount:#generates random positions for apple
         applex=r.randint(10,990)
         appley=r.randint(10,490)
         scorecount= score+1
-        #Wrap around for the player
+
+    #Wrap around for the player
     if x>1000:
         x=0
-    if x<0:
+    elif x<0:
         x=1000
-    if y>500:
+    elif y>500:
         y=0
-    if y<0:
+    elif y<0:
         y=500
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
              running = False
@@ -67,7 +69,7 @@ while running:
                     lines=False
                 else:
                     lines=True
-    x = x +(1*xDir)#controls direction on x 
+    x = x + (1*xDir)#controls direction on x 
     y = y + (1*yDir)#controls diretion on y
 
     if lines:#draws a triangle to apple 
@@ -84,5 +86,6 @@ while running:
     i=0#sets i to zero for next loop
     if score==100:
         running=False
-        print(score,"wow that took forever")
+        print(score,"Wow that took forever")
     pygame.display.flip()
+pygame.quit()
