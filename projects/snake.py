@@ -1,6 +1,5 @@
 
-import random as r
-import pygame
+import random as r, pygame
 xpos=[]
 ypos=[]
 x=500
