@@ -60,8 +60,7 @@ while running:
                 xDir = 1
                 yDir = 0 
             if event.key == pygame.K_ESCAPE:
-                xDir=0
-                yDir=0 
+                score+=10
             if event.key == pygame.K_e:
                 if lines:
                     lines=False
@@ -78,7 +77,7 @@ while running:
     while i<score:#draws a number of segemnts baced off of score
         i+=1
         sectDrawing(xpos, ypos, score, screen, i)
-        if (x==xpos[i*-15] or x<=xpos[i*-15]+5 and x>=xpos[i*-15]-5) and (y==ypos[i*-15] or y<=ypos[i*-15]+5 and y>=ypos[i*-15]-5) or (x==xpos[i*-15+15] or  x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y==ypos[i*-15+15] or y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5):
+        if ((x<=xpos[i*-15]+5 and x>=xpos[i*-15]-5) and (y<=ypos[i*-15]+5 and y>=ypos[i*-15]-5)) or (( x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5)):
             running=False
     i=0#sets i to zero for next run
     if score==100:
