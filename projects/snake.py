@@ -29,13 +29,13 @@ def sectDrawing(xpos, ypos, score, screen, iter):
 while running:
     screen.fill((25,200 ,25))
     pygame.time.delay(5)
-    if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:#proxicmaty pickup for apple 
+    if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:#proxicmaty pickup for apple
         score+=1
-    if score==scorecount:#genrates random postions for apple 
+    if score==scorecount:#genrates random postions for apple
         applex=r.randint(10,990)
         appley=r.randint(10,490)
         scorecount= score+1
-    if x>1000:#wrap around for player 
+    if x>1000:#wrap around for player
         x=0
     if x<0:
         x=1000
@@ -44,7 +44,7 @@ while running:
     if y<0:
         y=500
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: 
+        if event.type == pygame.QUIT:
              running = False
         if event.type == pygame.KEYDOWN:#contols 
             if event.key == pygame.K_UP or event.key == pygame.K_w:
@@ -65,13 +65,13 @@ while running:
                 if lines:
                     lines=False
                 else:
-                    lines=True     
+                    lines=True
     x = x +(1*xDir)#controls direction on x 
     y = y + (1*yDir)#controls diretion on y
     if lines:#drwas a triangle to apple 
         pygame.draw.polygon(screen,(255,25,25),((applex,appley),(applex,y),(x,y)),1)
     pygame.draw.circle(screen,(255,25,25),(applex,appley),(5))#draws the apple
-    pygame.draw.circle(screen,(0,0,80),(x,y),10)#draws the players 
+    pygame.draw.circle(screen,(0,0,80),(x,y),10)#draws the players
     xpos.append(x)#adds palyer psotion into list 
     ypos.append(y)#so that next segment can have a postion
     while i<score:#draws a number of segemnts baced off of score
