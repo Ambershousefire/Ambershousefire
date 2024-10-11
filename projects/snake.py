@@ -34,7 +34,7 @@ while running:
     if score==scorecount:#genrates random postions for apple 
         applex=r.randint(10,990)
         appley=r.randint(10,490)
-        scorecount+=1
+        scorecount= score+1
     if x>1000:#wrap around for player 
         x=0
     if x<0:
