@@ -1,4 +1,4 @@
-print("RULES OF USE, no caps, and no symbolse other than (!':;/.,-_&()@)"'  PS.. you can use (") as well')
+print("RULES OF USE, no symbolse other than (!':;/."'"'",-_&()@)")
 string = input("what to translate: ")
 letter = [ x for x in string]
 x = 0
