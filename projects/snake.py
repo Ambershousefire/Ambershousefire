@@ -60,7 +60,7 @@ while running:
                 xDir = 1
                 yDir = 0 
             if event.key == pygame.K_ESCAPE:
-                score+=10
+                score+=1
             if event.key == pygame.K_e:
                 if lines:
                     lines=False
