@@ -47,7 +47,8 @@ while running:
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-             running = False
+            running = False
+            print("end")
         if event.type == pygame.KEYDOWN:#controls 
             if event.key == pygame.K_UP or event.key == pygame.K_w:
                 yDir = -1
@@ -82,9 +83,11 @@ while running:
         sectDrawing(xpos, ypos, score, screen, i)
         if (( x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5)):
             running=False
+            
     i=0#sets i to zero for next loop
     if score==100:
         running=False
+        print("count")
         print(score,"Wow that took forever")
     pygame.display.flip()
 pygame.quit()
