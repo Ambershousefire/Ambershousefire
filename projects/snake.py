@@ -80,7 +80,7 @@ while running:
     while i<score:#draws a number of segments baced off of score
         i+=1
         sectDrawing(xpos, ypos, score, screen, i)
-        if ((x<=xpos[i*-15]+5 and x>=xpos[i*-15]-5) and (y<=ypos[i*-15]+5 and y>=ypos[i*-15]-5)) or (( x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5)):
+        if (( x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5)):
             running=False
     i=0#sets i to zero for next loop
     if score==100:
