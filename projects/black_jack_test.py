@@ -67,7 +67,6 @@ deck = []
 while not i==2:
     for x in sets: 
         deck.append(x+"H")
-        
         deck.append(x+"D")
         deck.append(x+"S")
         deck.append(x+"C")
