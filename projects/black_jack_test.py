@@ -89,33 +89,58 @@ while running:
     if x.capitalize().startswith("H"): 
         player.append(deck[i])
         p_value=0
-        d_value=0
         while not count==len(player):
             p_value+=value[player[count]]
             count+=1
         count=0
         print("player: "," ".join(player),"(",p_value,")")
+        print("deler: ",deler[0],"(",d_value,"+?",")")
 
         i+=1
         if p_value>21:
+            print("your cards: "," ".join(player),"(",p_value,")")
+            print("deler: "," ".join(deler),"(",d_value,")")            
             running=False
             print("bust")
         elif p_value==21:
             running=False
+            print("your cards: "," ".join(player),"(",p_value,")")
+            print("deler: "," ".join(deler),"(",d_value,")")
             print("you win")
-    else:
+    if x.capitalize().startswith("S"):
+        d_value = 0
+        p_value = 0
+        while not count==len(deler):
+            d_value+=value[deler[count]]
+            count+=1
+        count = 0
+        while not count==len(player):
+            p_value+=value[player[count]]
+            count+=1
+        count=0
         while d_value<16:
-            deler.append(deck[i])
             d_value = 0
-            p_value = 0
+            deler.append(deck[i])
             while not count==len(deler):
                 d_value+=value[deler[count]]
                 count+=1
             count = 0
+            
             i+=1
             print("deler: "," ".join(deler),"(",d_value,")")
+            if d_value>16 and d_value<21:
+                running=False
+                print("you lose")
 
         if d_value>21:
             running=False
             if p_value<=21:
                 print("you win")
+                running=False
+        elif d_value>p_value:
+            print("your cards: "," ".join(player),"(",p_value,")")
+            print("deler: "," ".join(deler),"(",d_value,")")
+            print("you lose")
+            running=False
+        elif d_value==p_value:
+            print("draw")
