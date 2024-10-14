@@ -63,11 +63,11 @@ value={
     "AceC" : 1,
 }
 sets = ["2","3","4","5","6","7","8","9","10","J","Q","K","Ace"]
-used = []
 deck = []
 while not i==2:
     for x in sets: 
         deck.append(x+"H")
+        
         deck.append(x+"D")
         deck.append(x+"S")
         deck.append(x+"C")
@@ -93,19 +93,16 @@ while running:
             p_value+=value[player[count]]
             count+=1
         count=0
-        print("player: "," ".join(player),"(",p_value,")")
-        print("deler: ",deler[0],"(",d_value,"+?",")")
+        print("player: "," ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 
         i+=1
         if p_value>21:
-            print("your cards: "," ".join(player),"(",p_value,")")
-            print("deler: "," ".join(deler),"(",d_value,")")            
+            print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")       
             running=False
             print("bust")
         elif p_value==21:
             running=False
-            print("your cards: "," ".join(player),"(",p_value,")")
-            print("deler: "," ".join(deler),"(",d_value,")")
+            print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
             print("you win")
     if x.capitalize().startswith("S"):
         d_value = 0
@@ -125,21 +122,15 @@ while running:
                 d_value+=value[deler[count]]
                 count+=1
             count = 0
-            
             i+=1
-            print("deler: "," ".join(deler),"(",d_value,")")
-            if d_value>16 and d_value<21:
-                running=False
-                print("you lose")
-
+            print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")","\n")
         if d_value>21:
             running=False
             if p_value<=21:
                 print("you win")
                 running=False
-        elif d_value>p_value:
-            print("your cards: "," ".join(player),"(",p_value,")")
-            print("deler: "," ".join(deler),"(",d_value,")")
+        elif d_value>=p_value:
+            print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
             print("you lose")
             running=False
         elif d_value==p_value:
