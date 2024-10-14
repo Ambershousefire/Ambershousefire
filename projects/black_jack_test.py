@@ -132,5 +132,3 @@ while running:
             print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
             print("you lose")
             running=False
-        elif d_value==p_value:
-            print("draw")
