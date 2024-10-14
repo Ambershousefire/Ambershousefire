@@ -21,7 +21,7 @@ while len(trans)< len(letter):
         x+=1
         if x>=len(lexacon):
             trans.append("?")
-            y+=
+            y+=1
             x=0
     trans.append(morse[x])
     y+=1
