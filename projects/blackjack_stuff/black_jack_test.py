@@ -1,5 +1,5 @@
 
-import random as r, projects.blackjack_stuff.black as black
+import random as r, black
 token=1000
 while token>0:
     start=True
@@ -71,10 +71,12 @@ while token>0:
             if x.capitalize().startswith("H"): 
                 player.append(deck[i])
                 p_value=0
+                d_value=0
                 while not count==len(player):
                     p_value+=black.value[player[count]]
                     count+=1
                 count=0
+                d_value+=black.value[deler[0]]
                 print("player: "," ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 
                 i+=1
