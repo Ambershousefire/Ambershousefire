@@ -6,7 +6,7 @@ def counter(obj,Value):
     Value=0
     while not count==len(obj):
         Value+=values.value[obj[count]]
-        if (obj[count]=="Ace of Hearts"or"Ace of Diomons"or"Ace of Spades"or"Ace of Clubs"):
+        if obj[count]==("Ace of Hearts" or "Ace of Diomons" or "Ace of Spades" or "Ace of Clubs"):
             if Value>21:
                 Value-=10
         count+=1
@@ -23,11 +23,11 @@ while token>0:
     d_value = 0
     i = 0
     x = 0
-    sets = ["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"]
+    cards = ["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"]
     deck = []
 
     while not i==2:
-        for x in sets: 
+        for x in cards: 
             deck.append(x+" of Hearts")
             deck.append(x+" of Diomons")
             deck.append(x+" of Spades")
@@ -36,7 +36,6 @@ while token>0:
         
     print("how much do you whant to bet, you cutnet blance is:",token,"tokens")
     y=int(input(": "))
-    y=int(y)
     if y<=0:
         print("try again")
         start=False
@@ -54,7 +53,7 @@ while token>0:
         deler.append(deck[3])
         deler.append(deck[4])
 
-        d_value+=values.value[deler[0]]
+        d_value = values.value[deler[0]]
         p_value = counter(player, p_value)
         print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 
