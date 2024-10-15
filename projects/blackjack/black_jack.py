@@ -1,6 +1,10 @@
 
 import random as r, values
 token=1000
+def hands():
+    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+def safe_hands():
+    ("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 def counter(obj,Value):
     count=0
     Value=0
@@ -61,26 +65,26 @@ while token>0:
 
         d_value = values.value[deler[0]]
         p_value = counter(player, p_value)
-        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
+        safe_hands
 
         d_value = counter(deler,d_value)
         p_value = counter(player, p_value)
 
         if p_value>21:
             running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+            hands
             print("you lose")
             token-=y
 
         if d_value==21:
             running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+            hands
             print("you lose")
             token-=y
 
         if p_value==21:
             running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+            hands
             print("you win")
             token+=y
 
@@ -93,13 +97,13 @@ while token>0:
                 d_value=0
                 p_value = counter(player,p_value)
                 d_value+=values.value[deler[0]]
-                print("player: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
+                safe_hands
 
                 i+=1
                 if p_value>21:
                     d_value = counter(deler,d_value)
                     p_value = counter(player,p_value)
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")       
+                    hands       
                     running=False
                     print("bust")
                     token-=y
@@ -108,7 +112,7 @@ while token>0:
                     running=False
                     p_value = counter(player,p_value)
                     d_value = counter(deler,d_value)
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                    hands
                     print("you win")
                     token+=y
 
@@ -117,37 +121,38 @@ while token>0:
                 p_value = counter(player,p_value)
                 
                 if d_value==16:
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                    hands
                     running=False
 
                 while d_value<16:
                     deler.append(deck[i])
                     d_value = counter(deler,d_value)
                     i+=1
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")","\n")
+                    hands
+                    print("\n")
                 
                 if d_value<=21:
                     running=False
                     if p_value>d_value:
-                        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                        hands
                         print("you win")
                         token+=y
                         running=False
 
                     elif d_value>p_value:
-                        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                        hands
                         print("you lose")
                         token-=y
                         running=False
 
                     elif d_value == p_value:
-                        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                        hands
                         print("draw")
                         token=token
                         running=False
 
                 if d_value>21:
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                    hands
                     print("you win")
                     token+=y
                     running=False
