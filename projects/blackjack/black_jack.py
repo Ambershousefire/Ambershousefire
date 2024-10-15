@@ -6,7 +6,7 @@ def counter(obj,Value):
     Value=0
     while not count==len(obj):
         Value+=values.value[obj[count]]
-        if obj[count]==("Ace of Hearts" or "Ace of Diomons" or "Ace of Spades" or "Ace of Clubs"):
+        if obj[count]==("Ace of Hearts" or "Ace of Diamonds" or "Ace of Spades" or "Ace of Clubs"):
             if Value>21:
                 Value-=10
         count+=1
@@ -29,7 +29,7 @@ while token>0:
     while not i==2:
         for x in cards: 
             deck.append(x+" of Hearts")
-            deck.append(x+" of Diomons")
+            deck.append(x+" of Diamonds")
             deck.append(x+" of Spades")
             deck.append(x+" of Clubs")
         i+=1
