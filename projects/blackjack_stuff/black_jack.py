@@ -12,14 +12,14 @@ while token>0:
     i = 0
     x = 0
     print(start,token,count)
-    sets = ["2","3","4","5","6","7","8","9","10","J","Q","K","Ace"]
+    sets = ["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"]
     deck = []
     while not i==2:
         for x in sets: 
-            deck.append(x+"H")
-            deck.append(x+"D")
-            deck.append(x+"S")
-            deck.append(x+"C")
+            deck.append(x+" of Hearts")
+            deck.append(x+" of Diomons")
+            deck.append(x+" of Spades")
+            deck.append(x+" of Clubs")
         i+=1
     print("how much do you whant to bet, you cutnet blance is:",token,"tokens")
     y=int(input(": "))
