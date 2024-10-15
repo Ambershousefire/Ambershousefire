@@ -35,15 +35,21 @@ while token>0:
         i+=1
         
     print("how much do you whant to bet, you cutnet blance is:",token,"tokens")
-    y=int(input(": "))
-    if y<=0:
-        print("try again")
+    y=(input(": "))
+    try:
+        y=int(y)
+    except:
         start=False
-    elif y>token:
-        print("try again")
-        start=False
+        print("not a number try again","\n")
     else:
-        start=True
+        if y<=0:
+            print("try again")
+            start=False
+        elif y>token:
+            print("try again")
+            start=False
+        else:
+            start=True
     if start==True:
 
         i = 5
