@@ -115,6 +115,7 @@ while token>0:
             elif x.capitalize().startswith("S"):
                 d_value = counter(deler,d_value)
                 p_value = counter(player,p_value)
+                print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")","\n")
                 
                 if d_value==16:
                     print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
