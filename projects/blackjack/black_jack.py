@@ -124,7 +124,7 @@ while token>0:
                     deler.append(deck[i])
                     d_value = counter(deler,d_value)
                     i+=1
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                    print("deler: ",", ".join(deler),"(",d_value,")")
                     print("\n")
                 
                 if d_value<=21:
