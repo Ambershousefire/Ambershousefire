@@ -11,7 +11,6 @@ while token>0:
     d_value = 0
     i = 0
     x = 0
-    print(start,token,count)
     sets = ["2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"]
     deck = []
     while not i==2:
@@ -23,9 +22,6 @@ while token>0:
         i+=1
     print("how much do you whant to bet, you cutnet blance is:",token,"tokens")
     y=int(input(": "))
-    if y==str(y):
-        start=False
-        print("try again")
     if y<=0:
         print("try again")
         start=False
@@ -161,17 +157,14 @@ while token>0:
                         token+=y
                         running=False
                     if d_value>p_value:
-                        print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
                         print("you lose")
                         token-=y
                         running=False
                     if d_value == p_value:
-                        print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
                         print("draw")
                         token=token
                         running=False
                 if d_value>21:
-                    print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
                     print("you win")
                     token+=y
                     running=False
