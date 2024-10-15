@@ -1,5 +1,5 @@
 
-import random as r, black
+import random as r, values
 token=1000
 while token>0:
     start=True
@@ -38,19 +38,19 @@ while token>0:
         player.append(deck[1])
         deler.append(deck[3])
         deler.append(deck[4])
-        d_value+=black.value[deler[0]]
-        p_value+=black.value[player[0]]
-        p_value+=black.value[player[1]]
+        d_value+=values.value[deler[0]]
+        p_value+=values.value[player[0]]
+        p_value+=values.value[player[1]]
         print("your cards: "," ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 
         d_value = 0
         p_value = 0
         while not count==len(deler):
-            d_value+=black.value[deler[count]]
+            d_value+=values.value[deler[count]]
             count+=1
         count = 0
         while not count==len(player):
-            p_value+=black.value[player[count]]
+            p_value+=values.value[player[count]]
             count+=1
         count=0
         if d_value==21:
@@ -73,10 +73,10 @@ while token>0:
                 p_value=0
                 d_value=0
                 while not count==len(player):
-                    p_value+=black.value[player[count]]
+                    p_value+=values.value[player[count]]
                     count+=1
                 count=0
-                d_value+=black.value[deler[0]]
+                d_value+=values.value[deler[0]]
                 print("player: "," ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 
                 i+=1
@@ -84,11 +84,11 @@ while token>0:
                     d_value = 0
                     p_value = 0
                     while not count==len(deler):
-                        d_value+=black.value[deler[count]]
+                        d_value+=values.value[deler[count]]
                         count+=1
                     count = 0
                     while not count==len(player):
-                        p_value+=black.value[player[count]]
+                        p_value+=values.value[player[count]]
                         count+=1
                     count=0
                     print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")       
@@ -101,11 +101,11 @@ while token>0:
                     d_value = 0
                     p_value = 0
                     while not count==len(deler):
-                        d_value+=black.value[deler[count]]
+                        d_value+=values.value[deler[count]]
                         count+=1
                     count = 0
                     while not count==len(player):
-                        p_value+=black.value[player[count]]
+                        p_value+=values.value[player[count]]
                         count+=1
                     count=0
                     print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
@@ -116,11 +116,11 @@ while token>0:
                     d_value = 0
                     p_value = 0
                     while not count==len(deler):
-                        d_value+=black.value[deler[count]]
+                        d_value+=values.value[deler[count]]
                         count+=1
                     count = 0
                     while not count==len(player):
-                        p_value+=black.value[player[count]]
+                        p_value+=values.value[player[count]]
                         count+=1
                     count=0        
                     print("your cards: "," ".join(player),"(",p_value,")","\n","deler: "," ".join(deler),"(",d_value,")")
@@ -132,12 +132,12 @@ while token>0:
                 p_value = 0
 
                 while not count==len(deler):
-                    d_value+=black.value[deler[count]]
+                    d_value+=values.value[deler[count]]
                     count+=1
                 count = 0
 
                 while not count==len(player):
-                    p_value+=black.value[player[count]]
+                    p_value+=values.value[player[count]]
                     count+=1
                 count=0
                 
@@ -148,7 +148,7 @@ while token>0:
                     d_value = 0
                     deler.append(deck[i])
                     while not count==len(deler):
-                        d_value+=black.value[deler[count]]
+                        d_value+=values.value[deler[count]]
                         count+=1
                     count = 0
                     i+=1
