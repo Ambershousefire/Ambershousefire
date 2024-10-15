@@ -151,3 +151,4 @@ while token>0:
                     print("you win")
                     token+=y
                     running=False
+print("you ran out of funds")
