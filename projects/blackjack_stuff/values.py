@@ -47,8 +47,8 @@ value={
     "King of Diomons" : 10,
     "King of Spades" : 10,
     "King of Clubs" : 10,
-    "Ace of Hearts" : 1,
-    "Ace of Diomons" : 1,
-    "Ace of Spades" : 1,
-    "Ace of Clubs" : 1,
+    "Ace of Hearts" : 11,
+    "Ace of Diomons" : 11,
+    "Ace of Spades" : 11,
+    "Ace of Clubs" : 11,
 }
