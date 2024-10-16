@@ -38,7 +38,7 @@ while token>0:
         y=int(input(": "))
     except:
         start=False
-        print("not a number try again","\n")
+        print("not a full number try again","\n")
     else:
         if y<=0:
             print("try again")
@@ -80,7 +80,7 @@ while token>0:
             running=False
             print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
             print("you win")
-            token+=y
+            token+=(1.5*y)
 
         while running:
             x = input("hit or stand: ")
