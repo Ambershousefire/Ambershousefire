@@ -89,9 +89,8 @@ while token>0:
 
             if x.capitalize().startswith("H"): 
                 player.append(deck[i])
-                d_value=0
                 p_value = counter(player,p_value)
-                d_value+=values.value[deler[0]]
+                d_value = values.value[deler[0]]
                 print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
 
                 i+=1
