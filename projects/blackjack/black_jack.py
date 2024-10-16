@@ -15,7 +15,7 @@ def counter(obj,Value):
 
 while token>0:
     start=True
-    deler = []
+    dealer = []
     player = []
     running = True
     p_value = 0
@@ -54,31 +54,31 @@ while token>0:
         r.shuffle(deck)
         player.append(deck[0])
         player.append(deck[1])
-        deler.append(deck[2])
-        deler.append(deck[3])
+        dealer.append(deck[2])
+        dealer.append(deck[3])
 
-        d_value = values.value[deler[0]]
+        d_value = values.value[dealer[0]]
         p_value = counter(player, p_value)
-        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
+        print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",dealer[0],"(",d_value,"+?",")")
 
-        d_value = counter(deler,d_value)
+        d_value = counter(dealer,d_value)
         p_value = counter(player, p_value)
 
         if p_value>21:
             running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+            print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
             print("you lose")
             token-=y
 
         if d_value==21:
             running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+            print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
             print("you lose")
             token-=y
 
         if p_value==21:
             running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+            print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
             print("you win")
             token+=(1.5*y)
 
@@ -89,14 +89,14 @@ while token>0:
             if x.capitalize().startswith("H"): 
                 player.append(deck[i])
                 p_value = counter(player,p_value)
-                d_value = values.value[deler[0]]
-                print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",deler[0],"(",d_value,"+?",")")
+                d_value = values.value[dealer[0]]
+                print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",dealer[0],"(",d_value,"+?",")")
 
                 i+=1
                 if p_value>21:
-                    d_value = counter(deler,d_value)
+                    d_value = counter(dealer,d_value)
                     p_value = counter(player,p_value)
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")       
+                    print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")       
                     running=False
                     print("bust")
                     token-=y
@@ -104,45 +104,45 @@ while token>0:
                 elif p_value==21:
                     running=False
                     p_value = counter(player,p_value)
-                    d_value = counter(deler,d_value)
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                    d_value = counter(dealer,d_value)
+                    print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                     print("you win")
                     token+=y
 
             elif x.capitalize().startswith("S"):
-                d_value = counter(deler,d_value)
+                d_value = counter(dealer,d_value)
                 p_value = counter(player,p_value)
-                print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")","\n")
+                print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")","\n")
                 
                 if d_value==16:
                     running=False
 
                 while d_value<16:
-                    deler.append(deck[i])
-                    d_value = counter(deler,d_value)
+                    dealer.append(deck[i])
+                    d_value = counter(dealer,d_value)
                     i+=1
-                    print("deler: ",", ".join(deler),"(",d_value,")")
+                    print("dealer: ",", ".join(dealer),"(",d_value,")")
                     print("\n")
                 
                 if d_value<=21:
                     running=False
                     if p_value>d_value:
-                        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                        print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                         print("you win")
                         token+=y
 
                     elif d_value>p_value:
-                        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                        print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                         print("you lose")
                         token-=y
 
                     elif d_value == p_value:
-                        print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                        print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                         print("draw")
                         token=token
 
                 if d_value>21:
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
+                    print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                     print("you win")
                     token+=y
                     running=False
