@@ -17,7 +17,6 @@ while token>0:
     start=True
     deler = []
     player = []
-    count=0
     running = True
     p_value = 0
     d_value = 0
