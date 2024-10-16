@@ -117,7 +117,6 @@ while token>0:
                 print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")","\n")
                 
                 if d_value==16:
-                    print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
                     running=False
 
                 while d_value<16:
@@ -133,19 +132,16 @@ while token>0:
                         print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
                         print("you win")
                         token+=y
-                        running=False
 
                     elif d_value>p_value:
                         print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
                         print("you lose")
                         token-=y
-                        running=False
 
                     elif d_value == p_value:
                         print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
                         print("draw")
                         token=token
-                        running=False
 
                 if d_value>21:
                     print("your cards: ",", ".join(player),"(",p_value,")","\n","deler: ",", ".join(deler),"(",d_value,")")
