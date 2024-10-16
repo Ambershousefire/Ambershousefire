@@ -35,9 +35,8 @@ while token>0:
         i+=1
         
     print("How much do you want to bet, you current balance is:",token,"tokens")
-    y=(input(": "))
     try:
-        y=int(y)
+        y=int(input(": "))
     except:
         start=False
         print("not a number try again","\n")
