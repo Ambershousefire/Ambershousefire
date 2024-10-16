@@ -52,12 +52,12 @@ while token>0:
             start=True
     if start==True:
 
-        i = 5
+        i = 4
         r.shuffle(deck)
         player.append(deck[0])
         player.append(deck[1])
+        deler.append(deck[2])
         deler.append(deck[3])
-        deler.append(deck[4])
 
         d_value = values.value[deler[0]]
         p_value = counter(player, p_value)
