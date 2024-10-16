@@ -34,7 +34,7 @@ while token>0:
             deck.append(x+" of Clubs")
         i+=1
         
-    print("how much do you whant to bet, you cutnet blance is:",token,"tokens")
+    print("how much do you want to bet, you current balance is:",token,"tokens")
     y=(input(": "))
     try:
         y=int(y)
