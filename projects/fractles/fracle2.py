@@ -55,7 +55,6 @@ while running:
             e2-=1
         if e==l:
             b=False
-            screen.fill((255,255,255))
         if i%2 == 1:
             color = white
         if not i%2 == 1:
@@ -79,7 +78,6 @@ while running:
             if event.key == pygame.K_e:
                 if key:
                     key=False
-                    screen.fill((255,255,255))
                     x=0
                     y=0
                     x2=l
