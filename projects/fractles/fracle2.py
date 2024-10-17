@@ -7,11 +7,12 @@ x2=l
 y2=100
 x3=0
 i=0
-black=(255,0,0)
-white=(0,0,255)
+black=(255,125,0)
+white=(0,125,255)
 colour=True
 color=black
 e=0
+w=0
 b=True
 e2=l
 key=True
@@ -33,12 +34,12 @@ while running:
         y+=h/2
         y2-=h/2
         if x>l:
-            x=0
+            x=w
         if y>l:
-            y=0
-        if x2<0:
+            y=w
+        if x2<w:
             x2=l
-        if y2<0:
+        if y2<w:
             y2=l
         if colour:
             color=(black)
@@ -47,7 +48,6 @@ while running:
             color=(white)
             colour=True
     if not key:
-        pygame.time.delay(50)
         pygame.draw.lines(screen,color,False,((x,l),(x+100,y),(x+100,l)))
         pygame.draw.lines(screen,color,False,((x2,l),(x2-100,y2),(x2-100,l)))
         pygame.draw.lines(screen,color,False,((l,x2),(y2,x2-100),(l,x2-100)))
@@ -62,12 +62,13 @@ while running:
         y+=h/2
         y2-=h/2
         if x>l:
-            x=0
+            x=w
+            
         if y>l:
-            y=0
-        if x2<0:
+            y=w
+        if x2<w:
             x2=l
-        if y2<0:
+        if y2<w:
             y2=l
         if b:
             i=e
@@ -83,9 +84,9 @@ while running:
             i=e
             e-=1
             e2+=1
-        if e<0:
+        if e<w:
             b=True
-            e=0
+            e=w
             e2=l
     
     pygame.display.flip()
