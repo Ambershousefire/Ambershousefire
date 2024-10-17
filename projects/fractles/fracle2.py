@@ -56,7 +56,7 @@ while running:
         pygame.draw.lines(screen,color,False,((x,l-l),(x+100,y2),(x+100,l-l)))
         pygame.draw.lines(screen,color,False,((l-l,x2),(y2 ,x2-100),(l-l,x2-100)))
         pygame.draw.lines(screen,color,False,((l-l,x),(y,x+100,),(l-l,x+100)))
-        #pygame.draw.lines(screen,color,True,((0,e),(e,l),(l,e2),(e2,0)),(1))
+        pygame.draw.lines(screen,color,True,((0,e),(e,l),(l,e2),(e2,0)),(1))
         x+=100
         x2-=100
         y+=h/2
