@@ -63,7 +63,6 @@ while token>0:
 
         d_value = counter(dealer,d_value)
         p_value = counter(player, p_value)
-        p_value=21
         if d_value==21:
             running=False
             print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
