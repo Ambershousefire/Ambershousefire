@@ -48,8 +48,8 @@ while token>0:
             start=False
         else:
             start=True
-    if start==True:
 
+    if start==True:
         i = 4
         r.shuffle(deck)
         player.append(deck[0])
@@ -63,13 +63,7 @@ while token>0:
 
         d_value = counter(dealer,d_value)
         p_value = counter(player, p_value)
-
-        if p_value>21:
-            running=False
-            print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
-            print("you lose")
-            token-=y
-
+        p_value=21
         if d_value==21:
             running=False
             print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
@@ -80,7 +74,7 @@ while token>0:
             running=False
             print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
             print("you win")
-            token+=(1.5*y)
+            token+=int((1.5*y))
 
         while running:
             x = input("hit or stand: ")
@@ -94,10 +88,10 @@ while token>0:
 
                 i+=1
                 if p_value>21:
+                    running=False
                     d_value = counter(dealer,d_value)
                     p_value = counter(player,p_value)
                     print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")       
-                    running=False
                     print("bust")
                     token-=y
 
@@ -142,8 +136,8 @@ while token>0:
                         token=token
 
                 if d_value>21:
+                    running=False
                     print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                     print("you win")
                     token+=y
-                    running=False
 print("you ran out of funds")
