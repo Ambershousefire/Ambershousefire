@@ -21,8 +21,12 @@ def mouse_pos_local(w):
     i=0
     z=0
     mousex,mousey=pygame.mouse.get_pos()
-    i=int((mousex/w))
-    z=int((mousey/w))
+    try:
+        i=int((mousex/w))
+        z=int((mousey/w))
+    except:
+        i=0
+        z=0
     return i,z
 #pygame.draw.polygon(screen,hid[int(b[z]-a[i])],((i*100,z*100),(i*100,z*100+100),(i*100+100,z*100+100),(i*100+100,z*100)))
 #pygame.draw.polygon(screen,hid[int(a[i]-b[z])],((i*100,z*100),(i*100,z*100+100),(i*100+100,z*100+100),(i*100+100,z*100)))
