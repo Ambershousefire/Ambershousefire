@@ -18,10 +18,10 @@ pink = (255,153,204)
 gray = (125,125,125)
 brown = (51,24,0)
 
-def mouse_pos_local(i,z):
+def mouse_pos_local(i,z,w):
     mousex,mousey=pygame.mouse.get_pos()
-    i=int((mousex/100))
-    z=int((mousey/100))
+    i=int((mousex/w))
+    z=int((mousey/w))
     return i,z
 #pygame.draw.polygon(screen,hid[int(b[z]-a[i])],((i*100,z*100),(i*100,z*100+100),(i*100+100,z*100+100),(i*100+100,z*100)))
 #pygame.draw.polygon(screen,hid[int(a[i]-b[z])],((i*100,z*100),(i*100,z*100+100),(i*100+100,z*100+100),(i*100+100,z*100)))
