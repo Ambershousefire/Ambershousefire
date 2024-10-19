@@ -4,13 +4,15 @@ l=500
 screen = pygame.display.set_mode((l,l))
 i=0
 z=0
-x=0
+x=1
 w=10
 num=0
 mouseDown=False
 running=True
 screen.fill(c.white)
 while running:
+    if x==0:
+        x=1
     if mouseDown:
         i,z=c.mouse_pos_relative(w)
         c.square(screen,c.colour_list[x],i,z,w)
