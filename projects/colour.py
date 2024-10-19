@@ -18,7 +18,9 @@ pink = (255,153,204)
 gray = (125,125,125)
 brown = (51,24,0)
 
-def mouse_pos_local(i,z,w):
+def mouse_pos_local(w):
+    i=0
+    z=0
     mousex,mousey=pygame.mouse.get_pos()
     i=int((mousex/w))
     z=int((mousey/w))
