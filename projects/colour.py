@@ -28,5 +28,9 @@ def mouse_pos_local(w):
         i=0
         z=0
     return i,z
-#pygame.draw.polygon(screen,hid[int(b[z]-a[i])],((i*100,z*100),(i*100,z*100+100),(i*100+100,z*100+100),(i*100+100,z*100)))
-#pygame.draw.polygon(screen,hid[int(a[i]-b[z])],((i*100,z*100),(i*100,z*100+100),(i*100+100,z*100+100),(i*100+100,z*100)))
+def square(place,value,i,z,w):
+    pygame.draw.polygon(place,colour_list[value],((i*w,z*w),(i*w,z*w+w),(i*w+w,z*w+w),(i*w+w,z*w)))
+def end():
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: 
+                running = False

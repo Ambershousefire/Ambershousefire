@@ -7,4 +7,6 @@ w=1
 running=True
 while running:
     i,z=c.mouse_pos_local(w)
+    c.square(screen,5,i,z,10)
     pygame.display.flip()
+    c.end
