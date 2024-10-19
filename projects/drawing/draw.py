@@ -1,5 +1,4 @@
-import colour as c
-import pygame
+import colour as c, pygame
 l=500
 screen = pygame.display.set_mode((l,l))
 i=0
