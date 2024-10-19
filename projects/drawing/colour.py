@@ -17,20 +17,16 @@ pink = (255,153,204)#13
 gray = (125,125,125)#14
 brown = (51,24,0)#15
 colour_list = [black,white,red,orange,yellow,lime,green,cyan,light_blue,blue,violet,purple,pink,gray,brown]
-def mouse_pos_local(w):
+def mouse_pos_relative(pos_box_size):
     i=0
     z=0
     mousex,mousey=pygame.mouse.get_pos()
     try:
-        i=int((mousex/w))
-        z=int((mousey/w))
+        i=int((mousex/pos_box_size))
+        z=int((mousey/pos_box_size))
     except:
         i=0
         z=0
     return i,z
-def square(place,value,i,z,w):
-    pygame.draw.polygon(place,colour_list[value],((i*w,z*w),(i*w,z*w+w),(i*w+w,z*w+w),(i*w+w,z*w)))
-def end():
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT: 
-                running = False
+def square(place,color,x,y,size):
+    pygame.draw.polygon(place,color,((x*size,y*size),(x*size,y*size+size),(x*size+size,y*size+size),(x*size+size,y*size)))
