@@ -2,6 +2,7 @@ import pygame, random
 l=700
 screen=pygame.display.set_mode((l,l))
 x=0
+g=0
 y=500
 x2=l
 y2=100
@@ -20,15 +21,16 @@ h=100
 running=True
 screen.fill((255,255,255))
 while running:
+    g-=.01
     if key:
-        pygame.draw.lines(screen,color,False,((x,l),(x+100,y),(x+100,l)))
-        pygame.draw.lines(screen,color,False,((x2,l),(x2-100,y2),(x2-100,l)))
-        pygame.draw.lines(screen,color,False,((l,x2),(y2,x2-100),(l,x2-100)))
-        pygame.draw.lines(screen,color,False,((l,x),(y,x+100,),(l,x+100)))
-        pygame.draw.lines(screen,color,False,((x2,l-l),(x2-100,y2),(x2-100,l-l)))
-        pygame.draw.lines(screen,color,False,((x,l-l),(x+100,y2),(x+100,l-l)))
-        pygame.draw.lines(screen,color,False,((l-l,x2),(y2 ,x2-100),(l-l,x2-100)))
-        pygame.draw.lines(screen,color,False,((l-l,x),(y,x+100,),(l-l,x+100)))
+        pygame.draw.lines(screen,color,False,((x,l),(x+g,y),(x+g,l)))
+        pygame.draw.lines(screen,color,False,((x2,l),(x2-g,y2),(x2-g,l)))
+        pygame.draw.lines(screen,color,False,((l,x2),(y2,x2-g),(l,x2-g)))
+        pygame.draw.lines(screen,color,False,((l,x),(y,x+g,),(l,x+g)))
+        pygame.draw.lines(screen,color,False,((x2,l-l),(x2-g,y2),(x2-g,l-l)))
+        pygame.draw.lines(screen,color,False,((x,l-l),(x+g,y2),(x+g,l-l)))
+        pygame.draw.lines(screen,color,False,((l-l,x2),(y2 ,x2-g),(l-l,x2-g)))
+        pygame.draw.lines(screen,color,False,((l-l,x),(y,x+g,),(l-l,x+g)))
         x+=100
         x2-=100
         y+=h/2
@@ -48,16 +50,16 @@ while running:
             color=(white)
             colour=True
     if not key:
-        pygame.draw.lines(screen,color,False,((x,l),(x+100,y),(x+100,l)))
-        pygame.draw.lines(screen,color,False,((x2,l),(x2-100,y2),(x2-100,l)))
-        pygame.draw.lines(screen,color,False,((l,x2),(y2,x2-100),(l,x2-100)))
-        pygame.draw.lines(screen,color,False,((l,x),(y,x+100,),(l,x+100)))
-        pygame.draw.lines(screen,color,False,((x2,l-l),(x2-100,y2),(x2-100,l-l)))
-        pygame.draw.lines(screen,color,False,((x,l-l),(x+100,y2),(x+100,l-l)))
-        pygame.draw.lines(screen,color,False,((l-l,x2),(y2 ,x2-100),(l-l,x2-100)))
-        pygame.draw.lines(screen,color,False,((l-l,x),(y,x+100,),(l-l,x+100)))
+        pygame.draw.lines(screen,color,False,((x,l),(x+g,y),(x+g,l)))
+        pygame.draw.lines(screen,color,False,((x2,l),(x2-g,y2),(x2-g,l)))
+        pygame.draw.lines(screen,color,False,((l,x2),(y2,x2-g),(l,x2-g)))
+        pygame.draw.lines(screen,color,False,((l,x),(y,x+g,),(l,x+g)))
+        pygame.draw.lines(screen,color,False,((x2,l-l),(x2-g,y2),(x2-g,l-l)))
+        pygame.draw.lines(screen,color,False,((x,l-l),(x+g,y2),(x+g,l-l)))
+        pygame.draw.lines(screen,color,False,((l-l,x2),(y2 ,x2-g),(l-l,x2-g)))
+        pygame.draw.lines(screen,color,False,((l-l,x),(y,x+g,),(l-l,x+g)))
         pygame.draw.lines(screen,color,True,((0,e),(e,l),(l,e2),(e2,0)),(1))
-        x+=100
+        x+=1000
         x2-=100
         y+=h/2
         y2-=h/2
@@ -103,7 +105,9 @@ while running:
                     y2=l
                     e=0
                     e2=l
+                    g=0
                     screen.fill((0,0,0))
                 else:
+                    g=0
                     key=True
                     screen.fill((255,255,255))
