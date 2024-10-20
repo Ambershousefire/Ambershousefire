@@ -3,11 +3,12 @@ import colour as c, pygame
 start = True
 try:
     l=int(input("what size window do you wahnt: "))
+    w=int(input("with: "))
 except:
     print("not a full number try again","\n")
     start = False
 if start:
-    screen = pygame.display.set_mode((l,l))
+    screen = pygame.display.set_mode((l,w))
     i=0
     z=0
     x=1
