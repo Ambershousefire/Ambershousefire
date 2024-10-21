@@ -27,7 +27,7 @@ if start:
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                    running = False
+                running = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 mouseDown = True
             if event.type == pygame.KEYDOWN:
