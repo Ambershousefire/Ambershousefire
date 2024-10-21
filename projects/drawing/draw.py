@@ -4,7 +4,7 @@ import colour as c, pygame
 screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
 i=0
 z=0
-x=1
+x=0
 w=10
 num=0
 mouseDown=False
