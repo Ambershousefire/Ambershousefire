@@ -1,7 +1,7 @@
 
 import colour as c, pygame
 
-screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
+screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)   
 i=0
 z=0
 x=0
