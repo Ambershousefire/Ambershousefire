@@ -65,7 +65,6 @@ while running:
         y2-=h/2
         if x>l:
             x=w
-            
         if y>l:
             y=w
         if x2<w:
