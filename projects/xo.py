@@ -6,8 +6,8 @@ global screen
 o="O wins"
 Y="X wins"
 k=False
-b1,b2,b3,b4,b5,b6,b7,b8,b9=False,False,False,False,False,False,False,False,False
-c1,c2,c3,c4,c5,c6,c7,c8,c9=6,6,6,6,6,6,6,6,6
+b = [False,False,False,False,False,False,False,False,False,False,False]
+c = [1,2,3,4,5,6,7,8,9,10,11]
 screen = pygame.display.set_mode((300, 300))
 
 pygame.display.set_caption('Tick, Tack, Toe') 
@@ -69,185 +69,185 @@ while running:
     if MouseDown == False and AppClick == True:
         AppClick = False
         
-    if b1==False:
+    if b[1]==False:
         if MouseDown:
             if mousex<100 and mousey<100:
                 AppClick,k = Button(0,0,AppClick,k)
-                b1=True
+                b[1]=True
                 MouseDown=False
-    if b2==False:
+    if b[2]==False:
         if MouseDown:
             if mousex<200 and mousex>100 and mousey<100:            
                 AppClick,k = Button(100,0,AppClick,k)
-                b2=True
+                b[2]=True
                 MouseDown=False
-    if b3==False:
+    if b[3]==False:
         if MouseDown:
             if mousex<300 and mousex>200 and mousey<100:
                 AppClick,k = Button(200,0,AppClick,k)
-                b3=True
+                b[3]=True
                 MouseDown=False
-    if b4==False:
+    if b[4]==False:
         if MouseDown:
             if mousex<100 and mousey<200 and mousey>100:
                 AppClick,k = Button(0,100,AppClick,k)
-                b4=True
+                b[4]=True
                 MouseDown=False
-    if b5==False:
+    if b[5]==False:
         if MouseDown:
             if mousex<200 and mousex>100 and mousey<200 and mousey>100:
                 AppClick,k = Button(100,100,AppClick,k)
-                b5=True
+                b[5]=True
                 MouseDown=False
-    if b6==False:
+    if b[6]==False:
         if MouseDown:
             if mousex<300 and mousex>200 and mousey<200 and mousey>100:
                 AppClick,k = Button(200,100,AppClick,k)
-                b6=True
+                b[6]=True
                 MouseDown=False
-    if b7==False:
+    if b[7]==False:
         if MouseDown:
             if mousex<100 and mousey<300 and mousey>200:
                 AppClick,k = Button(0,200,AppClick,k)
-                b7=True
+                b[7]=True
                 MouseDown=False
-    if b8==False:
+    if b[8]==False:
         if MouseDown:
             if mousex<200 and mousex>100 and mousey<300 and mousey>200:
                 AppClick,k = Button(100,200,AppClick,k)
-                b8=True
+                b[8]=True
                 MouseDown=False
-    if b9==False:
+    if b[9]==False:
         if MouseDown:
             if mousex<300 and mousex>200 and mousey<300 and mousey>200:
                 AppClick,k = Button(200,200,AppClick,k)
-                b9=True
+                b[9]=True
                 MouseDown=False
-    if b1:
-        if not b1==6:
+    if b[1]:
+        if not b[1]==6:
             if k:
-                c1=False
+                c[1]=False
             else:
-                c1=True
-            b1=6
-    if b2:
-        if not b2==6:
+                c[1]=True
+            b[1]=6
+    if b[2]:
+        if not b[2]==6:
             if k:
-                c2=False
+                c[2]=False
             else:
-                c2=True
-            b2=6
-    if b3:
-        if not b3==6:
+                c[2]=True
+            b[2]=6
+    if b[3]:
+        if not b[3]==6:
             if k:
-                c3=False
+                c[3]=False
             else:
-                c3=True
-            b3=6
-    if b4:
-        if not b4==6:
+                c[3]=True
+            b[3]=6
+    if b[4]:
+        if not b[4]==6:
             if k:
-                c4=False
+                c[4]=False
             else:
-                c4=True
-            b4=6
-    if b5:
-        if not b5==6:
+                c[4]=True
+            b[4]=6
+    if b[5]:
+        if not b[5]==6:
             if k:
-                c5=False
+                c[5]=False
             else:
-                c5=True
-            b5=6
-    if b6:
-        if not b6==6:
+                c[5]=True
+            b[5]=6
+    if b[6]:
+        if not b[6]==6:
             if k:
-                c6=False
+                c[6]=False
             else:
-                c6=True
-            b6=6
-    if b7:
-        if not b7==6:
+                c[6]=True
+            b[6]=6
+    if b[7]:
+        if not b[7]==6:
             if k:
-                c7=False
+                c[7]=False
             else:
-                c7=True
-            b7=6
-    if b8:
-        if not b8==6:
+                c[7]=True
+            b[7]=6
+    if b[8]:
+        if not b[8]==6:
             if k:
-                c8=False
+                c[8]=False
             else:
-                c8=True
-            b8=6
-    if b9:
-        if not b9==6:
+                c[8]=True
+            b[8]=6
+    if b[9]:
+        if not b[9]==6:
             if k:
-                c9=False
+                c[9]=False
             else:
-                c9=True
-            b9=6
+                c[9]=True
+            b[9]=6
             
-    if c1==True and c2==True and c3==True:
+    if c[1]==True and c[2]==True and c[3]==True:
         running=False
         print(o)
    
-    elif c4==True and c5==True and c6==True:
+    elif c[4]==True and c[5]==True and c[6]==True:
         running=False
         print(o)
    
-    elif c7==True and c8==True and c9==True:
+    elif c[7]==True and c[8]==True and c[9]==True:
         running=False
         print(o)
    
-    elif c1==True and c4==True and c7==True:
+    elif c[1]==True and c[4]==True and c[7]==True:
         running=False
         print(o)
   
-    elif c2==True and c5==True and c8==True:
+    elif c[2]==True and c[5]==True and c[8]==True:
         running=False
         print(o)
         
-    elif c3==True and c6==True and c9==True:
+    elif c[3]==True and c[6]==True and c[9]==True:
         running=False
         print(o)
         
-    elif c1==True and c5==True and c9==True:
+    elif c[1]==True and c[5]==True and c[9]==True:
         running=False
         print(o)
             
-    elif c7==True and c5==True and c3==True:
+    elif c[7]==True and c[5]==True and c[3]==True:
         running=False
         print(o)
         
-    elif c1==False and c2==False and c3==False:
+    elif c[1]==False and c[2]==False and c[3]==False:
         running=False
         print(Y) 
         
-    elif c4==False and c5==False and c6==False:
+    elif c[4]==False and c[5]==False and c[6]==False:
         running=False
         print(Y)
         
-    elif c7==False and c8==False and c9==False:
+    elif c[7]==False and c[8]==False and c[9]==False:
         running=False
         print(Y) 
         
-    elif c1==False and c4==False and c7==False:
+    elif c[1]==False and c[4]==False and c[7]==False:
         running=False
         print(Y)
         
-    elif c2==False and c5==False and c8==False:
+    elif c[2]==False and c[5]==False and c[8]==False:
         running=False
         print(Y) 
           
-    elif c3==False and c6==False and c9==False:
+    elif c[3]==False and c[6]==False and c[9]==False:
         running=False
         print(Y) 
         
-    elif c7==False and c5==False and c3==False:
+    elif c[7]==False and c[5]==False and c[3]==False:
         running=False
         print(Y)
     
-    elif c1==False and c5==False and c9==False:
+    elif c[1]==False and c[5]==False and c[9]==False:
         running=False
         print(Y)
     pygame.display.flip()
