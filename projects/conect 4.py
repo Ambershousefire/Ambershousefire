@@ -7,14 +7,68 @@ pygame.display.set_caption("connect 4 in a row")
 blue=(0,125,255)
 red=(255,0,0,)
 yellow=(255,255,0)
+global running
 running=True
 screen.fill(blue)
 hole=0
 x=40
 y=30
+i=-1
 r=[1,1,1,1,1,1,1,1]
-a=[bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool,bool]
+a=[]
+while len(a)<41:
+    a.append(bool)
 togle=False
+def line_up(sort,row,list,running):
+    i=0
+    i=row
+    if list[i]==sort and list[i+1]==sort and list[i+2]==sort and list[i+3]==sort:
+        running=False
+    if list[i+1]==sort and list[i+2]==sort and list[i+3]==sort and list[i+4]==sort:
+        running=False
+    if list[i+2]==sort and list[i+3]==sort and list[i+4]==sort and list[i+5]==sort:
+        running=False
+    return running
+
+def up_di(sort,row,list,running):
+    i=0
+    i=row
+    if list[i]==sort and list[i+7]==sort and list[i+14]==sort and list[i+21]==sort:
+        running=False
+    if list[i+1]==sort and list[i+8]==sort and list[i+15]==sort and list[i+22]==sort:
+        running=False
+    if list[i+2]==sort and list[i+9]==sort and list[i+16]==sort and list[i+23]==sort:
+        running=False
+    return running
+
+def down_di(sort,row,list,running):
+    i=0
+    i=row
+    if list[i+5]==sort and list[i+10]==sort and list[i+15]==sort and list[i+20]==sort:
+        running=False
+    if list[i+4]==sort and list[i+9]==sort and list[i+14]==sort and list[i+19]==sort:
+        running=False
+    if list[i+3]==sort and list[i+8]==sort and list[i+13]==sort and list[i+18]==sort:
+        running=False
+    return running
+
+def line_flat(sort,row,list,running):
+    i=0
+    i=row
+    if list[i]==sort and list[i+6]==sort and list[i+12]==sort and list[i+18]==sort:
+        running=False
+    if list[i+1]==sort and list[i+7]==sort and list[i+13]==sort and list[i+19]==sort:
+        running=False
+    if list[i+2]==sort and list[i+8]==sort and list[i+14]==sort and list[i+20]==sort:
+        running=False
+    if list[i+3]==sort and list[i+9]==sort and list[i+15]==sort and list[i+21]==sort:
+        running=False
+    if list[i+4]==sort and list[i+10]==sort and list[i+16]==sort and list[i+22]==sort:
+        running=False
+    if list[i+5]==sort and list[i+11]==sort and list[i+17]==sort and list[i+23]==sort:
+        running=False
+    return running
+
 while hole<43:
         if x>l:
             x=40
@@ -143,11 +197,11 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[5]=r[5]+1
                         if r[5]==2:
-                            a[29]=True
-                        elif r[5]==3:
                             a[30]=True
-                        elif r[5]==4:
+                        elif r[5]==3:
                             a[31]=True
+                        elif r[5]==4:
+                            a[32]=True
                         elif r[5]==5:
                             a[33]=True
                         elif r[5]==6:
@@ -314,334 +368,51 @@ while running:
             elif event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
-    #downs
-    if a[0]==True and a[6]==True and a[11]==True and a[17]==True:
-        running=False
-    elif a[6]==True and a[11]==True and a[17]==True and a[23]==True:
-        running=False
-    elif a[11]==True and a[17]==True and a[23]==True and a[29]==True:
-        running=False
-    elif a[17]==True and a[23]==True and a[29]==True and a[35]==True:
-        running=False
-        
-    elif a[1]==True and a[7]==True and a[12]==True and a[18]==True:
-        running=False
-    elif a[7]==True and a[12]==True and a[18]==True and a[24]==True:
-        running=False
-    elif a[12]==True and a[18]==True and a[24]==True and a[2]==True:
-        running=False
-    elif a[18]==True and a[24]==True and a[2]==True and a[37]==True:
-        running=False
-        
-    elif a[2]==True and a[7]==True and a[13]==True and a[19]==True:
-        running=False
-    elif a[7]==True and a[13]==True and a[19]==True and a[25]==True:
-        running=False
-    elif a[13]==True and a[19]==True and a[25]==True and a[31]==True:
-        running=False
-    elif a[19]==True and a[25]==True and a[31]==True and a[38]==True:
-        running=False
-        
-    elif a[3]==True and a[8]==True and a[14]==True and a[20]==True:
-        running=False
-    elif a[8]==True and a[14]==True and a[20]==True and a[26]==True:
-        running=False
-    elif a[14]==True and a[20]==True and a[26]==True and a[32]==True:
-        running=False
-    elif a[20]==True and a[26]==True and a[32]==True and a[39]==True:
-        running=False
-        
-    elif a[4]==True and a[9]==True and a[15]==True and a[21]==True:
-        running=False
-    elif a[9]==True and a[15]==True and a[21]==True and a[27]==True:
-        running=False
-    elif a[15]==True and a[21]==True and a[27]==True and a[33]==True:
-        running=False
-    elif a[21]==True and a[27]==True and a[33]==True and a[40]==True:
-        running=False
-        
-    elif a[5]==True and a[10]==True and a[16]==True and a[22]==True:
-        running=False
-    elif a[10]==True and a[16]==True and a[22]==True and a[28]==True:
-        running=False
-    elif a[16]==True and a[22]==True and a[28]==True and a[34]==True:
-        running=False
-    elif a[22]==True and a[28]==True and a[34]==True and a[41]==True:
-        running=False
+
+    running=line_up(True,0,a,running)
+    running=line_up(False,0,a,running)
+    running=line_up(True,6,a,running)
+    running=line_up(False,6,a,running)
+    running=line_up(True,12,a,running)
+    running=line_up(False,12,a,running)
+    running=line_up(True,18,a,running)
+    running=line_up(False,18,a,running)
+    running=line_up(True,24,a,running)
+    running=line_up(False,24,a,running)
+    running=line_up(True,30,a,running)
+    running=line_up(False,30,a,running)
+    running=line_up(True,36,a,running)
+    running=line_up(False,36,a,running)
+
+    running=up_di(True,0,a,running)
+    running=up_di(False,0,a,running)
+    running=up_di(True,6,a,running)
+    running=up_di(False,6,a,running)
+    running=up_di(True,12,a,running)
+    running=up_di(False,12,a,running)
+    running=up_di(True,18,a,running)
+    running=up_di(False,18,a,running)
+
+    running=down_di(True,0,a,running)
+    running=down_di(False,0,a,running)
+    running=down_di(True,6,a,running)
+    running=down_di(False,6,a,running)
+    running=down_di(True,12,a,running)
+    running=down_di(False,12,a,running)
+    running=down_di(True,18,a,running)
+    running=down_di(False,18,a,running)
+
+    running=line_flat(True,0,a,running)
+    running=line_flat(False,0,a,running)
+    running=line_flat(True,6,a,running)
+    running=line_flat(False,6,a,running)
+    running=line_flat(True,12,a,running)
+    running=line_flat(False,12,a,running)
+    running=line_flat(True,18,a,running)
+    running=line_flat(False,18,a,running)
 
 
-    #up's        
-    elif a[0]==True and  a[1] ==True and a[2]==True and a[3]==True:
-        running=False
-    elif a[1]==True and  a[2] ==True and a[3]==True and a[5]==True:
-        running=False
-    elif a[2]==True and  a[3] ==True and a[5]==True and a[5]==True:
-        running=False
-        
-    elif a[5]==True and  a[6] ==True and a[7]==True and a[8]==True:
-        running=False
-    elif a[6]==True and  a[7] ==True and a[8]==True and a[9]==True:
-        running=False
-    elif a[7]==True and  a[8] ==True and a[9]==True and a[10]==True:
-        running=False
-
-    elif a[11]==True and  a[12] ==True and a[13]==True and a[14]==True:
-        running=False
-    elif a[12]==True and  a[13] ==True and a[14]==True and a[15]==True:
-        running=False
-    elif a[13]==True and  a[14] ==True and a[15]==True and a[16]==True:
-        running=False
-
-    elif a[17]==True and  a[18] ==True and a[19]==True and a[20]==True:
-        running=False
-    elif a[18]==True and  a[19] ==True and a[20]==True and a[21]==True:
-        running=False
-    elif a[19]==True and  a[20] ==True and a[21]==True and a[22]==True:
-        running=False
-
-    elif a[23]==True and  a[24] ==True and a[25]==True and a[26]==True:
-        running=False
-    elif a[24]==True and  a[25] ==True and a[26]==True and a[27]==True:
-        running=False
-    elif a[25]==True and  a[26] ==True and a[27]==True and a[28]==True:
-        running=False
-
-    elif a[29]==True and  a[2] ==True and a[31]==True and a[32]==True:
-        running=False
-    elif a[2]==True and  a[31] ==True and a[32]==True and a[33]==True:
-        running=False
-    elif a[31]==True and  a[32] ==True and a[33]==True and a[34]==True:
-        running=False
-        
-    elif a[35]==True and  a[37] ==True and a[38]==True and a[39]==True:
-        running=False
-    elif a[37]==True and  a[38] ==True and a[39]==True and a[40]==True:
-        running=False
-    elif a[38]==True and  a[39] ==True and a[40]==True and a[41]==True:
-        running=False
-        
-    #posative diagnels 
-    elif a[0]==True and a[6] == True and a[13] == True and a[20] == True: 
-        running=False
-    elif a[1] == True and a[7] == True and a[14] == True and a[21] == True:
-        running = False
-    elif a[2] == True and a[8]== True and a[15] == True and a[22] == True:
-        running = False
-        
-    elif a[5]==True and a[12] == True and a[19] == True and a[26] == True: 
-        running=False
-    elif a[6] == True and a[13] == True and a[20] == True and a[27] == True:
-        running = False
-    elif a[7] == True and a[14]== True and a[21] == True and a[28] == True:
-        running = False
-        
-    elif a[11] == True and a[18] == True and a[25] == True and a[32] == True: 
-        running=False
-    elif a[12] == True and a[19] == True and a[26] == True and a[33] == True:
-        running = False
-    elif a[13] == True and a[20]== True and a[27] == True and a[34] == True:
-        running = False
-
-    elif a[17]==True and a[24] == True and a[31] == True and a[39] == True: 
-        running=False
-    elif a[18] == True and a[25] == True and a[32] == True and a[40] == True:
-        running = False
-    elif a[19] == True and a[26]== True and a[33] == True and a[41] == True:
-        running = False
-
-    #negative  diagnels 
-    elif a[4]==True and a[9] == True and a[14] == True and a[19] == True: 
-        running=False
-    elif a[5] == True and a[8] == True and a[13] == True and a[18] == True:
-        running = False
-    elif a[3] == True and a[7]== True and a[12] == True and a[17] == True:
-        running = False
-        
-    elif a[10]==True and a[15] == True and a[20] == True and a[25] == True: 
-        running=False
-    elif a[9] == True and a[14] == True and a[19] == True and a[24] == True:
-        running = False
-    elif a[8] == True and a[13]== True and a[18] == True and a[23] == True:
-        running = False
-        
-    elif a[16]==True and a[21] == True and a[26] == True and a[31] == True: 
-        running=False
-    elif a[15] == True and a[20] == True and a[25] == True and a[2] == True:
-        running = False
-    elif a[14] == True and a[19]== True and a[24] == True and a[29] == True:
-        running = False
-
-    elif a[22]==True and a[27] == True and a[32] == True and a[38] == True: 
-        running=False
-    elif a[21] == True and a[26] == True and a[31] == True and a[37] == True:
-        running = False
-    elif a[20] == True and a[25]== True and a[2] == True and a[35] == True:
-        running = False
-
-    elif a[0]==False and a[5]==False and a[11]==False and a[17]==False:
-        running=False
-    elif a[5]==False and a[11]==False and a[17]==False and a[23]==False:
-        running=False
-    elif a[11]==False and a[17]==False and a[23]==False and a[29]==False:
-        running=False
-    elif a[17]==False and a[23]==False and a[29]==False and a[35]==False:
-        running=False
-        
-    elif a[1]==False and a[6]==False and a[12]==False and a[18]==False:
-        running=False
-    elif a[6]==False and a[12]==False and a[18]==False and a[24]==False:
-        running=False
-    elif a[12]==False and a[18]==False and a[24]==False and a[30]==False:
-        running=False
-    elif a[18]==False and a[24]==False and a[30]==False and a[37]==False:
-        running=False
-        
-    elif a[2]==False and a[7]==False and a[13]==False and a[19]==False:
-        running=False
-    elif a[7]==False and a[13]==False and a[19]==False and a[25]==False:
-        running=False
-    elif a[13]==False and a[19]==False and a[25]==False and a[31]==False:
-        running=False
-    elif a[19]==False and a[25]==False and a[31]==False and a[38]==False:
-        running=False
-        
-    elif a[3]==False and a[8]==False and a[14]==False and a[20]==False:
-        running=False
-    elif a[8]==False and a[14]==False and a[20]==False and a[26]==False:
-        running=False
-    elif a[14]==False and a[20]==False and a[26]==False and a[32]==False:
-        running=False
-    elif a[20]==False and a[26]==False and a[32]==False and a[39]==False:
-        running=False
-        
-    elif a[4]==False and a[9]==False and a[15]==False and a[21]==False:
-        running=False
-    elif a[9]==False and a[15]==False and a[21]==False and a[27]==False:
-        running=False
-    elif a[15]==False and a[21]==False and a[27]==False and a[33]==False:
-        running=False
-    elif a[21]==False and a[27]==False and a[33]==False and a[40]==False:
-        running=False
-        
-    elif a[5]==False and a[10]==False and a[16]==False and a[22]==False:
-        running=False
-    elif a[10]==False and a[16]==False and a[22]==False and a[28]==False:
-        running=False
-    elif a[16]==False and a[22]==False and a[28]==False and a[34]==False:
-        running=False
-    elif a[22]==False and a[28]==False and a[34]==False and a[41]==False:
-        running=False
-
-
-    #up's        
-    elif a[0]==False and  a[1] ==False and a[2]==False and a[3]==False:
-        running=False
-    elif a[1]==False and  a[2] ==False and a[3]==False and a[5]==False:
-        running=False
-    elif a[2]==False and  a[3] ==False and a[5]==False and a[5]==False:
-        running=False
-        
-    elif a[5]==False and  a[6] ==False and a[7]==False and a[8]==False:
-        running=False
-    elif a[6]==False and  a[7] ==False and a[8]==False and a[9]==False:
-        running=False
-    elif a[7]==False and  a[8] ==False and a[9]==False and a[10]==False:
-        running=False
-
-    elif a[11]==False and  a[12] ==False and a[13]==False and a[14]==False:
-        running=False
-    elif a[12]==False and  a[13] ==False and a[14]==False and a[15]==False:
-        running=False
-    elif a[13]==False and  a[14] ==False and a[15]==False and a[16]==False:
-        running=False
-
-    elif a[17]==False and  a[18] ==False and a[19]==False and a[20]==False:
-        running=False
-    elif a[18]==False and  a[19] ==False and a[20]==False and a[21]==False:
-        running=False
-    elif a[19]==False and  a[20] ==False and a[21]==False and a[22]==False:
-        running=False
-
-    elif a[23]==False and  a[24] ==False and a[25]==False and a[26]==False:
-        running=False
-    elif a[24]==False and  a[25] ==False and a[26]==False and a[27]==False:
-        running=False
-    elif a[25]==False and  a[26] ==False and a[27]==False and a[28]==False:
-        running=False
-
-    elif a[29]==False and  a[30] ==False and a[31]==False and a[32]==False:
-        running=False
-    elif a[30]==False and  a[31] ==False and a[32]==False and a[33]==False:
-        running=False
-    elif a[31]==False and  a[32] ==False and a[33]==False and a[34]==False:
-        running=False
-        
-    elif a[35]==False and  a[37] ==False and a[38]==False and a[39]==False:
-        running=False
-    elif a[37]==False and  a[38] ==False and a[39]==False and a[40]==False:
-        running=False
-    elif a[38]==False and  a[39] ==False and a[40]==False and a[41]==False:
-        running=False
-        
-    #posative diagnels 
-    elif a[0]==False and a[6] == False and a[13] == False and a[20] == False: 
-        running=False
-    elif a[1] == False and a[7] == False and a[14] == False and a[21] == False:
-        running = False
-    elif a[2] == False and a[8]== False and a[15] == False and a[22] == False:
-        running = False
-        
-    elif a[5]==False and a[12] == False and a[19] == False and a[26] == False: 
-        running=False
-    elif a[6] == False and a[13] == False and a[20] == False and a[27] == False:
-        running = False
-    elif a[7] == False and a[14]== False and a[21] == False and a[28] == False:
-        running = False
-        
-    elif a[11]==False and a[18] == False and a[25] == False and a[32] == False: 
-        running=False
-    elif a[12] == False and a[19] == False and a[26] == False and a[33] == False:
-        running = False
-    elif a[13] == False and a[20]== False and a[27] == False and a[34] == False:
-        running = False
-
-    elif a[17]==False and a[24] == False and a[31] == False and a[39] == False: 
-        running=False
-    elif a[18] == False and a[25] == False and a[32] == False and a[40] == False:
-        running = False
-    elif a[19] == False and a[26]== False and a[33] == False and a[41] == False:
-        running = False
-
-    #negative  diagnels 
-    elif a[4]==False and a[9] == False and a[14] == False and a[19] == False: 
-        running=False
-    elif a[5] == False and a[8] == False and a[13] == False and a[18] == False:
-        running = False
-    elif a[3] == False and a[7]== False and a[12] == False and a[17] == False:
-        running = False
-        
-    elif a[10]==False and a[15] == False and a[20] == False and a[25] == False: 
-        running=False
-    elif a[9] == False and a[14] == False and a[19] == False and a[24] == False:
-        running = False
-    elif a[8] == False and a[13]== False and a[18] == False and a[23] == False:
-        running = False
-        
-    elif a[16]==False and a[21] == False and a[26] == False and a[31] == False: 
-        running=False
-    elif a[15] == False and a[20] == False and a[25] == False and a[30] == False:
-        running = False
-    elif a[14] == False and a[19]== False and a[24] == False and a[29] == False:
-        running = False
-
-    elif a[22]==False and a[27] == False and a[32] == False and a[38] == False: 
-        running=False
-    elif a[21] == False and a[26] == False and a[31] == False and a[37] == False:
-        running = False
-    elif a[20] == False and a[25]== False and a[30] == False and a[35] == False:
-        running = False
-
-    elif r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
+    if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
         running=False    
     if togle:
         player=red
@@ -657,4 +428,3 @@ while running:
                 print("  yellow won!!")
             else:
                 print("     red won!!")
-#if your reading this, dont cry my code is over yes i know its so bad that its might possably be the worst possable code on earth that works but it works  
