@@ -210,16 +210,10 @@ while running:
                         token(6,False)
                         y=0
                         
-            elif event.key == pygame.K_a:
+            elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x-=80
-            elif event.key == pygame.K_d:
-                pygame.draw.circle(screen,(255,255,255),(x,30),(20))
-                x+=80
-            elif event.key == pygame.K_LEFT:
-                pygame.draw.circle(screen,(255,255,255),(x,30),(20))
-                x-=80
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
     while i<36:            
