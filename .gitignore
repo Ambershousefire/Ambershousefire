@@ -1,3 +1,5 @@
-.vscode
-README.md
-__pycache__
+*.vscode
+
+*README.md
+
+* __pycache__
