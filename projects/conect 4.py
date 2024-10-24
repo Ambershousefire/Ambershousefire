@@ -14,10 +14,11 @@ hole=0
 x=40
 y=30
 i=-1
-r=[1,1,1,1,1,1,1,1]
+r=[]
 pos=[]
-while len(pos)<41:
+while len(pos)<50:
     pos.append(bool)
+    r.append(1)
 togle=False
 
 def token(i,truth):
@@ -277,8 +278,8 @@ while running:
     pygame.display.flip()
     if running==False:
             if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
-                print("thats pos draw!!")
+                print("Draw")
             elif togle:
-                print("  yellow won!!")
+                print("Yellow won")
             else:
-                print("     red won!!")
+                print("Red won")
