@@ -1,0 +1,1 @@
+this is my repoe of code, this is just a hobby so my code is slopy and layed out wrong, most if not all code is my own (some code has been reperpust from others to learn from) the code is in pythong for now :3
