@@ -6,14 +6,13 @@ screen=pygame.display.set_mode((l,w))
 pygame.display.set_caption("connect 4 in pos row")
 blue=(0,125,255)
 red=(255,0,0,)
-yellow=(255,255,0)
-global running
+yellow=(255,255,0) 
 running=True
 screen.fill(blue)
 hole=0
 x=40
 y=30
-i=-1
+i=0
 r=[]
 pos=[]
 while len(pos)<50:
@@ -223,49 +222,21 @@ while running:
             elif event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
+    while i<36:            
+        if i<18:
+            running=up_di(True,i,pos,running)
+            running=up_di(False,i,pos,running)
 
-    running=up_di(True,0,pos,running)
-    running=up_di(False,0,pos,running)
-    running=up_di(True,6,pos,running)
-    running=up_di(False,6,pos,running)
-    running=up_di(True,12,pos,running)
-    running=up_di(False,12,pos,running)
-    running=up_di(True,18,pos,running)
-    running=up_di(False,18,pos,running)
+            running=down_di(True,i,pos,running)
+            running=down_di(False,i,pos,running)
 
-    running=down_di(True,0,pos,running)
-    running=down_di(False,0,pos,running)
-    running=down_di(True,6,pos,running)
-    running=down_di(False,6,pos,running)
-    running=down_di(True,12,pos,running)
-    running=down_di(False,12,pos,running)
-    running=down_di(True,18,pos,running)
-    running=down_di(False,18,pos,running)
+            running=line_flat(True,i,pos,running)
+            running=line_flat(False,i,pos,running)
 
-    running=line_up(True,0,pos,running)
-    running=line_up(False,0,pos,running)
-    running=line_up(True,6,pos,running)
-    running=line_up(False,6,pos,running)
-    running=line_up(True,12,pos,running)
-    running=line_up(False,12,pos,running)
-    running=line_up(True,18,pos,running)
-    running=line_up(False,18,pos,running)
-    running=line_up(True,24,pos,running)
-    running=line_up(False,24,pos,running)
-    running=line_up(True,30,pos,running)
-    running=line_up(False,30,pos,running)
-    running=line_up(True,36,pos,running)
-    running=line_up(False,36,pos,running)    
-
-    running=line_flat(True,0,pos,running)
-    running=line_flat(False,0,pos,running)
-    running=line_flat(True,6,pos,running)
-    running=line_flat(False,6,pos,running)
-    running=line_flat(True,12,pos,running)
-    running=line_flat(False,12,pos,running)
-    running=line_flat(True,18,pos,running)
-    running=line_flat(False,18,pos,running)
-
+        running=line_up(True,i,pos,running)
+        running=line_up(False,i,pos,running)
+        i+=6
+    i=0
 
     if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
         running=False    
