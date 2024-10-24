@@ -3,7 +3,7 @@ import pygame
 l=560
 w=420
 screen=pygame.display.set_mode((l,w))
-pygame.display.set_caption("connect 4 in a row")
+pygame.display.set_caption("connect 4 in pos row")
 blue=(0,125,255)
 red=(255,0,0,)
 yellow=(255,255,0)
@@ -15,9 +15,9 @@ x=40
 y=30
 i=-1
 r=[1,1,1,1,1,1,1,1]
-a=[]
-while len(a)<41:
-    a.append(bool)
+pos=[]
+while len(pos)<41:
+    pos.append(bool)
 togle=False
 def line_up(sort,row,list,running):
     i=0
@@ -106,17 +106,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[0]=r[0]+1
                         if r[0]==2:
-                            a[0]=True
+                            pos[0]=True
                         elif r[0]==3:
-                            a[1]=True
+                            pos[1]=True
                         elif r[0]==4:
-                            a[2]=True
+                            pos[2]=True
                         elif r[0]==5:
-                            a[3]=True
+                            pos[3]=True
                         elif r[0]==6:
-                            a[4]=True
+                            pos[4]=True
                         elif r[0]==7:
-                            a[5]=True
+                            pos[5]=True
                         
 
                         y=0
@@ -125,17 +125,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[1]=r[1]+1
                         if r[1]==2:
-                            a[6]=True
+                            pos[6]=True
                         elif r[1]==3:
-                            a[7]=True
+                            pos[7]=True
                         elif r[1]==4:
-                            a[8]=True
+                            pos[8]=True
                         elif r[1]==5:
-                            a[9]=True
+                            pos[9]=True
                         elif r[1]==6:
-                            a[10]=True
+                            pos[10]=True
                         elif r[1]==7:
-                            a[11]=True
+                            pos[11]=True
                         
                         y=0
                     elif x==200:
@@ -143,17 +143,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[2]=r[2]+1
                         if r[2]==2:
-                            a[12]=True
+                            pos[12]=True
                         elif r[2]==3:
-                            a[13]=True
+                            pos[13]=True
                         elif r[2]==4:
-                            a[14]=True
+                            pos[14]=True
                         elif r[2]==5:
-                            a[15]=True
+                            pos[15]=True
                         elif r[2]==6:
-                            a[16]=True
+                            pos[16]=True
                         elif r[2]==7:
-                            a[17]=True
+                            pos[17]=True
                         
                         y=0
                     elif x==280:
@@ -161,17 +161,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[3]=r[3]+1
                         if r[3]==2:
-                            a[18]=True
+                            pos[18]=True
                         elif r[3]==3:
-                            a[19]=True
+                            pos[19]=True
                         elif r[3]==4:
-                            a[20]=True
+                            pos[20]=True
                         elif r[3]==5:
-                            a[21]=True
+                            pos[21]=True
                         elif r[3]==6:
-                            a[22]=True
+                            pos[22]=True
                         elif r[3]==7:
-                            a[23]=True
+                            pos[23]=True
                         
                         y=0
                     elif x==360:
@@ -179,17 +179,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[4]=r[4]+1
                         if r[4]==2:
-                            a[24]=True
+                            pos[24]=True
                         elif r[4]==3:
-                            a[25]=True
+                            pos[25]=True
                         elif r[4]==4:
-                            a[26]=True
+                            pos[26]=True
                         elif r[4]==5:
-                            a[27]=True
+                            pos[27]=True
                         elif r[4]==6:
-                            a[28]=True
+                            pos[28]=True
                         elif r[4]==7:
-                            a[29]=True
+                            pos[29]=True
                         
                         y=0
                     elif x==440:
@@ -197,17 +197,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[5]=r[5]+1
                         if r[5]==2:
-                            a[30]=True
+                            pos[30]=True
                         elif r[5]==3:
-                            a[31]=True
+                            pos[31]=True
                         elif r[5]==4:
-                            a[32]=True
+                            pos[32]=True
                         elif r[5]==5:
-                            a[33]=True
+                            pos[33]=True
                         elif r[5]==6:
-                            a[34]=True
+                            pos[34]=True
                         elif r[5]==7:
-                            a[35]=True
+                            pos[35]=True
                         
                         y=0
                     elif x==520:
@@ -215,17 +215,17 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[6]=r[6]+1
                         if r[6]==2:
-                            a[36]=True
+                            pos[36]=True
                         elif r[6]==3:
-                            a[37]=True
+                            pos[37]=True
                         elif r[6]==4:
-                            a[38]=True
+                            pos[38]=True
                         elif r[6]==5:
-                            a[39]=True
+                            pos[39]=True
                         elif r[6]==6:
-                            a[40]=True
+                            pos[40]=True
                         elif r[6]==7:
-                            a[41]=True
+                            pos[41]=True
                         
                         y=0
                 else:
@@ -235,17 +235,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[0]=r[0]+1
                         if r[0]==2:
-                            a[0]=False
+                            pos[0]=False
                         elif r[0]==3:
-                            a[1]=False
+                            pos[1]=False
                         elif r[0]==4:
-                            a[2]=False
+                            pos[2]=False
                         elif r[0]==5:
-                            a[3]=False
+                            pos[3]=False
                         elif r[0]==6:
-                            a[4]=False
+                            pos[4]=False
                         elif r[0]==7:
-                            a[5]=False
+                            pos[5]=False
                         
                         y=0
                     elif x==120:
@@ -253,17 +253,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[1]=r[1]+1
                         if r[1]==2:
-                            a[6]=False
+                            pos[6]=False
                         elif r[1]==3:
-                            a[7]=False
+                            pos[7]=False
                         elif r[1]==4:
-                            a[8]=False
+                            pos[8]=False
                         elif r[1]==5:
-                            a[9]=False
+                            pos[9]=False
                         elif r[1]==6:
-                            a[10]=False
+                            pos[10]=False
                         elif r[1]==7:
-                            a[11]=False
+                            pos[11]=False
                        
                         y=0
                     elif x==200:
@@ -271,17 +271,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[2]=r[2]+1
                         if r[2]==2:
-                            a[12]=False
+                            pos[12]=False
                         elif r[2]==3:
-                            a[13]=False
+                            pos[13]=False
                         elif r[2]==4:
-                            a[14]=False
+                            pos[14]=False
                         elif r[2]==5:
-                            a[15]=False
+                            pos[15]=False
                         elif r[2]==6:
-                            a[16]=False
+                            pos[16]=False
                         elif r[2]==7:
-                            a[17]=False
+                            pos[17]=False
                         
                         y=0
                     elif x==280:
@@ -289,17 +289,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[3]=r[3]+1
                         if r[3]==2:
-                            a[18]=False
+                            pos[18]=False
                         elif r[3]==3:
-                            a[19]=False
+                            pos[19]=False
                         elif r[3]==4:
-                            a[20]=False
+                            pos[20]=False
                         elif r[3]==5:
-                            a[21]=False
+                            pos[21]=False
                         elif r[3]==6:
-                            a[22]=False
+                            pos[22]=False
                         elif r[3]==7:
-                            a[23]=False
+                            pos[23]=False
                         
                         y=0
                     elif x==360:
@@ -307,17 +307,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[4]=r[4]+1
                         if r[4]==2:
-                            a[24]=False
+                            pos[24]=False
                         elif r[4]==3:
-                            a[25]=False
+                            pos[25]=False
                         elif r[4]==4:
-                            a[26]=False
+                            pos[26]=False
                         elif r[4]==5:
-                            a[27]=False
+                            pos[27]=False
                         elif r[4]==6:
-                            a[28]=False
+                            pos[28]=False
                         elif r[4]==7:
-                            a[29]=False
+                            pos[29]=False
                         
                         y=0
                     elif x==440:
@@ -325,17 +325,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[5]=r[5]+1
                         if r[5]==2:
-                            a[30]=False
+                            pos[30]=False
                         elif r[5]==3:
-                            a[31]=False
+                            pos[31]=False
                         elif r[5]==4:
-                            a[32]=False
+                            pos[32]=False
                         elif r[5]==5:
-                            a[33]=False
+                            pos[33]=False
                         elif r[5]==6:
-                            a[34]=False
+                            pos[34]=False
                         elif r[5]==7:
-                            a[35]=False
+                            pos[35]=False
                         
                         y=0
                     elif x==520:
@@ -343,17 +343,17 @@ while running:
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[6]=r[6]+1
                         if r[6]==2:
-                            a[36]=False
+                            pos[36]=False
                         elif r[6]==3:
-                            a[37]=False
+                            pos[37]=False
                         elif r[6]==4:
-                            a[38]=False
+                            pos[38]=False
                         elif r[6]==5:
-                            a[39]=False
+                            pos[39]=False
                         elif r[6]==6:
-                            a[40]=False
+                            pos[40]=False
                         elif r[6]==7:
-                            a[41]=False
+                            pos[41]=False
                         y=0
                         
             elif event.key == pygame.K_a:
@@ -369,47 +369,47 @@ while running:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
 
-    running=line_up(True,0,a,running)
-    running=line_up(False,0,a,running)
-    running=line_up(True,6,a,running)
-    running=line_up(False,6,a,running)
-    running=line_up(True,12,a,running)
-    running=line_up(False,12,a,running)
-    running=line_up(True,18,a,running)
-    running=line_up(False,18,a,running)
-    running=line_up(True,24,a,running)
-    running=line_up(False,24,a,running)
-    running=line_up(True,30,a,running)
-    running=line_up(False,30,a,running)
-    running=line_up(True,36,a,running)
-    running=line_up(False,36,a,running)
+    running=up_di(True,0,pos,running)
+    running=up_di(False,0,pos,running)
+    running=up_di(True,6,pos,running)
+    running=up_di(False,6,pos,running)
+    running=up_di(True,12,pos,running)
+    running=up_di(False,12,pos,running)
+    running=up_di(True,18,pos,running)
+    running=up_di(False,18,pos,running)
 
-    running=up_di(True,0,a,running)
-    running=up_di(False,0,a,running)
-    running=up_di(True,6,a,running)
-    running=up_di(False,6,a,running)
-    running=up_di(True,12,a,running)
-    running=up_di(False,12,a,running)
-    running=up_di(True,18,a,running)
-    running=up_di(False,18,a,running)
+    running=down_di(True,0,pos,running)
+    running=down_di(False,0,pos,running)
+    running=down_di(True,6,pos,running)
+    running=down_di(False,6,pos,running)
+    running=down_di(True,12,pos,running)
+    running=down_di(False,12,pos,running)
+    running=down_di(True,18,pos,running)
+    running=down_di(False,18,pos,running)
 
-    running=down_di(True,0,a,running)
-    running=down_di(False,0,a,running)
-    running=down_di(True,6,a,running)
-    running=down_di(False,6,a,running)
-    running=down_di(True,12,a,running)
-    running=down_di(False,12,a,running)
-    running=down_di(True,18,a,running)
-    running=down_di(False,18,a,running)
+    running=line_up(True,0,pos,running)
+    running=line_up(False,0,pos,running)
+    running=line_up(True,6,pos,running)
+    running=line_up(False,6,pos,running)
+    running=line_up(True,12,pos,running)
+    running=line_up(False,12,pos,running)
+    running=line_up(True,18,pos,running)
+    running=line_up(False,18,pos,running)
+    running=line_up(True,24,pos,running)
+    running=line_up(False,24,pos,running)
+    running=line_up(True,30,pos,running)
+    running=line_up(False,30,pos,running)
+    running=line_up(True,36,pos,running)
+    running=line_up(False,36,pos,running)    
 
-    running=line_flat(True,0,a,running)
-    running=line_flat(False,0,a,running)
-    running=line_flat(True,6,a,running)
-    running=line_flat(False,6,a,running)
-    running=line_flat(True,12,a,running)
-    running=line_flat(False,12,a,running)
-    running=line_flat(True,18,a,running)
-    running=line_flat(False,18,a,running)
+    running=line_flat(True,0,pos,running)
+    running=line_flat(False,0,pos,running)
+    running=line_flat(True,6,pos,running)
+    running=line_flat(False,6,pos,running)
+    running=line_flat(True,12,pos,running)
+    running=line_flat(False,12,pos,running)
+    running=line_flat(True,18,pos,running)
+    running=line_flat(False,18,pos,running)
 
 
     if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
@@ -423,7 +423,7 @@ while running:
     pygame.display.flip()
     if running==False:
             if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
-                print("thats a draw!!")
+                print("thats pos draw!!")
             elif togle:
                 print("  yellow won!!")
             else:
