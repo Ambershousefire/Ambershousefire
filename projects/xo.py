@@ -7,7 +7,7 @@ o="O wins"
 Y="X wins"
 k=False
 b = [False,False,False,False,False,False,False,False,False,False,False]
-c = [1,2,3,4,5,6,7,8,9,10,11]
+c = [6,6,6,6,6,6,6,6,6,6,6]
 screen = pygame.display.set_mode((300, 300))
 
 pygame.display.set_caption('Tick, Tack, Toe') 
@@ -186,7 +186,7 @@ while running:
             else:
                 c[9]=True
             b[9]=6
-            
+
     if c[1]==True and c[2]==True and c[3]==True:
         running=False
         print(o)
