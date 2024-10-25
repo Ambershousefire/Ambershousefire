@@ -23,15 +23,15 @@ togle=False
 def token(i,truth):
     if r[i]==2:
         pos[i*6]=truth
-    if r[i]==3:
+    elif r[i]==3:
         pos[i*6+1]=truth
-    if r[i]==4:
+    elif r[i]==4:
         pos[i*6+2]=truth
-    if r[i]==5:
+    elif r[i]==5:
         pos[i*6+3]=truth
-    if r[i]==6:
+    elif r[i]==6:
         pos[i*6+4]=truth
-    if r[i]==7:
+    elif r[i]==7:
         pos[i*6+5]=truth 
     y=0       
 
@@ -41,9 +41,9 @@ def line_up(sort,row,list,running):
     i=row
     if list[i]==sort and list[i+1]==sort and list[i+2]==sort and list[i+3]==sort:
         running=False
-    if list[i+1]==sort and list[i+2]==sort and list[i+3]==sort and list[i+4]==sort:
+    elif list[i+1]==sort and list[i+2]==sort and list[i+3]==sort and list[i+4]==sort:
         running=False
-    if list[i+2]==sort and list[i+3]==sort and list[i+4]==sort and list[i+5]==sort:
+    elif list[i+2]==sort and list[i+3]==sort and list[i+4]==sort and list[i+5]==sort:
         running=False
     return running
 
@@ -52,9 +52,9 @@ def up_di(sort,row,list,running):
     i=row
     if list[i]==sort and list[i+7]==sort and list[i+14]==sort and list[i+21]==sort:
         running=False
-    if list[i+1]==sort and list[i+8]==sort and list[i+15]==sort and list[i+22]==sort:
+    elif list[i+1]==sort and list[i+8]==sort and list[i+15]==sort and list[i+22]==sort:
         running=False
-    if list[i+2]==sort and list[i+9]==sort and list[i+16]==sort and list[i+23]==sort:
+    elif list[i+2]==sort and list[i+9]==sort and list[i+16]==sort and list[i+23]==sort:
         running=False
     return running
 
@@ -63,9 +63,9 @@ def down_di(sort,row,list,running):
     i=row
     if list[i+5]==sort and list[i+10]==sort and list[i+15]==sort and list[i+20]==sort:
         running=False
-    if list[i+4]==sort and list[i+9]==sort and list[i+14]==sort and list[i+19]==sort:
+    elif list[i+4]==sort and list[i+9]==sort and list[i+14]==sort and list[i+19]==sort:
         running=False
-    if list[i+3]==sort and list[i+8]==sort and list[i+13]==sort and list[i+18]==sort:
+    elif list[i+3]==sort and list[i+8]==sort and list[i+13]==sort and list[i+18]==sort:
         running=False
     return running
 
@@ -74,15 +74,15 @@ def line_flat(sort,row,list,running):
     i=row
     if list[i]==sort and list[i+6]==sort and list[i+12]==sort and list[i+18]==sort:
         running=False
-    if list[i+1]==sort and list[i+7]==sort and list[i+13]==sort and list[i+19]==sort:
+    elif list[i+1]==sort and list[i+7]==sort and list[i+13]==sort and list[i+19]==sort:
         running=False
-    if list[i+2]==sort and list[i+8]==sort and list[i+14]==sort and list[i+20]==sort:
+    elif list[i+2]==sort and list[i+8]==sort and list[i+14]==sort and list[i+20]==sort:
         running=False
-    if list[i+3]==sort and list[i+9]==sort and list[i+15]==sort and list[i+21]==sort:
+    elif list[i+3]==sort and list[i+9]==sort and list[i+15]==sort and list[i+21]==sort:
         running=False
-    if list[i+4]==sort and list[i+10]==sort and list[i+16]==sort and list[i+22]==sort:
+    elif list[i+4]==sort and list[i+10]==sort and list[i+16]==sort and list[i+22]==sort:
         running=False
-    if list[i+5]==sort and list[i+11]==sort and list[i+17]==sort and list[i+23]==sort:
+    elif list[i+5]==sort and list[i+11]==sort and list[i+17]==sort and list[i+23]==sort:
         running=False
     return running
 
