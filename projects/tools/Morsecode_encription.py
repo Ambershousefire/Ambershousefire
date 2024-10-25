@@ -22,10 +22,10 @@ while len(trans)< len(letter):
             x+=1
             if x>=len(lexacon):
                 y+=1
-                x=0
+                x = 0
         trans.append(morse[x])
         y+=1
-        x=0
+        x = 0
     except:
         trans.append("?")
 print(" ".join(trans))
