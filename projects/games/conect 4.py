@@ -35,7 +35,6 @@ def token(i,truth):
         pos[i*6+5]=truth 
     y=0       
 
-
 def line_up(sort,row,list,running):
     if list[row]==sort and list[row+1]==sort and list[row+2]==sort and list[row+3]==sort:
         running=False
@@ -101,100 +100,39 @@ while running:
         x=520
     elif x>560:
         x=40
-        
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
                 running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+                if x==40:
+                        i=0
+                elif x==120:
+                        i=1 
+                elif x==200:
+                        i=2
+                elif x==280:
+                        i=3
+                elif x==360:
+                        i=4
+                elif x==440:
+                        i=5
+                elif x==520:
+                        i=6
                 if togle:
                     togle=False
-                    if x==40:
-                        y=420-65*row[0]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[0]=row[0]+1
-                        token(0,True)
-
-                    elif x==120:
-                        y=420-65*row[1]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[1]=row[1]+1
-                        token(1,True)
-                        
-                    elif x==200:
-                        y=420-65*row[2]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[2]=row[2]+1
-                        token(2,True)
-                        
-                    elif x==280:
-                        y=420-65*row[3]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[3]=row[3]+1
-                        token(3,True)
-                        
-                    elif x==360:
-                        y=420-65*row[4]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[4]=row[4]+1
-                        token(4,True)
-                        
-                    elif x==440:
-                        y=420-65*row[5]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[5]=row[5]+1
-                        token(5,True)
-                        
-                    elif x==520:
-                        y=420-65*row[6]
-                        pygame.draw.circle(screen,red,(x,y),(30))
-                        row[6]=row[6]+1
-                        token(6,True)
-                        
-                else:
+                    y=420-65*row[i]
+                    pygame.draw.circle(screen,red,(x,y),(30))
+                    row[i]=row[i]+1
+                    token(i,True)
+                    
+                if not togle:
                     togle=True
-                    if x==40:
-                        y=420-65*row[0]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[0]=row[0]+1
-                        token(0,False)
-                        
-                    elif x==120:
-                        y=420-65*row[1]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[1]=row[1]+1
-                        token(1,False)
-                       
-                    elif x==200:
-                        y=420-65*row[2]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[2]=row[2]+1
-                        token(2,False)
-                        
-                    elif x==280:
-                        y=420-65*row[3]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[3]=row[3]+1
-                        token(3,False)
-                        
-                    elif x==360:
-                        y=420-65*row[4]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[4]=row[4]+1
-                        token(4,False)
-                        
-                    elif x==440:
-                        y=420-65*row[5]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[5]=row[5]+1
-                        token(5,False)
-                        
-                    elif x==520:
-                        y=420-65*row[6]
-                        pygame.draw.circle(screen,yellow,(x,y),(30))
-                        row[6]=row[6]+1
-                        token(6,False)
+                    y=420-65*row[i]
+                    pygame.draw.circle(screen,yellow,(x,y),(30))
+                    row[i]=row[i]+1
+                    token(i,False)
                         
             elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
