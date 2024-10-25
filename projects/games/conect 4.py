@@ -32,7 +32,7 @@ def token(i,truth):
     if r[i]==6:
         pos[i*6+4]=truth
     if r[i]==7:
-        pos[i*6+6]=truth 
+        pos[i*6+5]=truth 
     y=0       
 
 
