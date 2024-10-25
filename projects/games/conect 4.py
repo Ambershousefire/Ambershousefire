@@ -127,7 +127,7 @@ while running:
                     row[i]=row[i]+1
                     token(i,True)
                     
-                if not togle:
+                else:
                     togle=True
                     y=420-65*row[i]
                     pygame.draw.circle(screen,yellow,(x,y),(30))
