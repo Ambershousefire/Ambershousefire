@@ -13,76 +13,68 @@ hole=0
 x=40
 y=30
 i=0
-r=[]
+row=[]
 pos=[]
 while len(pos)<50:
     pos.append(bool)
-    r.append(1)
+    row.append(1)
 togle=False
 
 def token(i,truth):
-    if r[i]==2:
+    if row[i]==2:
         pos[i*6]=truth
-    elif r[i]==3:
+    elif row[i]==3:
         pos[i*6+1]=truth
-    elif r[i]==4:
+    elif row[i]==4:
         pos[i*6+2]=truth
-    elif r[i]==5:
+    elif row[i]==5:
         pos[i*6+3]=truth
-    elif r[i]==6:
+    elif row[i]==6:
         pos[i*6+4]=truth
-    elif r[i]==7:
+    elif row[i]==7:
         pos[i*6+5]=truth 
     y=0       
 
 
 def line_up(sort,row,list,running):
-    i=0
-    i=row
-    if list[i]==sort and list[i+1]==sort and list[i+2]==sort and list[i+3]==sort:
+    if list[row]==sort and list[row+1]==sort and list[row+2]==sort and list[row+3]==sort:
         running=False
-    elif list[i+1]==sort and list[i+2]==sort and list[i+3]==sort and list[i+4]==sort:
+    elif list[row+1]==sort and list[row+2]==sort and list[row+3]==sort and list[row+4]==sort:
         running=False
-    elif list[i+2]==sort and list[i+3]==sort and list[i+4]==sort and list[i+5]==sort:
+    elif list[row+2]==sort and list[row+3]==sort and list[row+4]==sort and list[row+5]==sort:
         running=False
     return running
 
 def up_di(sort,row,list,running):
-    i=0
-    i=row
-    if list[i]==sort and list[i+7]==sort and list[i+14]==sort and list[i+21]==sort:
+    if list[row]==sort and list[row+7]==sort and list[row+14]==sort and list[row+21]==sort:
         running=False
-    elif list[i+1]==sort and list[i+8]==sort and list[i+15]==sort and list[i+22]==sort:
+    elif list[row+1]==sort and list[row+8]==sort and list[row+15]==sort and list[row+22]==sort:
         running=False
-    elif list[i+2]==sort and list[i+9]==sort and list[i+16]==sort and list[i+23]==sort:
+    elif list[row+2]==sort and list[row+9]==sort and list[row+16]==sort and list[row+23]==sort:
         running=False
     return running
 
 def down_di(sort,row,list,running):
-    i=0
-    i=row
-    if list[i+5]==sort and list[i+10]==sort and list[i+15]==sort and list[i+20]==sort:
+    if list[row+5]==sort and list[row+10]==sort and list[row+15]==sort and list[row+20]==sort:
         running=False
-    elif list[i+4]==sort and list[i+9]==sort and list[i+14]==sort and list[i+19]==sort:
+    elif list[row+4]==sort and list[row+9]==sort and list[row+14]==sort and list[row+19]==sort:
         running=False
-    elif list[i+3]==sort and list[i+8]==sort and list[i+13]==sort and list[i+18]==sort:
+    elif list[row+3]==sort and list[row+8]==sort and list[row+13]==sort and list[row+18]==sort:
         running=False
     return running
 
 def line_flat(sort,row,list,running):
-    i=0
-    i=row
-    if list[i]==sort and list[i+6]==sort and list[i+12]==sort and list[i+18]==sort:
+    if list[row]==sort and list[row+6]==sort and list[row+12]==sort and list[row+18]==sort:
         running=False
-    elif list[i+1]==sort and list[i+7]==sort and list[i+13]==sort and list[i+19]==sort:
+    elif list[row+1]==sort and list[row+7]==sort and list[row+13]==sort and list[row+19]==sort:
         running=False
-    elif list[i+2]==sort and list[i+8]==sort and list[i+14]==sort and list[i+20]==sort:
+    elif list[row+2]==sort and list[row+8]==sort and list[row+14]==sort and list[row+20]==sort:
         running=False
-    elif list[i+3]==sort and list[i+9]==sort and list[i+15]==sort and list[i+21]==sort:
+    elif list[row+3]==sort and list[row+9]==sort and list[row+15]==sort and list[row+21]==sort:
         running=False
-    elif list[i+4]==sort and list[i+10]==sort and list[i+16]==sort and list[i+22]==sort:
+    elif list[row+4]==sort and list[row+10]==sort and list[row+16]==sort and list[row+22]==sort:
         running=False
-    elif list[i+5]==sort and list[i+11]==sort and list[i+17]==sort and list[i+23]==sort:
+    elif list[row+5]==sort and list[row+11]==sort and list[row+17]==sort and list[row+23]==sort:
         running=False
     return running
 
@@ -119,89 +111,89 @@ while running:
                 if togle:
                     togle=False
                     if x==40:
-                        y=420-65*r[0]
+                        y=420-65*row[0]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[0]=r[0]+1
+                        row[0]=row[0]+1
                         token(0,True)
 
                     elif x==120:
-                        y=420-65*r[1]
+                        y=420-65*row[1]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[1]=r[1]+1
+                        row[1]=row[1]+1
                         token(1,True)
                         
                     elif x==200:
-                        y=420-65*r[2]
+                        y=420-65*row[2]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[2]=r[2]+1
+                        row[2]=row[2]+1
                         token(2,True)
                         
                     elif x==280:
-                        y=420-65*r[3]
+                        y=420-65*row[3]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[3]=r[3]+1
+                        row[3]=row[3]+1
                         token(3,True)
                         
                     elif x==360:
-                        y=420-65*r[4]
+                        y=420-65*row[4]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[4]=r[4]+1
+                        row[4]=row[4]+1
                         token(4,True)
                         
                     elif x==440:
-                        y=420-65*r[5]
+                        y=420-65*row[5]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[5]=r[5]+1
+                        row[5]=row[5]+1
                         token(5,True)
                         
                     elif x==520:
-                        y=420-65*r[6]
+                        y=420-65*row[6]
                         pygame.draw.circle(screen,red,(x,y),(30))
-                        r[6]=r[6]+1
+                        row[6]=row[6]+1
                         token(6,True)
                         
                 else:
                     togle=True
                     if x==40:
-                        y=420-65*r[0]
+                        y=420-65*row[0]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[0]=r[0]+1
+                        row[0]=row[0]+1
                         token(0,False)
                         
                     elif x==120:
-                        y=420-65*r[1]
+                        y=420-65*row[1]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[1]=r[1]+1
+                        row[1]=row[1]+1
                         token(1,False)
                        
                     elif x==200:
-                        y=420-65*r[2]
+                        y=420-65*row[2]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[2]=r[2]+1
+                        row[2]=row[2]+1
                         token(2,False)
                         
                     elif x==280:
-                        y=420-65*r[3]
+                        y=420-65*row[3]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[3]=r[3]+1
+                        row[3]=row[3]+1
                         token(3,False)
                         
                     elif x==360:
-                        y=420-65*r[4]
+                        y=420-65*row[4]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[4]=r[4]+1
+                        row[4]=row[4]+1
                         token(4,False)
                         
                     elif x==440:
-                        y=420-65*r[5]
+                        y=420-65*row[5]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[5]=r[5]+1
+                        row[5]=row[5]+1
                         token(5,False)
                         
                     elif x==520:
-                        y=420-65*r[6]
+                        y=420-65*row[6]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
-                        r[6]=r[6]+1
+                        row[6]=row[6]+1
                         token(6,False)
                         
             elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
@@ -226,7 +218,7 @@ while running:
         i+=6
     i=0
 
-    if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
+    if row[0]>6 and row[1]>6 and row[2]>6 and row[3]>6 and row[4]>6 and row[5]>6 and row[6]>6:
         running=False    
     if togle:
         player=red
@@ -236,7 +228,7 @@ while running:
     pygame.draw.circle(screen,player,(x,30),(20))
     pygame.display.flip()
     if running==False:
-            if r[0]>6 and r[1]>6 and r[2]>6 and r[3]>6 and r[4]>6 and r[5]>6 and r[6]>6:
+            if row[0]>6 and row[1]>6 and row[2]>6 and row[3]>6 and row[4]>6 and row[5]>6 and row[6]>6:
                 print("Draw")
             elif togle:
                 print("Yellow won")
