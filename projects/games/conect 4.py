@@ -3,7 +3,7 @@ import pygame
 l=560
 w=420
 screen=pygame.display.set_mode((l,w))
-pygame.display.set_caption("connect 4 in pos row")
+pygame.display.set_caption("connect 4 in a row")
 blue=(0,125,255)
 red=(255,0,0,)
 yellow=(255,255,0) 
@@ -32,7 +32,8 @@ def token(i,truth):
     if r[i]==6:
         pos[i*6+4]=truth
     if r[i]==7:
-        pos[i*6+6]=truth        
+        pos[i*6+6]=truth 
+    y=0       
 
 
 def line_up(sort,row,list,running):
@@ -122,43 +123,43 @@ while running:
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[0]=r[0]+1
                         token(0,True)
-                        y=0
+
                     elif x==120:
                         y=420-65*r[1]
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[1]=r[1]+1
                         token(1,True)
-                        y=0
+                        
                     elif x==200:
                         y=420-65*r[2]
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[2]=r[2]+1
                         token(2,True)
-                        y=0
+                        
                     elif x==280:
                         y=420-65*r[3]
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[3]=r[3]+1
                         token(3,True)
-                        y=0
+                        
                     elif x==360:
                         y=420-65*r[4]
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[4]=r[4]+1
                         token(4,True)
-                        y=0
+                        
                     elif x==440:
                         y=420-65*r[5]
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[5]=r[5]+1
                         token(5,True)
-                        y=0
+                        
                     elif x==520:
                         y=420-65*r[6]
                         pygame.draw.circle(screen,red,(x,y),(30))
                         r[6]=r[6]+1
                         token(6,True)
-                        y=0
+                        
                 else:
                     togle=True
                     if x==40:
@@ -167,48 +168,41 @@ while running:
                         r[0]=r[0]+1
                         token(0,False)
                         
-                        y=0
                     elif x==120:
                         y=420-65*r[1]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[1]=r[1]+1
                         token(1,False)
                        
-                        y=0
                     elif x==200:
                         y=420-65*r[2]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[2]=r[2]+1
                         token(2,False)
                         
-                        y=0
                     elif x==280:
                         y=420-65*r[3]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[3]=r[3]+1
                         token(3,False)
                         
-                        y=0
                     elif x==360:
                         y=420-65*r[4]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[4]=r[4]+1
                         token(4,False)
                         
-                        y=0
                     elif x==440:
                         y=420-65*r[5]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[5]=r[5]+1
                         token(5,False)
                         
-                        y=0
                     elif x==520:
                         y=420-65*r[6]
                         pygame.draw.circle(screen,yellow,(x,y),(30))
                         r[6]=r[6]+1
                         token(6,False)
-                        y=0
                         
             elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
@@ -216,8 +210,8 @@ while running:
             elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
-    while i<36:            
-        if i<18:
+    while i<42:            
+        if i<24:
             running=up_di(True,i,pos,running)
             running=up_di(False,i,pos,running)
 
