@@ -17,13 +17,15 @@ lexacon = [
     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"                                                           #upper case letters
 ]
 while len(trans)< len(letter):
-    while not letter[y]==lexacon[x]:
-        x+=1
-        if x>=len(lexacon):
-            trans.append("?")
-            y+=1
-            x=0
-    trans.append(morse[x])
-    y+=1
-    x=0
+    try:
+        while not letter[y]==lexacon[x]:
+            x+=1
+            if x>=len(lexacon):
+                y+=1
+                x=0
+        trans.append(morse[x])
+        y+=1
+        x=0
+    except:
+        trans.append("?")
 print(" ".join(trans))
