@@ -131,7 +131,6 @@ while running:
                 c[1]=True
             b[1]=6
     if b[2]:
-        if not b[2]==6:
             if k:
                 c[2]=False
             else:
