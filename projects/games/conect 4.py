@@ -6,7 +6,7 @@ screen=pygame.display.set_mode((l,w))
 pygame.display.set_caption("connect 4 in a row")
 blue=(0,125,255)
 red=(255,0,0,)
-yellow=(255,255,0) 
+yellow=(255,255,0)
 running=True
 screen.fill(blue)
 hole=0
@@ -32,8 +32,8 @@ def token(i,truth):
     elif row[i]==6:
         pos[i*6+4]=truth
     elif row[i]==7:
-        pos[i*6+5]=truth 
-    y=0       
+        pos[i*6+5]=truth
+    y=0
 
 def line_up(sort,row,list,running):
     if list[row]==sort and list[row+1]==sort and list[row+2]==sort and list[row+3]==sort:
@@ -102,14 +102,14 @@ while running:
         x=40
     
     for event in pygame.event.get():
-        if event.type == pygame.QUIT: 
+        if event.type == pygame.QUIT:
                 running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 if x==40:
                         i=0
                 elif x==120:
-                        i=1 
+                        i=1
                 elif x==200:
                         i=2
                 elif x==280:
@@ -140,7 +140,7 @@ while running:
             elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x+=80
-    while i<42:            
+    while i<42:
         if i<24:
             running=up_di(True,i,pos,running)
             running=up_di(False,i,pos,running)
@@ -157,7 +157,7 @@ while running:
     i=0
 
     if row[0]>6 and row[1]>6 and row[2]>6 and row[3]>6 and row[4]>6 and row[5]>6 and row[6]>6:
-        running=False    
+        running=False
     if togle:
         player=red
     else:
