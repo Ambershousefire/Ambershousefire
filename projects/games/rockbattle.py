@@ -13,7 +13,7 @@ elif not run.capitalize().startswith("Y"):
         print("aww i whanted to play")
         
 if run==True:
-    npc=[1,2,3] #rock is 1 paper is 2 paper 3 is sissiors
+    npc=[1,1,1,2,2,2,3,3,3] #rock is 1 paper is 2 paper 3 is sissiors
     b=0
     
     while runtime:
