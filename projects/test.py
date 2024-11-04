@@ -28,4 +28,4 @@ class test:
 while i<len(list):
     p=test(list[i],list[i+1],list[i+2])
     i+=3
-    print(p)
+    print(p,"\n")
