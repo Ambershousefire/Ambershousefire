@@ -12,7 +12,6 @@ while done:
     if (list[i] or list[i+1] or list[i+2]) == "end":
         done =False
         del list[i+2],list[i+1],list[i]
-        i-=3
     i+=3
 i=0
 class test: 
