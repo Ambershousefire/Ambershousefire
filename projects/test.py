@@ -11,6 +11,8 @@ while done:
     list.append(c)
     if (list[i] or list[i+1] or list[i+2]) == "end":
         done =False
+        del list[i+2],list[i+1],list[i]
+        i-=3
     i+=3
 i=0
 class test: 
@@ -21,7 +23,7 @@ class test:
         self.job = job
 
     def __str__(self):
-        return f"hello im {self.name} i'm {self.type}years old and i work as {self.job}."
+        return f"hello im {self.name} i'm {self.type} years old and i work as {self.job}."
     
 while i<len(list):
     p=test(list[i],list[i+1],list[i+2])
