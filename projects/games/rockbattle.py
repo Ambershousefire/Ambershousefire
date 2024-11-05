@@ -1,6 +1,5 @@
 
-import random , os
-
+import random
 file = open("projects\\games\\win_rate.txt","a")
 win= "  You Won :3"
 loss="  You lost >:3"

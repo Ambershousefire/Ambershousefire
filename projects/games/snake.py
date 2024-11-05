@@ -1,5 +1,6 @@
 
 import random as r, pygame
+file = open("projects\\games\\win_rate.txt","a")
 xpos=[]
 ypos=[]
 x=500
@@ -62,8 +63,6 @@ while running:
             elif event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                 xDir = 1
                 yDir = 0 
-            if event.key == pygame.K_ESCAPE:
-                score += 1
             if event.key == pygame.K_e:
                 if lines:
                     lines=False
@@ -83,7 +82,7 @@ while running:
         sectDrawing(xpos, ypos, score, screen, i)
         if (( x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5)):
             running=False
-            
+
     i=0#sets i to zero for next loop
     if score==100:
         running=False
@@ -91,3 +90,5 @@ while running:
         print(score,"Wow that took forever")
     pygame.display.flip()
 pygame.quit()
+file.write("\nsnake: ")
+file.write(str(score))

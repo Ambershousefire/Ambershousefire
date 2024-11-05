@@ -1,17 +1,19 @@
 
-import pygame  
+import pygame
+file = open("projects\\games\\win_rate.txt","a")
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
 o="O wins"
 Y="X wins"
+winner=bool
 k=False
 b = [False,False,False,False,False,False,False,False,False,False,False]
 c = [6,6,6,6,6,6,6,6,6,6,6]
 screen = pygame.display.set_mode((300, 300))
 
-pygame.display.set_caption('Tick, Tack, Toe') 
- 
+pygame.display.set_caption('Tick, Tack, Toe')
+
 screen.fill((255,255,255))
 
 pygame.draw.line(screen,(0,0,0),(100,0),(100,300),(3))
@@ -22,27 +24,27 @@ def O (mousex,mousey):
 
         pygame.draw.circle(screen,(255,8,48),(mousex+50,mousey+50),(40))
         pygame.draw.circle(screen,(255,255,255),(mousex+50,mousey+50),(35))
-    
+
 def X (mousex, mousey):
-      
+
         pygame.draw.line(screen,(48,8,255),(mousex+10,mousey+10),(mousex+90,mousey+90),(5)) 
         pygame.draw.line(screen,(48,8,255),(mousex+10,mousey+90),(mousex+90,mousey+10),(5))
-    
+
 def Button(x, y, AppClick, isO):
     inboundingbox = False
-    
+
     if mousex >= x and mousey >= y and mousex <= (x + 100) and mousey <= (y + 100):
         inboundingbox = True
-        
+
     if MouseDown and inboundingbox and AppClick == False:
             if isO:
                 isO=False
                 O(x,y)
-                    
+
             else:
                 isO=True
                 X(x,y)
-                
+
             AppClick = True
     return AppClick, isO
 
@@ -52,23 +54,23 @@ running = True
 
 while running:
     mousex, mousey = pygame.mouse.get_pos()
-    
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
              running = False
              pygame.quit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             MouseDown = True
-            
+
         if event.type == pygame.MOUSEBUTTONUP:
             MouseDown = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 running=False
-    
+
     if MouseDown == False and AppClick == True:
         AppClick = False
-        
+
     if b[1]==False:
         if MouseDown:
             if mousex<100 and mousey<100:
@@ -77,7 +79,7 @@ while running:
                 MouseDown=False
     if b[2]==False:
         if MouseDown:
-            if mousex<200 and mousex>100 and mousey<100:            
+            if mousex<200 and mousex>100 and mousey<100:
                 AppClick,k = Button(100,0,AppClick,k)
                 b[2]=True
                 MouseDown=False
@@ -189,64 +191,85 @@ while running:
     if c[1]==True and c[2]==True and c[3]==True:
         running=False
         print(o)
-   
+        winner = True
+
     elif c[4]==True and c[5]==True and c[6]==True:
         running=False
         print(o)
-   
+        winner = True
+
     elif c[7]==True and c[8]==True and c[9]==True:
         running=False
         print(o)
-   
+        winner = True
+
     elif c[1]==True and c[4]==True and c[7]==True:
         running=False
         print(o)
-  
+        winner = True
+
     elif c[2]==True and c[5]==True and c[8]==True:
         running=False
         print(o)
-        
+        winner = True
+
     elif c[3]==True and c[6]==True and c[9]==True:
         running=False
         print(o)
-        
+        winner = True
+
     elif c[1]==True and c[5]==True and c[9]==True:
         running=False
         print(o)
-            
+        winner = True
+
     elif c[7]==True and c[5]==True and c[3]==True:
         running=False
         print(o)
-        
+        winner = True
+
     elif c[1]==False and c[2]==False and c[3]==False:
         running=False
-        print(Y) 
-        
+        print(Y)
+        winner = False 
+
     elif c[4]==False and c[5]==False and c[6]==False:
         running=False
         print(Y)
-        
+        winner = False
+
     elif c[7]==False and c[8]==False and c[9]==False:
         running=False
-        print(Y) 
-        
+        print(Y)
+        winner = False 
+
     elif c[1]==False and c[4]==False and c[7]==False:
         running=False
         print(Y)
-        
+        winner = False
+
     elif c[2]==False and c[5]==False and c[8]==False:
         running=False
-        print(Y) 
-          
+        print(Y)
+        winner = False 
+
     elif c[3]==False and c[6]==False and c[9]==False:
         running=False
-        print(Y) 
-        
+        print(Y)
+        winner = False 
+
     elif c[7]==False and c[5]==False and c[3]==False:
         running=False
         print(Y)
-    
+        winner = False
+
     elif c[1]==False and c[5]==False and c[9]==False:
         running=False
         print(Y)
+        winner = False
     pygame.display.flip()
+file.write("\nXO: ")
+if not winner:
+    file.write(str(Y))
+else:
+    file.write(str(o))
