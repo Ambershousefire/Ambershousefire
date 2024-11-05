@@ -1,6 +1,6 @@
 
 import random as r , pygame
-
+file = open("data\\win_rate.txt","a")
 global screen
 x=450
 y=220
@@ -32,7 +32,7 @@ else:
     modes = ["esay", "normal", "hard"]
     print(modes[say-1], "Selected!")
     speed = (say-1)*speed
-    
+
 screen=pygame.display.set_mode((900,450))    
 
 def snake(screen, x, y, alpha, bata, black, white):
@@ -40,24 +40,24 @@ def snake(screen, x, y, alpha, bata, black, white):
     pygame.draw.circle(screen,white,(x+alpha,y+bata),(10))
 
 while running:
-    
+
     pygame.display.set_caption("supper snail")
-    
+
     if score==scorecount:
         print("score:",score)
         xpos=r.randint(10,890)
         ypos=r.randint(10,440)
         speed= speed+0.5
         scorecount= scorecount+1
-        
+
     if (x-xpos)<pickupDist and (x-xpos)>-pickupDist and (y-ypos)<pickupDist and (y-ypos)>-pickupDist:
         score= score+1 
-    
+
     screen.fill(green)
     pygame.draw.circle(screen,red,((xpos),(ypos)),(5))
     pygame.time.delay(delay)
     snake(screen, x, y, alpha, bata, black, white)
-    
+
     if y>450:
         y=0
         z+=1
@@ -70,11 +70,11 @@ while running:
     elif x<0:
         x=900
         z+=1
-        
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
              running = False
-             
+
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 bata=+10
@@ -86,19 +86,19 @@ while running:
                 alpha=0
                 yDir = 1
                 xDir = 0
-                
+
             elif event.key == pygame.K_LEFT:
                 alpha=+10
                 bata=0
                 xDir = -1
                 yDir = 0
-                
+
             elif event.key == pygame.K_RIGHT:
                 alpha=-10
                 bata=0
                 xDir = 1
                 yDir = 0
-                
+
             if event.key == pygame.K_SPACE:
                 score+=1
 
@@ -113,7 +113,16 @@ while running:
 
     x = x +(speed*xDir)
     y = y + (speed*yDir)
-    
+
     pygame.display.flip()
 
 pygame.quit()
+file.write("\nsnail: ")
+file.write(str(score))
+file.write(" ")
+if say>3:
+    file.write("on ultra mode")
+else:
+    file.write("on ")
+    file.write(str(modes[say-1]))
+    file.write(" mode")
