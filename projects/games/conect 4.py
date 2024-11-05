@@ -101,7 +101,7 @@ while running:
         x=520
     elif x>560:
         x=40
-    
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
                 running = False
@@ -127,14 +127,14 @@ while running:
                     pygame.draw.circle(screen,red,(x,y),(30))
                     row[i]=row[i]+1
                     token(i,True)
-                    
+
                 else:
                     togle=True
                     y=420-65*row[i]
                     pygame.draw.circle(screen,yellow,(x,y),(30))
                     row[i]=row[i]+1
                     token(i,False)
-                        
+
             elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
                 pygame.draw.circle(screen,(255,255,255),(x,30),(20))
                 x-=80
