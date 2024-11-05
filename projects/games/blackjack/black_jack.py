@@ -1,6 +1,10 @@
 
 import random as r, values
-token=1000
+file = open("projects\\games\\blackjack\\money.txt","r")
+playing = True
+token = int(file.readline(-1))
+file.close
+file = open("projects\\games\\blackjack\\money.txt","w")
 def counter(obj,Value):
     count=0
     Value=0
@@ -13,7 +17,7 @@ def counter(obj,Value):
     count = 0
     return Value
 
-while token>0:
+while playing:
     start=True
     dealer = []
     player = []
@@ -32,7 +36,7 @@ while token>0:
             deck.append(x+" of Spades")
             deck.append(x+" of Clubs")
         i+=1
-        
+
     print("How much do you want to bet, you current balance is:",token,"tokens")
     try:
         y=int(input(": "))
@@ -106,7 +110,7 @@ while token>0:
                 d_value = counter(dealer,d_value)
                 p_value = counter(player,p_value)
                 print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")","\n")
-                
+
                 if d_value==16:
                     running=False
 
@@ -116,7 +120,7 @@ while token>0:
                     i+=1
                     print("dealer: ",", ".join(dealer),"(",d_value,")")
                     print("\n")
-                
+
                 if d_value<=21:
                     running=False
                     if p_value>d_value:
@@ -139,4 +143,6 @@ while token>0:
                     print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                     print("you win")
                     token+=y
-print("you ran out of funds")
+        if input("do you whant to continu (y/n): ").capitalize().startswith("N"):
+            playing=False
+            file.write(str(token))

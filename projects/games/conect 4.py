@@ -1,5 +1,6 @@
 
 import pygame
+file = open("projects\\games\\win_rate.txt","a")
 l=560
 w=420
 screen=pygame.display.set_mode((l,w))
@@ -166,9 +167,13 @@ while running:
     pygame.draw.circle(screen,player,(x,30),(20))
     pygame.display.flip()
     if running==False:
+            file.write("\nconnect four: ")
             if row[0]>6 and row[1]>6 and row[2]>6 and row[3]>6 and row[4]>6 and row[5]>6 and row[6]>6:
                 print("Draw")
+                file.write("Draw")
             elif togle:
                 print("Yellow won")
+                file.write("Yellow won")
             else:
                 print("Red won")
+                file.write("Red won")
