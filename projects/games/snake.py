@@ -1,6 +1,6 @@
 
 import random as r, pygame
-file = open("projects\\games\\win_rate.txt","a")
+file = open("data\\win_rate.txt","a")
 xpos=[]
 ypos=[]
 x=500

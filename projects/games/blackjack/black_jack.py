@@ -1,10 +1,10 @@
 
 import random as r, values
-file = open("projects\\games\\blackjack\\money.txt","r")
+file = open("data\\monet.txt","r")
 playing = True
 token = int(file.readline(-1))
 file.close
-file = open("projects\\games\\blackjack\\money.txt","w")
+file = open("data\\monet.txt","w")
 def counter(obj,Value):
     count=0
     Value=0

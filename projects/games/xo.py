@@ -1,6 +1,6 @@
 
 import pygame
-file = open("projects\\games\\win_rate.txt","a")
+file = open("data\\win_rate.txt","a")
 global AppClick; AppClick = False
 global MouseDown; MouseDown = False
 global screen
