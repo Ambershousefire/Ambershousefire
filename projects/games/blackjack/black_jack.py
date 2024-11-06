@@ -2,7 +2,10 @@
 import random as r, values
 file = open("data\\money.txt","r")
 playing = True
-token = int(file.readline(-1))
+try:
+    token = int(file.readline(-1))
+except:
+    token=1
 file.close
 file = open("data\\money.txt","w")
 def counter(obj,Value):
@@ -37,7 +40,7 @@ while playing:
             deck.append(x+" of Clubs")
         i+=1
 
-    print("How much do you want to bet, you current balance is:",token,"tokens")
+    print("How much do you want to bet, you current balance is:",token,"chips")
     try:
         y=int(input(": "))
     except:
@@ -45,8 +48,9 @@ while playing:
         print("not a full number try again","\n")
     else:
         if y<=0:
-            print("try again")
-            start=False
+            print("your broke, heres a chip on the house")
+            start=True
+            token=1
         elif y>token:
             print("try again")
             start=False
