@@ -27,7 +27,7 @@ if list.count(x)==True:
     elif not b.capitalize().startswith("Y"):
         print("aww")
 
-    
+
 if x==(5):
     q=1
     c=input("two nubers multipyed together is the gole, this will spit out a lsit of suqar numbers, do you whant to play: ")
