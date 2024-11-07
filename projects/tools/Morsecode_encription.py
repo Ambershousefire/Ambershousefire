@@ -1,6 +1,6 @@
 print("RULES OF USE, no symbolse other than (!':;/."'"'",-_&()@)")
 string = input("what to translate: ")
-letter = [ x for x in string]
+letter = [x for x in string]
 x = 0
 y = 0
 trans = []
