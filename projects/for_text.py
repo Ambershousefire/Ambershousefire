@@ -9,5 +9,3 @@ print(test2)
 test3=["3","7.4","8.2"]
 test3=[float(x) for x in test3]
 print(test3)
-
-#https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions
