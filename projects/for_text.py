@@ -9,22 +9,31 @@
 #test3=[float(x) for x in test3]
 #print(test3)
 
-x=1
-z=1
-y=40
-running = True
-list=[]
-while not z==21:
-    x+=z
-    z+=1
-    while running:
-        list.append(x)
-        x+=1
-        if x>=41:
-            running=False
-            x=1
-    if z<20:
-        running=True
 
-
-[print (x) for x in list]
+dice=20
+num=2
+x=True
+y=0
+z=0
+list=[i for i in range(dice+1) if i>0]
+list2=[]
+while x:
+    list2.append(list[y]+list[z])
+    y+=1
+    if y==len(list):
+        z+=1
+        y=0
+    if z==len(list):
+        z=0
+        y=0
+        x=False
+list4=[i for i in range(41) if i>1]
+list2.sort()
+#print(list2)
+list3=[]
+i=num-1
+while i<dice*num:
+    i+=1
+    list3.append(list2.count(i))
+print(list3)
+print(list4)
