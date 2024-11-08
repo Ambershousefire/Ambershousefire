@@ -15,6 +15,7 @@ num=2
 x=True
 y=0
 z=0
+
 list=[i for i in range(dice+1) if i>0]
 list2=[]
 while x:
@@ -29,11 +30,18 @@ while x:
         x=False
 list4=[i for i in range(41) if i>1]
 list2.sort()
-#print(list2)
 list3=[]
 i=num-1
 while i<dice*num:
     i+=1
     list3.append(list2.count(i))
+
+print(list)
+print("\n\n")
+print(list2)
+print("\n\n")
 print(list3)
+print("\n\n")
 print(list4)
+print("\n\n")
+[print (list3[i],list4[i]) for i in range(39)]
