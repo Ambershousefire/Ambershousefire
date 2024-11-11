@@ -28,7 +28,7 @@ while x:
         z=0
         y=0
         x=False
-list4=[i for i in range(41) if i>1]
+list4=[i for i in range((dice*2)+1) if i>1]
 list2.sort()
 list3=[]
 i=num-1
@@ -44,4 +44,4 @@ print(list3)
 print("\n\n")
 print(list4)
 print("\n\n")
-[print (list3[i],list4[i]) for i in range(39)]
+[print (list3[i],list4[i]) for i in range((dice*2)-1)]
