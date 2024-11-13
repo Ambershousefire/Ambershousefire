@@ -4,4 +4,5 @@ __pycache__*
 
 data/**
 
-discord_bot/**
+
+token_data*
