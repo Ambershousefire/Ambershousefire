@@ -1,7 +1,7 @@
 
 import os , sys , subprocess , discord , token_data
-#py_filepath = 'discord_bot/opener.pyw'    #for vs code to run
-py_filepath = '../opener.pyw'              #for terminal to run
+py_filepath = 'discord_bot/opener.pyw'    #for vs code to run
+#py_filepath = '../opener.pyw'              #for terminal to run
 bot = discord.Client(intents=discord.client.Intents.default())
 def opener():
     args = '"%s" "%s" "%s"' % (sys.executable,                   # command
