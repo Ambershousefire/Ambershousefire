@@ -1,14 +1,19 @@
 
-import os , sys , subprocess , discord , token_data
-py_filepath = 'discord_bot/opener.pyw'    #for vs code to run
-#py_filepath = '../opener.pyw'              #for terminal to run
+import discord , token_data , webbrowser ,win32api, win32con , time , keyboard 
 bot = discord.Client(intents=discord.client.Intents.default())
 def opener():
-    args = '"%s" "%s" "%s"' % (sys.executable,                   # command
-								py_filepath,                     # argv[0]
-								os.path.basename(py_filepath))   # argv[1]
+	webbrowser.open('https://aternos.org/server/',2,True)
+	time.sleep(15)
+	win32api.SetCursorPos((700,550))
+	time.sleep(5)
+	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,700,550,0,0)
+	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,700,550,0,0)
+	time.sleep(5)
+	keyboard.press('alt')
+	keyboard.press('f4')
+	keyboard.release('f4')
+	keyboard.release('alt')
 
-    proc = subprocess.run(args)
 
 @bot.event
 async def on_ready():
