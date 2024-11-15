@@ -7,6 +7,7 @@ def opener():
 	win32api.SetCursorPos((700,550))
 	time.sleep(5)
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,700,550,0,0)
+	time.sleep(0.05)
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,700,550,0,0)
 	time.sleep(5)
 	keyboard.press('alt')
