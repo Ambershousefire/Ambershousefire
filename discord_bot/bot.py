@@ -1,5 +1,5 @@
 
-import discord , token_data , webbrowser ,win32api, win32con , time , keyboard 
+import discord , token_data , webbrowser ,win32api, win32con , time , keyboard
 bot = discord.Client(intents=discord.client.Intents.default())
 def opener():
 	webbrowser.open('https://aternos.org/server/',2,True)
