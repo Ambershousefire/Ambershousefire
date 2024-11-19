@@ -60,7 +60,7 @@ class Cheese(Sprite):
         self.position[0] = (self.game.width - self.image.get_width())/2
         self.position[1] = (self.game.height - self.image.get_height())/2
         self.movement_speed=[5,5]
-        
+
     def update(self):
         '''
         Update the cheese position and then stop it moving off
@@ -84,19 +84,19 @@ class Cheese(Sprite):
         if self.position[1] + self.image.get_height() > self.game.height:
             self.position[1] = self.game.height - self.image.get_height()
 
-        
+
     def StartMoveUp(self):
         'Start the cheese moving up'
         self.movingUp = True
-        
+
     def StopMoveUp(self):
         'Stop the cheese moving up'
         self.movingUp = False
-        
+
     def StartMoveDown(self):
         'Start the cheese moving down'
         self.movingDown = True
-        
+
     def StopMoveDown(self):
         'Stop the cheese moving down'
         self.movingDown = False
@@ -104,7 +104,7 @@ class Cheese(Sprite):
     def StartMoveLeft(self):
         'Start the cheese moving left'
         self.movingLeft = True
-        
+
     def StopMoveLeft(self):
         'Stop the cheese moving left'
         self.movingLeft = False
@@ -112,7 +112,7 @@ class Cheese(Sprite):
     def StartMoveRight(self):
         'Start the cheese moving right'
         self.movingRight = True
-        
+
     def StopMoveRight(self):
         'Stop the cheese moving right'
         self.movingRight = False
@@ -128,13 +128,13 @@ class Cracker(Sprite):
                 self.game.width-self.image.get_width())
         self.position[1] = random.randint(0,
                 self.game.height-self.image.get_height())
-        
+
 
 class CrackerChase:
     '''
     Plays the amazing cracker chase game
     '''
-    
+
     def play_game(self):
         '''
         Starts the game playing
@@ -173,8 +173,8 @@ class CrackerChase:
                                         game=self)
 
         self.sprites.append(self.cheese_sprite)
-        
-        clock = pygame.time.Clock()        
+
+        clock = pygame.time.Clock()
 
         while True:
             clock.tick(60)
@@ -206,7 +206,7 @@ class CrackerChase:
 
             for sprite in self.sprites:
                 sprite.draw()
-                
+
             pygame.display.flip()
 
 
