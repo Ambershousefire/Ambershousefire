@@ -179,6 +179,9 @@ class CrackerChase:
         while True:
             clock.tick(60)
             for e in pygame.event.get():
+                if e.type == pygame.QUIT:
+                    pygame.quit()
+                    return
                 if e.type == pygame.KEYDOWN:
                     if e.key == pygame.K_ESCAPE:
                         pygame.quit()
