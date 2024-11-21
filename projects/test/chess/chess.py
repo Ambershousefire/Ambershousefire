@@ -59,11 +59,11 @@ starting_order = {(0, 0): pygame.image.load(br.image), (1, 0): pygame.image.load
 
 def create_board(board):
     board[0] = [br, bkn, bb, \
-               Piece('b', 'q', 'projects/test/chess/bq.png'), Piece('b', 'k', 'projects/test/chess/bk.png'), bb, \
+               bq, bk, bb, \
                bkn, br]
 
     board[7] = [wr, wkn, wb, \
-               Piece('w', 'q', 'projects/test/chess/wq.png'), Piece('w', 'k', 'projects/test/chess/wk.png'), wb, \
+               wq, wk, wb, \
                wkn, wr]
 
     for i in range(8):
