@@ -1,5 +1,5 @@
 
-import discord , token_data , webbrowser ,win32api, win32con , time , keyboard
+import discord , webbrowser ,win32api, win32con , time , keyboard ,token_data
 bot = discord.Client(intents=discord.client.Intents.default())
 def opener():
 	webbrowser.open('https://aternos.org/server/',2,True)
@@ -12,6 +12,7 @@ def opener():
 	time.sleep(5)
 	keyboard.press('alt')
 	keyboard.press('f4')
+	time.sleep(0.05)
 	keyboard.release('f4')
 	keyboard.release('alt')
 
