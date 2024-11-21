@@ -17,18 +17,18 @@ class Piece:
 
 ## Creates instances of chess pieces, so far we got: pawn, king, rook and bishop
 ## The first parameter defines what team its on and the second, what type of piece it is
-bp = Piece('b', 'p', 'projects/test/chess/bp.png')
-wp = Piece('w', 'p', 'projects/test/chess/wp.png')
-bk = Piece('b', 'k', 'projects/test/chess/bq.png')
-wk = Piece('w', 'k', 'projects/test/chess/wq.png')
-br = Piece('b', 'r', 'projects/test/chess/br.png')
-wr = Piece('w', 'r', 'projects/test/chess/wr.png')
+bp = Piece('b', 'p', 'projects/test/chess/bp.png')#
+wp = Piece('w', 'p', 'projects/test/chess/wp.png')#
+bk = Piece('b', 'k', 'projects/test/chess/bq.png')#
+wk = Piece('w', 'k', 'projects/test/chess/wq.png')#
+br = Piece('b', 'r', 'projects/test/chess/br.png')#
+wr = Piece('w', 'r', 'projects/test/chess/wr.png')#
 bb = Piece('b', 'b', 'projects/test/chess/bbis.png')
 wb = Piece('w', 'b', 'projects/test/chess/wbis.png')
-bq = Piece('b', 'q', 'projects/test/chess/bk.png')
-wq = Piece('w', 'q', 'projects/test/chess/wk.png')
-bkn = Piece('b', 'kn', 'projects/test/chess/bn.png')
-wkn = Piece('w', 'kn', 'projects/test/chess/wn.png')
+bq = Piece('b', 'q', 'projects/test/chess/bk.png')#
+wq = Piece('w', 'q', 'projects/test/chess/wk.png')#
+bkn = Piece('b', 'kn', 'projects/test/chess/bn.png')#
+wkn = Piece('w', 'kn', 'projects/test/chess/wn.png')#
 
 
 starting_order = {(0, 0): pygame.image.load(br.image), (1, 0): pygame.image.load(bkn.image),
@@ -60,17 +60,17 @@ starting_order = {(0, 0): pygame.image.load(br.image), (1, 0): pygame.image.load
 
 
 def create_board(board):
-    board[0] = [Piece('b', 'r', 'b_rook.png'), Piece('b', 'kn', 'b_knight.png'), Piece('b', 'b', 'b_bishop.png'), \
-               Piece('b', 'q', 'b_queen.png'), Piece('b', 'k', 'b_king.png'), Piece('b', 'b', 'b_bishop.png'), \
-               Piece('b', 'kn', 'b_knight.png'), Piece('b', 'r', 'b_rook.png')]
+    board[0] = [Piece('b', 'r', 'projects/test/chess/br.png'), Piece('b', 'kn', 'projects/test/chess/bn.png'), Piece('b', 'b', 'projects/test/chess/bbis.png'), \
+               Piece('b', 'q', 'projects/test/chess/bq.png'), Piece('b', 'k', 'projects/test/chess/bk.png'), Piece('b', 'b', 'projects/test/chess/bbis.png'), \
+               Piece('b', 'kn', 'projects/test/chess/bn.png'), Piece('b', 'r', 'projects/test/chess/br.png')]
 
-    board[7] = [Piece('w', 'r', 'w_rook.png'), Piece('w', 'kn', 'w_knight.png'), Piece('w', 'b', 'w_bishop.png'), \
-               Piece('w', 'q', 'w_queen.png'), Piece('w', 'k', 'w_king.png'), Piece('w', 'b', 'w_bishop.png'), \
-               Piece('w', 'kn', 'w_knight.png'), Piece('w', 'r', 'w_rook.png')]
+    board[7] = [Piece('w', 'r', 'projects/test/chess/wr.png'), Piece('w', 'kn', 'projects/test/chess/wn.png'), Piece('w', 'b', 'projects/test/chess/wbis.png'), \
+               Piece('w', 'q', 'projects/test/chess/wq.png'), Piece('w', 'k', 'projects/test/chess/wk.png'), Piece('w', 'b', 'projects/test/chess/wbis.png'), \
+               Piece('w', 'kn', 'projects/test/chess/wn.png'), Piece('w', 'r', 'projects/test/chess/wr.png')]
 
     for i in range(8):
-        board[1][i] = Piece('b', 'p', 'b_pawn.png')
-        board[6][i] = Piece('w', 'p', 'w_pawn.png')
+        board[1][i] = Piece('b', 'p', 'projects/test/chess/bp.png')
+        board[6][i] = Piece('w', 'p', 'projects/test/chess/wp.png')
     return board
 
 
