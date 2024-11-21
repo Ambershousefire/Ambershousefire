@@ -17,18 +17,18 @@ class Piece:
 
 ## Creates instances of chess pieces, so far we got: pawn, king, rook and bishop
 ## The first parameter defines what team its on and the second, what type of piece it is
-bp = Piece('b', 'p', 'projects/test/chess/bp.png')#
-wp = Piece('w', 'p', 'projects/test/chess/wp.png')#
-bk = Piece('b', 'k', 'projects/test/chess/bq.png')#
-wk = Piece('w', 'k', 'projects/test/chess/wq.png')#
-br = Piece('b', 'r', 'projects/test/chess/br.png')#
-wr = Piece('w', 'r', 'projects/test/chess/wr.png')#
+bp = Piece('b', 'p', 'projects/test/chess/bp.png')
+wp = Piece('w', 'p', 'projects/test/chess/wp.png')
+bk = Piece('b', 'k', 'projects/test/chess/bq.png')
+wk = Piece('w', 'k', 'projects/test/chess/wq.png')
+br = Piece('b', 'r', 'projects/test/chess/br.png')
+wr = Piece('w', 'r', 'projects/test/chess/wr.png')
 bb = Piece('b', 'b', 'projects/test/chess/bbis.png')
 wb = Piece('w', 'b', 'projects/test/chess/wbis.png')
-bq = Piece('b', 'q', 'projects/test/chess/bk.png')#
-wq = Piece('w', 'q', 'projects/test/chess/wk.png')#
-bkn = Piece('b', 'kn', 'projects/test/chess/bn.png')#
-wkn = Piece('w', 'kn', 'projects/test/chess/wn.png')#
+bq = Piece('b', 'q', 'projects/test/chess/bk.png')
+wq = Piece('w', 'q', 'projects/test/chess/wk.png')
+bkn = Piece('b', 'kn', 'projects/test/chess/bn.png')
+wkn = Piece('w', 'kn', 'projects/test/chess/wn.png')
 
 
 starting_order = {(0, 0): pygame.image.load(br.image), (1, 0): pygame.image.load(bkn.image),
@@ -60,17 +60,17 @@ starting_order = {(0, 0): pygame.image.load(br.image), (1, 0): pygame.image.load
 
 
 def create_board(board):
-    board[0] = [Piece('b', 'r', 'projects/test/chess/br.png'), Piece('b', 'kn', 'projects/test/chess/bn.png'), Piece('b', 'b', 'projects/test/chess/bbis.png'), \
-               Piece('b', 'q', 'projects/test/chess/bq.png'), Piece('b', 'k', 'projects/test/chess/bk.png'), Piece('b', 'b', 'projects/test/chess/bbis.png'), \
-               Piece('b', 'kn', 'projects/test/chess/bn.png'), Piece('b', 'r', 'projects/test/chess/br.png')]
+    board[0] = [br, bkn, bb, \
+               Piece('b', 'q', 'projects/test/chess/bq.png'), Piece('b', 'k', 'projects/test/chess/bk.png'), bb, \
+               bkn, br]
 
-    board[7] = [Piece('w', 'r', 'projects/test/chess/wr.png'), Piece('w', 'kn', 'projects/test/chess/wn.png'), Piece('w', 'b', 'projects/test/chess/wbis.png'), \
-               Piece('w', 'q', 'projects/test/chess/wq.png'), Piece('w', 'k', 'projects/test/chess/wk.png'), Piece('w', 'b', 'projects/test/chess/wbis.png'), \
-               Piece('w', 'kn', 'projects/test/chess/wn.png'), Piece('w', 'r', 'projects/test/chess/wr.png')]
+    board[7] = [wr, wkn, wb, \
+               Piece('w', 'q', 'projects/test/chess/wq.png'), Piece('w', 'k', 'projects/test/chess/wk.png'), wb, \
+               wkn, wr]
 
     for i in range(8):
-        board[1][i] = Piece('b', 'p', 'projects/test/chess/bp.png')
-        board[6][i] = Piece('w', 'p', 'projects/test/chess/wp.png')
+        board[1][i] = bp
+        board[6][i] = wp
     return board
 
 
@@ -269,7 +269,7 @@ def knight_moves(index):
     return board
 
 
-WIDTH = 800
+WIDTH = 696
 
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 
@@ -450,4 +450,4 @@ def main(WIN, WIDTH):
             update_display(WIN, grid, 8, WIDTH)
 
 
-main(WIN, 800)
+main(WIN, WIDTH)
