@@ -16,7 +16,7 @@ while not x==1000:
         except:
             zet+=0
         i+=1
-        if zet==5 or zet==-5:
+        if abs(zet)==len(cut):
             cet+=1
     x+=1
     i=0
