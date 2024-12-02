@@ -2,12 +2,11 @@ file = open("advent/avdent_2.txt","r").readlines(-1)
 file=[x for x in file]
 x=0
 i=1
-count=1
 zet=0
 cet=0
 while not x==1000:
     cut=file[x].split(" ")
-    while not (i-2)==len(cut):
+    while not (i)==len(cut):
         try:
             if (int(cut[i])-int(cut[i+1]))==( -1 or -2):
                 zet+=1
@@ -16,7 +15,7 @@ while not x==1000:
         except:
             zet+=0
         i+=1
-    if (abs(zet))==len(cut):
+    if (abs(zet))<len(cut)-1:
         cet+=1
     x+=1
     i=0
