@@ -14,24 +14,28 @@ while not x==len(file):
 x=0
 z=0
 y=0
-i=0
+i=1
 f=1
 get=0
 while not z==len(zet):
     for x in zet[z]:
         but.append(int(x))
     while not f == len(but):
-        if but[f-1]-but[f]==(1 or 2):
+        print(i)
+        if int(but[f])-int(but[f])==(-1 or -2 or -3):
             i+=1
-        if but[f-1]-but[f]==(-1 or -2 or -3):
-            i+=-1
+        elif but[f-1]==but[f]:
+            print("same")
         f+=1
-        if i==(len(but)-1):
+        if i==(len(but)):
             y+=1
-        if i==-(len(but)-1):
+        elif i==-(len(but)):
             y+=1
-        i=0
+    print(len(but),"count")
+
+    i=1
     z+=1
     f=0
     but=[]
+    print("\n")
 print(y)
