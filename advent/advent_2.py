@@ -1,23 +1,37 @@
 file = open("advent/avdent_2.txt","r").readlines(-1)
 file=[x for x in file]
 x=0
-i=1
-zet=0
-cet=0
-while not x==1000:
+i=0
+z=0
+but=[]
+zet=[]
+while not x==len(file):
     cut=file[x].split(" ")
-    while not (i)==len(cut):
-        try:
-            if (int(cut[i])-int(cut[i+1]))==( -1 or -2):
-                zet+=1
-            elif (int(cut[i])-int(cut[i+1]))==(1 or 2 or 3):
-                zet-=1
-        except:
-            zet+=0
-        i+=1
-    if (abs(zet))<len(cut)-1:
-        cet+=1
+
+    if (sorted(cut)==cut) or (sorted(cut,reverse=True)==cut):
+        zet.append(cut)
     x+=1
-    i=0
-    zet=0
-print(cet)
+x=0
+z=0
+y=0
+i=0
+f=1
+get=0
+while not z==len(zet):
+    for x in zet[z]:
+        but.append(int(x))
+    while not f == len(but):
+        if but[f-1]-but[f]==(1 or 2):
+            i+=1
+        if but[f-1]-but[f]==(-1 or -2 or -3):
+            i+=-1
+        f+=1
+        if i==(len(but)-1):
+            y+=1
+        if i==-(len(but)-1):
+            y+=1
+        i=0
+    z+=1
+    f=0
+    but=[]
+print(y)
