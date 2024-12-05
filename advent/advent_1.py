@@ -21,12 +21,9 @@ while not x==len(file):
     d+=(abs((int(Left_list[x])-int(Right_list[x]))))
     x+=1
 x=0
-a=[]
-x=0
 i=0
 list=[]
 total=0
-x=0
 z=0
 while not z == 1000:
     try:
