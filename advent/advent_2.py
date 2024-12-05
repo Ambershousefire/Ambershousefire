@@ -12,7 +12,7 @@ while not x ==-1:
     x+=1
 x=0
 #len of lsit 1k
-list_1.sort()
+#list_1.sort()
 while not x == -1:
     try:
         list_1[x]=str(list_1[x]).split(" ")
