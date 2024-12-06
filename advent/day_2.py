@@ -1,4 +1,4 @@
-file = open("advent/advent_2.txt","r")
+file = open("advent/day_2.txt","r")
 file=file.readlines(-1)
 x=0
 z=0

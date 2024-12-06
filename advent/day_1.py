@@ -1,4 +1,4 @@
-file=open("advent/advent_1.txt","r")
+file=open("advent/day_1.txt","r")
 file=[file.readlines(-1)]
 full_list_not_sperated=[]
 x=0
