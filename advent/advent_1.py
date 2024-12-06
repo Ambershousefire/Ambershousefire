@@ -40,4 +40,4 @@ while not i == -1:
         i+=1
     except:
         break
-print(f"{d},{total}")
+print(f"{d:} : {total}")
