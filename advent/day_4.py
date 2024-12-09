@@ -11,22 +11,22 @@ i=0
 xmas=0
 while not x == len(full_list[0]):
     try:
-        if (full_list[x][0][i]+full_list[x][0][i+1]+full_list[x][0][i+2]+full_list[x][0][i+3])=="XMAS"or"SAMX":
+        if (full_list[x][0][i]+full_list[x][0][i+1]+full_list[x][0][i+2]+full_list[x][0][i+3])==("XMAS"or"SAMX"):
             xmas+=1
     except:
         pass
     try:
-        if (full_list[x][0][i]+full_list[x+1][0][i+1]+full_list[x+2][0][i+2]+full_list[x+3][0][i+3])=="XMAS"or"SAMX":
+        if (full_list[x][0][i]+full_list[x+1][0][i+1]+full_list[x+2][0][i+2]+full_list[x+3][0][i+3])==("XMAS"or"SAMX"):
             xmas+=1
     except:
         pass
     try: 
-        if (full_list[x][0][i]+full_list[x+1][0][i]+full_list[x+2][0][i]+full_list[x+3][0][i])=="XMAS"or"SAMX":
+        if (full_list[x][0][i]+full_list[x+1][0][i]+full_list[x+2][0][i]+full_list[x+3][0][i])==("XMAS"or"SAMX"):
             xmas+=1
     except:
         pass
     try:
-        if (full_list[x][0][i]+full_list[x-1][0][i+1]+full_list[x-2][0][i+2]+full_list[x-3][0][i+3])=="XMAS"or"SAMX":
+        if (full_list[x][0][i]+full_list[x-1][0][i+1]+full_list[x-2][0][i+2]+full_list[x-3][0][i+3])==("XMAS"or"SAMX"):
             xmas+=1
     except:
         pass
