@@ -1,18 +1,21 @@
 
-import discord , webbrowser ,win32api, win32con , time , keyboard ,token_data
+import discord ,win32api, win32con , keyboard
+from time import sleep 
+from webbrowser import open as webopen
+from token_data import bot_token
 bot = discord.Client(intents=discord.client.Intents.default())
 def opener():
-	webbrowser.open('https://aternos.org/server/',2,True)
-	time.sleep(15)
+	webopen('https://aternos.org/server/',2,True)
+	sleep(15)
 	win32api.SetCursorPos((700,550))
-	time.sleep(5)
+	sleep(5)
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,700,550,0,0)
-	time.sleep(0.05)
+	sleep(0.05)
 	win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,700,550,0,0)
-	time.sleep(5)
+	sleep(5)
 	keyboard.press('alt')
 	keyboard.press('f4')
-	time.sleep(0.05)
+	sleep(0.05)
 	keyboard.release('f4')
 	keyboard.release('alt')
 
@@ -42,4 +45,4 @@ async def on_message(message):
 	if message.content =="*start ":
 		opener()
 
-bot.run(token_data.bot_token)
+bot.run(bot_token)
