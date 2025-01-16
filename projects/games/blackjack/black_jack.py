@@ -149,4 +149,5 @@ while playing:
                     token+=y
         if input("do you whant to continu (y/n): ").capitalize().startswith("N"):
             playing=False
+            print(token,"current funds")
             file.write(str(token))
