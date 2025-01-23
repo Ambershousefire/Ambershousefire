@@ -1,5 +1,6 @@
 
 import random as r, pygame
+from time import sleep
 file = open("data\\win_rate.txt","a")
 xpos=[]
 ypos=[]
@@ -27,6 +28,7 @@ def sectDrawing(xpos, ypos, score, screen, iter):
         pygame.draw.circle(screen,colour,(xpos[15*-iter],ypos[15*-iter]),10)#uses the 15th postion in the list multpleyed by iteration to draw tailing pieces
         #xpos[15*-iter] this only works becuse all positions of players are stored in list
 while running:
+    
     screen.fill((25,200 ,25))
     pygame.time.delay(5)
     if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:#proximity detection pickup for apple
@@ -63,6 +65,8 @@ while running:
             elif event.key == pygame.K_RIGHT or event.key == pygame.K_d:
                 xDir = 1
                 yDir = 0 
+            if event.key == pygame.K_1:
+                score+=1
             if event.key == pygame.K_e:
                 if lines:
                     lines=False
@@ -80,8 +84,9 @@ while running:
     while i<score:#draws a number of segments baced off of score
         i+=1
         sectDrawing(xpos, ypos, score, screen, i)
-        if (( x<=xpos[i*-15+15]+5 and x>=xpos[i*-15+15]-5) and (y<=ypos[i*-15+15]+5 and y>=ypos[i*-15+15]-5)):
+        if (x <= xpos[i*-15]+5 and x >= xpos[i*-15]-5 and y <= ypos[i*-15]+5 and y >= ypos[i*-15]-5):
             running=False
+
 
     i=0#sets i to zero for next loop
     if score==100:
