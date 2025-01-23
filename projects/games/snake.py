@@ -17,8 +17,12 @@ running=True
 lines=False
 i=0
 speed=1
-screen=pygame.display.set_mode((1000,500))
+lenght1=1000
+lenght2=500
+
+screen=pygame.display.set_mode((lenght1,lenght2))
 pygame.display.set_caption("Snake for real this time")
+
 def sectDrawing(xpos, ypos, score, screen, iter, space):
     black = (0,0,0)
     white = (255,255,255)
@@ -27,29 +31,27 @@ def sectDrawing(xpos, ypos, score, screen, iter, space):
     else:
         colour = black
     if score>=iter:
-        pygame.draw.circle(screen,colour,(xpos[space*-iter],ypos[space*-iter]),10)#uses the 15th postion in the list multpleyed by iteration to draw tailing pieces
-        #xpos[15*-iter] this only works becuse all positions of players are stored in list
+        pygame.draw.circle(screen,colour,(xpos[space*-iter],ypos[space*-iter]),10)#uses the (space)th postion in the list multpleyed by iteration to draw tailing pieces
+        #xpos[space*-iter] this only works becuse all positions of players are stored in list
 while running:
-    
     screen.fill((25,200 ,25))
     pygame.time.delay(5)
     if (x-applex)<15 and (x-applex)>-15 and (y-appley)<15 and (y-appley)>-15:#proximity detection pickup for apple
         score+=1
     if score==scorecount:#generates random positions for apple
-        applex=r.randint(10,990)
-        appley=r.randint(10,490)
+        applex=r.randint(10,(lenght1-10))
+        appley=r.randint(10,(lenght2-10))
         scorecount= score+1
 
     #Wrap around for the player
-    if x>1000:
+    if x>lenght1:
         x=0
     elif x<0:
-        x=1000
-    elif y>500:
+        x=lenght1
+    elif y>lenght2:
         y=0
     elif y<0:
-        y=500
-
+        y=lenght2
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
