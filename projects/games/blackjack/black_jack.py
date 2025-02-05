@@ -47,10 +47,13 @@ while playing:
         start=False
         print("not a full number try again","\n")
     else:
-        if y<=0:
+        if (y==0) and (token==0):
             print("your broke, heres a chip on the house")
             start=True
             token=1
+        elif y==0 and token>0:
+            print("try again")
+            start=False
         elif y>token:
             print("try again")
             start=False

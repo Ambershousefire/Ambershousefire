@@ -45,17 +45,16 @@ while running:
 
     #Wrap around for the player
     if x>lenght1:
-        x=0
+        running=False
     elif x<0:
-        x=lenght1
+        running=False
     elif y>lenght2:
-        y=0
+        running=False
     elif y<0:
-        y=lenght2
+        running=False
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-            print("end")
         if event.type == pygame.KEYDOWN:#controls 
             if event.key == pygame.K_UP or event.key == pygame.K_w:
                 yDir = -1
@@ -70,7 +69,7 @@ while running:
                 xDir = 1
                 yDir = 0 
             if event.key == pygame.K_1:
-                score+=1
+                score+=10
             if event.key == pygame.K_e:
                 if lines:
                     lines=False
@@ -98,7 +97,6 @@ while running:
     i=0#sets i to zero for next loop
     if score==100:
         running=False
-        print("count")
         print(score,"Wow that took forever")
     pygame.display.flip()
 pygame.quit()
