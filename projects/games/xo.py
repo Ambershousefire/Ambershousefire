@@ -20,6 +20,22 @@ pygame.draw.line(screen,(0,0,0),(100,0),(100,300),(3))
 pygame.draw.line(screen,(0,0,0),(200,0),(200,300),(3))
 pygame.draw.line(screen,(0,0,0),(0,100),(300,100),(3))
 pygame.draw.line(screen,(0,0,0),(0,200),(300,200),(3))
+def line (list,pos,value):
+     if (list[pos]==value) and (list[pos+1]==value) and (list[pos+2]==value):
+        return True
+     
+def line_up(list,pos,value):
+     if (list[pos]==value) and (list[pos+3]==value) and (list[pos+6]==value):
+         return True
+     
+def negative(list,value):
+     if (list[7]==value) and (list[5]==value) and (list[3]==value):
+          return True
+     
+def postaive(list,value):
+     if (list[1]==value) and (list[5]==value) and (list[9]==value):
+          return True
+     
 def O (mousex,mousey):
 
         pygame.draw.circle(screen,(255,8,48),(mousex+50,mousey+50),(40))
@@ -126,7 +142,6 @@ while running:
                 b[9]=True
                 MouseDown=False
     if b[1]:
-        if not b[1]==6:
             if k:
                 c[1]=False
             else:
@@ -139,134 +154,95 @@ while running:
                 c[2]=True
             b[2]=6
     if b[3]:
-        if not b[3]==6:
             if k:
                 c[3]=False
             else:
                 c[3]=True
             b[3]=6
     if b[4]:
-        if not b[4]==6:
             if k:
                 c[4]=False
             else:
                 c[4]=True
             b[4]=6
     if b[5]:
-        if not b[5]==6:
             if k:
                 c[5]=False
             else:
                 c[5]=True
             b[5]=6
     if b[6]:
-        if not b[6]==6:
             if k:
                 c[6]=False
             else:
                 c[6]=True
             b[6]=6
     if b[7]:
-        if not b[7]==6:
             if k:
                 c[7]=False
             else:
                 c[7]=True
             b[7]=6
     if b[8]:
-        if not b[8]==6:
             if k:
                 c[8]=False
             else:
                 c[8]=True
             b[8]=6
     if b[9]:
-        if not b[9]==6:
             if k:
                 c[9]=False
             else:
                 c[9]=True
             b[9]=6
-
-    if c[1]==True and c[2]==True and c[3]==True:
+    if line(c,1,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[4]==True and c[5]==True and c[6]==True:
+    if line(c,4,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[7]==True and c[8]==True and c[9]==True:
+    if line(c,7,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[1]==True and c[4]==True and c[7]==True:
+    if line_up(c,1,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[2]==True and c[5]==True and c[8]==True:
+    if line_up(c,2,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[3]==True and c[6]==True and c[9]==True:
+    if line_up(c,3,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[1]==True and c[5]==True and c[9]==True:
+    if negative(c,True):
         running=False
-        print(o)
-        winner = True
 
-    elif c[7]==True and c[5]==True and c[3]==True:
+    if postaive(c,True):
         running=False
-        print(o)
-        winner = True
+        ##########################
+    if line(c,1,False):
+        running=False
 
-    elif c[1]==False and c[2]==False and c[3]==False:
+    if line(c,4,False):
         running=False
-        print(Y)
-        winner = False 
 
-    elif c[4]==False and c[5]==False and c[6]==False:
+    if line(c,7,False):
         running=False
-        print(Y)
-        winner = False
 
-    elif c[7]==False and c[8]==False and c[9]==False:
+    if line_up(c,1,False):
         running=False
-        print(Y)
-        winner = False 
 
-    elif c[1]==False and c[4]==False and c[7]==False:
+    if line_up(c,2,False):
         running=False
-        print(Y)
-        winner = False
 
-    elif c[2]==False and c[5]==False and c[8]==False:
+    if line_up(c,3,False):
         running=False
-        print(Y)
-        winner = False 
 
-    elif c[3]==False and c[6]==False and c[9]==False:
+    if negative(c,False):
         running=False
-        print(Y)
-        winner = False 
 
-    elif c[7]==False and c[5]==False and c[3]==False:
+    if postaive(c,False):
         running=False
-        print(Y)
-        winner = False
-
-    elif c[1]==False and c[5]==False and c[9]==False:
-        running=False
-        print(Y)
-        winner = False
+    
     pygame.display.flip()
 file.write("\nXO: ")
 if not winner:

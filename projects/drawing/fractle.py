@@ -1,6 +1,6 @@
 
 import pygame
-l=int(input("how large do you wahnt the sreen to be size 1 or 2 :"))
+l=int(input("input screen size, can be 1 or 2:"))
 if l==1:
     l=600
 elif l==2:
@@ -20,7 +20,12 @@ count=1
 yDir=0
 x2Dir=0
 black=(0,0,0)
-white=(255,255,255)
+w1,w2,w3=0,0,0
+if l==9000:
+    white=(w1,w2,w3)
+else:
+    white=(255,255,255)
+
 screen=pygame.display.set_mode((l,l))
 running =True
 screen.fill((white))
@@ -43,27 +48,36 @@ while running:
                     space=True
             if event.key == pygame.K_z:
                 count+=1
-            if event.key == pygame.K_w:
-                y+=10
-                x2-=10
-            if event.key == pygame.K_s:
-                y-=10
-                x2+=10
+                y=l
+                x2=l
             if event.key == pygame.K_BACKSPACE:
                 running=False
     if count==3:
         count=1
-    if x2<0:
-        x2=l
-    if y>l:
-        y=0
+        
+    if (l==9000) and (count==1):
+        if x2<=0:
+            x2=2000
+        if y>=2000:
+            y=0
+    else:
+        if x2<0:
+            x2=l
+        if y>l:
+            y=0
     x2 = x2 - x2Dir
     y = y - yDir
     if colour:
         color=(black)
         colour=False
     else:
-        color=(white)
+        w1+=5
+        if w1>255:
+            w1=0
+            w3+=5
+        if w3>255:
+            w3=0
+        color=((w1,w2,w3))
         colour=True
     if space:
         pygame.draw.line(screen,color,(0,y),(l/z,l/z))
