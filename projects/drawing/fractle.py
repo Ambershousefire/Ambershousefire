@@ -71,10 +71,10 @@ while running:
         color=(black)
         colour=False
     else:
-        w1+=5
+        w1+=8
         if w1>255:
             w1=0
-            w3+=5
+            w3+=8
         if w3>255:
             w3=0
         color=((w1,w2,w3))
@@ -82,7 +82,7 @@ while running:
     if space:
         pygame.draw.line(screen,color,(0,y),(l/z,l/z))
         pygame.draw.line(screen,color,(x2,0),(l/z,l/z))
-        
+
         if count==2:
             z=2
             pygame.draw.line(screen,color,(l,l-y),(l/z,l/z))
