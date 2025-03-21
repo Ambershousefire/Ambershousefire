@@ -48,8 +48,8 @@ while running:
                     space=True
             if event.key == pygame.K_z:
                 count+=1
-                y=l
-                x2=l
+                y=0
+                x2=0
             if event.key == pygame.K_BACKSPACE:
                 running=False
     if count==3:
