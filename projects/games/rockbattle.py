@@ -23,7 +23,7 @@ if run==True:
         b=b+1
 
         x=int(input("ok to paly rock(1) paper(2) sisors(3) you will say what you whant to play and we will see who wins: "))    
-        z=npc[random.randint(0,8)]
+        z=npc[random.randint(0,len(npc))]
 
         if z==x:
             d+=1
