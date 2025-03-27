@@ -1,6 +1,6 @@
 
 import random as r , pygame
-file = open("data\\win_rate.txt","a")
+file = open("Ambershousefire\\data\\win_rate.txt","a")
 global screen
 x=450
 y=220

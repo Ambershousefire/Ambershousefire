@@ -1,6 +1,6 @@
 
 import random
-file = open("data\\win_rate.txt","a")
+file = open("Ambershousefire\\data\\win_rate.txt","a")
 win= "  You Won :3"
 loss="  You lost >:3"
 draw="  Thats a Draw"
