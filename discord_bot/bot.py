@@ -34,13 +34,15 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+	if message.content =="*Start":
+		opener()
 	if message.content =="*start":
 		opener()
-	elif message.content =="* Start":
+	if message.content =="* Start":
 		opener()
-	elif message.content =="*Start":
+	if message.content =="* start":
 		opener()
-	elif message.content =="*Start ":
+	if message.content =="*Start ":
 		opener
 	if message.content =="*start ":
 		opener()
