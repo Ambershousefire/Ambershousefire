@@ -20,12 +20,13 @@ pygame.draw.line(screen,(0,0,0),(100,0),(100,300),(3))
 pygame.draw.line(screen,(0,0,0),(200,0),(200,300),(3))
 pygame.draw.line(screen,(0,0,0),(0,100),(300,100),(3))
 pygame.draw.line(screen,(0,0,0),(0,200),(300,200),(3))
-def line (list,pos,value):
-     if (list[pos]==value) and (list[pos+1]==value) and (list[pos+2]==value):
+
+def line (list,startpos,value):
+     if (list[startpos]==value) and (list[startpos+1]==value) and (list[startpos+2]==value):
         return True
      
-def line_up(list,pos,value):
-     if (list[pos]==value) and (list[pos+3]==value) and (list[pos+6]==value):
+def line_up(list,startpos,value):
+     if (list[startpos]==value) and (list[startpos+3]==value) and (list[startpos+6]==value):
          return True
      
 def negative(list,value):
@@ -218,7 +219,7 @@ while running:
 
     if postaive(c,True):
         running=False
-        ##########################
+        #cheking if X#
     if line(c,1,False):
         running=False
 
@@ -242,7 +243,7 @@ while running:
 
     if postaive(c,False):
         running=False
-    
+
     pygame.display.flip()
 file.write("\nXO: ")
 if not winner:
