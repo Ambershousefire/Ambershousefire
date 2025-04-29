@@ -24,7 +24,6 @@ while running:
             y+=1
             final.append(z)
             z=""
-    print(sep,combind,final)
     running=False
     output=[]
 morse = [
