@@ -1,11 +1,10 @@
-txt=input(": ")
+txt=input("input your morse code here: ")
 sep=[]
 combind=[]
 final=[]
 sep=[x for x in txt]
 running=True
 x=0
-i=0
 y=0
 z=""
 while running:
