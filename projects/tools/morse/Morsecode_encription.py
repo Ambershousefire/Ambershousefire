@@ -28,4 +28,4 @@ while len(trans)< len(letter):
         x = 0
     except:
         trans.append("?")
-print(" ".join(trans))
+print("ooutput:","\n"," ".join(trans))
