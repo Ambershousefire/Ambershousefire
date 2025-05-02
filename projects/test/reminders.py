@@ -11,6 +11,7 @@ for b in x:
     if not b == 2:
         x.append(2)
 print(x)
-print("\n".join(str(x))) 
+x="  ".join(str(x))
+print(x) 
 x=[ x for x in x]
 print(x)
