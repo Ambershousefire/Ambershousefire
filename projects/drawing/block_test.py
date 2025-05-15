@@ -1,5 +1,5 @@
 import pygame
-alpha=3
+alpha=2
 mode=255*alpha
 screen=pygame.display.set_mode((mode,mode))
 running=True
