@@ -11,8 +11,8 @@ map_x=[]
 map_y=[]
 size=10
 i=0
-dbx=[]
-dby=[]
+dbx=[0,10,20,30,40]
+dby=[0,0,0,0,0]
 while running:
 
     screen.fill((255-mode/5,255-mode/6,255-mode/3))
