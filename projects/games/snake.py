@@ -1,7 +1,7 @@
 
 import random as r, pygame
 from time import sleep
-file = open("data\\win_rate.txt","a")
+file = open("projects/data/win_rate.txt","a")
 xpos=[]
 ypos=[]
 x=500

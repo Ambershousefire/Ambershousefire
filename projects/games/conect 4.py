@@ -1,6 +1,6 @@
 
 import pygame
-file = open("data\\win_rate.txt","a")
+file = open("projects/data/win_rate.txt","a")
 l=560
 w=420
 screen=pygame.display.set_mode((l,w))
