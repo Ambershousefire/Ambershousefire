@@ -1,80 +1,18 @@
 
 running = True
 turn = 1
-loc = { 
-        "A1" : 1,
-        "A2" : 2,
-        "A3" : 3,
-        "A4" : 4,
-        "A5" : 5,
-        "A6" : 6,
-        "A7" : 7,
-        "A8" : 8,
-        "B1" : 9,
-        "B2" : 10,
-        "B3" : 11,
-        "B4" : 12,
-        "B5" : 13,
-        "B6" : 14,
-        "B7" : 15,
-        "B8" : 16, 
-        "C1" : 17,
-        "C2" : 18,
-        "C3" : 19, 
-        "C4" : 20,
-        "C5" : 21,
-        "C6" : 22,
-        "C7" : 23,
-        "C8" : 24,
-        "D1" : 25,
-        "D2" : 26,
-        "D3" : 27,
-        "D4" : 28,
-        "D5" : 29,
-        "D6" : 30,
-        "D7" : 31,
-        "D8" : 32,
-        "E1" : 33,
-        "E2" : 34,
-        "E3" : 35,
-        "E4" : 36,
-        "E5" : 37,
-        "E6" : 38,
-        "E7" : 39,
-        "E8" : 40,
-        "F1" : 41,
-        "F2" : 42,
-        "F3" : 43, 
-        "F4" : 44,
-        "F5" : 45,
-        "F6" : 46,
-        "F7" : 47,
-        "F8" : 48,
-        "G1" : 49,
-        "G2" : 50,
-        "G3" : 51,
-        "G4" : 52,
-        "G5" : 53,
-        "G6" : 54,
-        "G7" : 55,
-        "G8" : 56,
-        "H1" : 57,
-        "H2" : 58,
-        "H3" : 59,
-        "H4" : 60,
-        "H5" : 61,
-        "H6" : 62,
-        "H7" : 63,
-        "H8" : 64}
-bord = [ "A1","A2","A3","A4","A5","A6","A7","A8"
-        ,"B1","B2","B3","B4","B5","B6","B7","B8"
-        ,"C1","C2","C3","C4","C5","C6","C7","C8"
-        ,"D1","D2","D3","D4","D5","D6","D7","D8"
-        ,"E1","E2","E3","E4","E5","E6","E7","E8"
-        ,"F1","F2","F3","F4","F5","F6","F7","F8"
-        ,"G1","G2","G3","G4","G5","G6","G7","G8"
-        ,"H1","H2","H3","H4","H5","H6","H7","H8"
-        ]
+bordY = ["A","B","C","D","E","F","G","H"]
+
+bordX = ["8","7","6","5","4","3","2","1"]
+y=0
+x=0
+zetta = []
+while not y == len(bordX): 
+    while not x==8:
+        zetta.append(bordY[x]+bordX[y])
+        x+=1
+    x=0
+    y+=1
 game = [
         " r","kn"," b"," k"," q"," b","kn"," r"
         ," p"," p"," p"," p"," p"," p"," p"," p"
@@ -88,7 +26,7 @@ game = [
 x=0
 def gamestate(x):
         while not x >= 64:
-                print("{"," | ".join(bord[x:x+8]),"}")
+                print("{"," | ".join(zetta[x:x+8]),"}")
         
                 print("{"," | ".join(game[x:x+8]),"}")
 
@@ -102,10 +40,28 @@ while running:
         text3 = input("To: ")
         y=0
         x=0
-        while not bord[y] == text2:
+        while not zetta[y] == text2:
                 y+=1
-        while not bord[x] == text3:
+        while not zetta[x] == text3:
                 x+=1
         game[x] = game[y]
         game[y] = " -"
         z = gamestate(0)
+
+# pawns can only move one tile 
+# on there first move they can move 2
+# pawns can only attack on diagnels 
+# pwans can promot to any class apon reaching the other side of the bord
+
+# rooks can only move is stright lines
+
+# bishops can only move on diagnles 
+
+# knights attack in a L shape (2 fowerd 1 to the side)
+# knights can hop over other pices 
+
+# queen can use all move sets other then knight 
+
+# king can only move one tile at a time
+# king if in the line of attack must move or use another pice to --
+# block the attack before they can move another pice 
