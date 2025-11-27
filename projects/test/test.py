@@ -18,8 +18,8 @@ type = {
     "P":5
 }
 
-def pistion(list,dir):
-    role[0[lsit]]
+#def pistion(list,dir):
+#    role[0[lsit]]
 
 rookx = [1,8,1,8]
 rooky = [1,1,8,8]

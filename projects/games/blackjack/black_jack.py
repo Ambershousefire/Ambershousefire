@@ -2,12 +2,16 @@
 import random as r, values
 file = open("projects/data/money.txt","r")
 playing = True
+
 try:
     token = int(file.readline(-1))
+
 except:
     token=1
+
 file.close
 file = open("projects/data/money.txt","w")
+
 def counter(obj,Value):
     count=0
     Value=0
@@ -41,6 +45,7 @@ while playing:
         i+=1
 
     print("How much do you want to bet, you current balance is:",token,"chips")
+
     try:
         y=int(input(": "))
     except:
@@ -74,6 +79,7 @@ while playing:
 
         d_value = counter(dealer,d_value)
         p_value = counter(player, p_value)
+
         if d_value==21:
             running=False
             print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
@@ -150,6 +156,7 @@ while playing:
                     print("your cards: ",", ".join(player),"(",p_value,")","\n","dealer: ",", ".join(dealer),"(",d_value,")")
                     print("you win")
                     token+=y
+
         if input("do you whant to continu (y/n): ").capitalize().startswith("N"):
             playing=False
             print(token,"current funds")
