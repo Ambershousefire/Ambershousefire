@@ -2,7 +2,9 @@
 import random,time
 bord=[]
 i=1
-while not i==65:
+w=8
+l=8
+while not i==(w*l)+1:
     
     bord.append('-')
     i+=1
@@ -10,9 +12,9 @@ i=0
 def game_state(bord,i):
     print(" ","~"*16)
     while not i==len(bord):
-        print("|"," ".join(bord[i:i+8]),"|")
-        i+=8
-    print(" ","~"*16)
+        print("|"," ".join(bord[i:i+w]),"|")
+        i+=w
+    print(" ","~"*l*2)
 
 posx=[4]
 posy=[4]
@@ -20,7 +22,7 @@ posy=[4]
 def pos_update(x,y):
     num=0
     while not num == len(x):
-        bord[(8*y[num])+x[num]]="#"
+        bord[(w*y[num])+x[num]]="#"
         num+=1
     return bord
 
@@ -29,8 +31,8 @@ def pos_update(x,y):
 
 def apple(posx,posy): 
     test=True
-    x=random.randrange(1,8)
-    y=random.randrange(1,8)
+    x=random.randrange(1,l)
+    y=random.randrange(1,w)
     i=0
     running=True
     while running:
@@ -43,7 +45,7 @@ def apple(posx,posy):
         if test:
             running=False
         else: x,y=roll_pos(x,y)
-    bord[(8*y)+x]="@"
+    bord[(l*y)+x]="@"
     return x,y
 running=True
 apple(posx,posy)
@@ -57,28 +59,28 @@ while running:
     z=(input(":"))
     i=0
     if z.capitalize().startswith("U"):
-        bord[((8*posy[i])+posx[i])]="-"
+        bord[((w*posy[i])+posx[i])]="-"
         posy[i]-=1
         
 
     elif z.capitalize().startswith("D"):
-        bord[((8*posy[i])+posx[i])]="-"
+        bord[((w*posy[i])+posx[i])]="-"
         posy[0]=posy[0]+1
 
     elif z.capitalize().startswith("R"):
-        bord[((8*posy[i])+posx[i])]="-"
+        bord[((w*posy[i])+posx[i])]="-"
         posx[0]+=1
 
-    elif z.capitalize().startswith("L"):
-        bord[((8*posy[i])+posx[i])]="-"
+    elif z.capitalize().startswith("w"):
+        bord[((w*posy[i])+posx[i])]="-"
         posx[0]-=1
 
 
     
-    if posy[0] < 0 or posy[0] > 8:
+    if posy[0] < 0 or posy[0] > w:
         running=False
         print("game over") 
-    elif posx[0] < 0 or posx[0] == 8:
+    elif posx[0] < 0 or posx[0] == l:
         running=False
         print("game over") 
 
